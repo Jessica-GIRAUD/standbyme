@@ -2,7 +2,7 @@ import { useLanguage } from '@/context/language-context';
 import React, { useState, useRef } from 'react';
 
 export default function LanguageSelect() {
-  const { setLanguage, language } = useLanguage();
+  const { setLanguage, language, t } = useLanguage();
   // State to manage dropdown visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -39,12 +39,12 @@ export default function LanguageSelect() {
       >
         <li>
           <a href="#" onClick={() => handleLanguageSelect('en')}>
-            English
+            {t('English')}
           </a>
         </li>
         <li>
           <a href="#" onClick={() => handleLanguageSelect('fr')}>
-            French
+            {t('French')}
           </a>
         </li>
       </ul>

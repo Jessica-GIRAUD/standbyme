@@ -1,8 +1,12 @@
-import React from "react";
+'use client';
+import { useLanguage } from '@/context/language-context';
+import React from 'react';
 
 export default function AnimatedText({
-  text = "Grow your business with a new website.",
+  text = 'Grow your business with a new website.',
 }) {
+  const { t } = useLanguage();
+
   return (
     <>
       <span
@@ -10,27 +14,27 @@ export default function AnimatedText({
         data-splitting="chars"
         aria-hidden="true"
         style={{
-          "--word-total": text.split(" ").length,
-          "--char-total": text.split("").length,
-          visibility: "visible",
+          '--word-total': text.split(' ').length,
+          '--char-total': text.split('').length,
+          visibility: 'visible',
         }}
       >
-        {text
+        {t(text)
           .trim()
-          .split(" ")
+          .split(' ')
           .map((elm, i) => (
             <React.Fragment key={i}>
               <span
                 className="word"
                 data-word="Grow"
-                style={{ "--word-index": i }}
+                style={{ '--word-index': i }}
               >
-                {elm.split("").map((elm2, i2) => (
+                {elm.split('').map((elm2, i2) => (
                   <span
                     key={i2}
                     className="char"
                     data-char="G"
-                    style={{ "--char-index": i + i2 }}
+                    style={{ '--char-index': i + i2 }}
                   >
                     {elm2}
                   </span>

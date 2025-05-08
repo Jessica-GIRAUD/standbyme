@@ -6,9 +6,12 @@ import React from 'react';
 import Nav from './Nav';
 import LanguageSelect from './LanguageSelect';
 import { useLanguage } from '@/context/language-context';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header({ links }) {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const isRealPage = pathname.includes('realisations');
   return (
     <div className="main-nav-sub full-wrapper">
       {/* Logo  (* Add your text or image to the link tag. Use SVG or PNG image format. 
@@ -17,14 +20,22 @@ export default function Header({ links }) {
       <div className="nav-logo-wrap local-scroll">
         <Link href={`/`} className="logo">
           <Image
-            src="/assets/images/logo.png"
+            src={
+              isRealPage
+                ? '/assets/images/logo-color.png'
+                : '/assets/images/logo-white.png'
+            }
             alt="Stand By Me"
             width={105}
             height={34}
             className="light-mode-logo"
           />
           <Image
-            src="/assets/images/logo-white.png"
+            src={
+              isRealPage
+                ? '/assets/images/logo-color.png'
+                : '/assets/images/logo-white.png'
+            }
             alt="Stand By Me"
             width={105}
             height={34}

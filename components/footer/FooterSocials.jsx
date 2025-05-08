@@ -1,11 +1,17 @@
-import React from "react";
+import React from 'react';
 
 export default function FooterSocials() {
   const socials = [
-    { name: "Facebook", icon: "fa-facebook", url: "#" },
-    { name: "YouTube", icon: "fa-youtube", url: "#" },
-    { name: "Pinterest", icon: "fa-pinterest", url: "#" },
-    { name: "LinkedIn", icon: "fa-linkedin", url: "#" },
+    {
+      name: 'LinkedIn',
+      icon: 'fa-linkedin',
+      url: 'https://www.linkedin.com/company/standbyme/',
+    },
+    {
+      name: 'Instagram',
+      icon: 'fa-instagram',
+      url: 'https://www.instagram.com/be_standbyme/',
+    },
   ];
 
   return (

@@ -26,6 +26,7 @@ export default function OnePageNav({ links, animateY = false }) {
       window.removeEventListener('resize', init_classic_menu_resize);
     };
   }, []);
+  
   const pathname = usePathname();
 
   return (

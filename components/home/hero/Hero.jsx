@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import { useRef, useState } from "react";
+import { useLanguage } from '@/context/language-context';
+import { useRef, useState } from 'react';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -43,8 +45,9 @@ export default function Hero() {
             muted
             loop
           >
-{/*             <source src="/assets/videos/video-1.mp4" type="video/mp4" />
- */}           <source src="/assets/videos/video_fr.mp4" type="video/mp4" />
+            {/*             <source src="/assets/videos/video-1.mp4" type="video/mp4" />
+             */}{' '}
+            <source src="/assets/videos/video_1.mp4" type="video/mp4" />
           </video>
           <div className="bg-video-overlay bg-dark-alpha-50" />
         </div>
@@ -54,7 +57,7 @@ export default function Hero() {
           role="button"
           className="bg-video-button-muted"
         >
-          <i className={`mi-volume-${isMuted ? "up" : "off"}`} />
+          <i className={`mi-volume-${isMuted ? 'up' : 'off'}`} />
           <span className="visually-hidden">Volume On</span>
         </a>
         <a
@@ -63,7 +66,7 @@ export default function Hero() {
           role="button"
           className="bg-video-button-pause"
         >
-          <i className={`mi-${isPlaying ? "pause" : "play"}`} />
+          <i className={`mi-${isPlaying ? 'pause' : 'play'}`} />
           <span className="visually-hidden">Pause</span>
         </a>
         {/* End Background Video */}
@@ -73,11 +76,11 @@ export default function Hero() {
             {/* Home Section Text */}
             <div className="col-md-10 offset-md-1 mb-20 mb-sm-0">
               <h2 className="hs-title-11 mb-30 mb-xs-10 wow fadeInUp">
-                Resonance Creative Studio
+                Stand By Me
               </h2>
               <h1 className="hs-title-12 mb-50 mb-sm-30">
                 <span className="wow charsAnimIn" data-splitting="chars">
-                  Grow your business with new online experience.
+                  {t('Offrez une nouvelle dimension à vos espaces.')}
                 </span>
               </h1>
               <div
@@ -89,14 +92,14 @@ export default function Hero() {
                   className="btn btn-mod btn-border-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  Learn More
+                  {t('Learn More')}
                 </a>
                 <a
                   href="#contact"
                   className="btn btn-mod btn-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  Get In Touch
+                  {t('Get In Touch')}
                 </a>
               </div>
             </div>

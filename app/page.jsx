@@ -2,8 +2,8 @@ import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import { menuItems } from '@/data/menu';
-import Home1 from "@/components/home/index";
-import Hero from "@/components/home/hero/Hero"
+import Home1 from '@/components/home/index';
+import Hero from '@/components/home/hero/Hero';
 
 export const metadata = {
   title: 'Stand By Me',
@@ -33,13 +33,14 @@ export default function Home() {
             >
               <Hero />
             </ParallaxContainer>
-            
+
             {/* End Home Section */}
             <Home1 />
             {/* Divider */}
             <hr className="mt-0 mb-0" />
             {/* End Divider */}
           </main>
+
           {/* Footer */}
           <footer className="page-section footer bg-gray-light-1 pb-30">
             <Footer />
