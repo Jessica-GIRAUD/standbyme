@@ -5,7 +5,7 @@ import React from 'react';
 export default function Service() {
   return (
     <div className="container position-relative">
-      <div className="row justify-content-center">
+      <div className="row justify-content-md-center">
         <div className="col-lg-6 mb-md-60 mb-sm-30">
           <h2 className="section-caption mb-xs-10">Our Team</h2>
           <h3 className="section-title mb-30">
@@ -86,7 +86,7 @@ export default function Service() {
           </ul>
         </div>
         <div
-          className="col-4 d-flex wow fadeInLeft"
+          className="col-lg-4 d-flex wow fadeInLeft"
           data-wow-delay="0.55s"
           data-wow-offset={275}
         >
