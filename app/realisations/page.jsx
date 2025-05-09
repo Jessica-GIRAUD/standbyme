@@ -28,10 +28,8 @@ export default function Projects() {
                 }}
               >
                 <div className="container position-relative pt-30 pt-sm-50">
-                  {/* Section Content */}
                   <div className="text-center">
                     <div className="row">
-                      {/* Page Title */}
                       <div className="col-md-8 offset-md-2">
                         <h1 className="hs-title-1 mb-20">
                           <span
@@ -55,20 +53,19 @@ export default function Projects() {
                           </div>
                         </div>
                       </div>
-                      {/* End Page Title */}
                     </div>
                   </div>
-                  {/* End Section Content */}
                 </div>
               </ParallaxContainer>
             </section>
 
-            {/* Section */}
+            {/* Portfolio Section */}
             <section className="page-section">
               <Portfolio lazyload gridClass="work-grid-3" />
             </section>
-            {/* End Section */}
+            {/* End Portfolio Section */}
 
+            {/* Contact Section */}
             <section className="page-section pt-0 pb-0" id="contact">
               <ParallaxContainer
                 className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
@@ -79,27 +76,20 @@ export default function Projects() {
               >
                 <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
                 <div className="container position-relative pt-50">
-                  {/* Section Content */}
                   <div className="text-center">
                     <div className="row">
-                      {/* Page Title */}
                       <div className="col-md-8 offset-md-2">
                         <h3 className="section-title mb-30">
                           <AnimatedText text="Say hello" />
                         </h3>
                       </div>
-                      {/* End Page Title */}
                     </div>
                   </div>
-                  {/* End Section Content */}
                 </div>
               </ParallaxContainer>
-            </section>
-
-            {/* Contact Section */}
-            <section className="page-section pt-0">
               <Contact />
             </section>
+            {/* End Contact Section */}
           </main>
           <Footer />
         </div>

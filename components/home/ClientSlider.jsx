@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { clients } from "@/data/brands";
-import Image from "next/image";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { clients } from '@/data/brands';
+import Image from 'next/image';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function ClientSlider() {
   return (
@@ -29,7 +29,7 @@ export default function ClientSlider() {
       className="small-item-carousel black owl-carousel mb-0 autoplay owl-theme"
       style={{
         opacity: 1,
-        display: "block",
+        display: 'block',
       }}
     >
       {/* Team item */}

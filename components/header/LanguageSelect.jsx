@@ -1,3 +1,5 @@
+'use client';
+
 import { useLanguage } from '@/context/language-context';
 import React, { useState, useRef } from 'react';
 

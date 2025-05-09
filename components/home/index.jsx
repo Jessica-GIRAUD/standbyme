@@ -10,6 +10,7 @@ export default function Home1({ onePage = false, dark = false }) {
   const { t } = useLanguage();
   return (
     <>
+      {/* Team Section */}
       <section className="page-section pt-0 pb-0" id="about">
         <ParallaxContainer
           className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
@@ -25,6 +26,8 @@ export default function Home1({ onePage = false, dark = false }) {
           </>
         </ParallaxContainer>
       </section>
+      {/* End Team Section */}
+
       {/* Divider */}
       <hr className="mt-0 mb-0" />
       {/* End Divider */}
@@ -63,8 +66,7 @@ export default function Home1({ onePage = false, dark = false }) {
       <hr className="mt-0 mb-0" />
       {/* End Divider */}
 
-      <hr className={`mt-0 mb-0 ${dark ? 'white' : ''}`} />
-
+      {/* Contact Section */}
       <section className="page-section pt-0 pb-0" id="contact">
         <ParallaxContainer
           className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
@@ -75,27 +77,21 @@ export default function Home1({ onePage = false, dark = false }) {
         >
           <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
           <div className="container position-relative pt-50">
-            {/* Section Content */}
             <div className="text-center">
               <div className="row">
-                {/* Page Title */}
                 <div className="col-md-8 offset-md-2">
                   <h3 className="section-title mb-30">
                     <AnimatedText text="Say hello" />
                   </h3>
                 </div>
-                {/* End Page Title */}
               </div>
             </div>
-            {/* End Section Content */}
           </div>
         </ParallaxContainer>
-      </section>
-
-      {/* Contact Section */}
-      <section className="page-section pt-0">
         <Contact />
       </section>
+
+      {/* End Contact Section */}
     </>
   );
 }

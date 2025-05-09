@@ -3,7 +3,7 @@
 import AnimatedText from '@/components/common/AnimatedText';
 import { useLanguage } from '@/context/language-context';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { teamMembers } from '@/data/team';
 
 export default function Team() {

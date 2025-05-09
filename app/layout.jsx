@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
       window.removeEventListener('scroll', headerChangeOnScroll);
     };
   }, [path]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // Import the script only on the client side
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en" className="no-mobile no-touch ">
+    <html lang="en" className="no-mobile no-touch" suppressHydrationWarning>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
