@@ -93,13 +93,10 @@ export default function Portfolio({ gridClass = '' }) {
                           <Image
                             width={719}
                             height={461}
-                            loading="lazy"
                             ref={ref}
-                            placeholder="blur"
-                            blurDataURL="/assets/images/portfolio/projects-thumb.gif"
                             src={item.images[0].imgSrc}
                             alt={item.images[0].imgAlt}
-                            //  data-wow-delay={item.delay || '1s'}
+                            data-wow-delay={item.delay || '1s'}
                           />
                         </div>
                         <div onClick={open} className="work-intro text-start">
@@ -120,7 +117,6 @@ export default function Portfolio({ gridClass = '' }) {
                     <Image
                       width={650}
                       height={773}
-                      loading="lazy"
                       src={item.images[0].imgSrc}
                       alt={item.images[0].imgAlt}
                       className="wow fadeIn"
