@@ -5,17 +5,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import { useLanguage } from '@/context/language-context';
 
 const filters = [
   { name: 'Tous les stands', category: 'all' },
-  { name: 'Interieur', category: 'interior' },
-  { name: 'Exterieur', category: 'exterior' },
+  { name: 'Intérieur', category: 'indoor' },
+  { name: 'Extérieur', category: 'outdoor' },
 ];
 
 export default function Portfolio({ gridClass = '' }) {
+  const { t } = useLanguage();
+
   const [currentCategory, setCurrentCategory] = useState('all');
+
   const isotopContainer = useRef();
   const isotope = useRef();
+
   const initIsotop = async () => {
     const Isotope = (await import('isotope-layout')).default;
     const imagesloaded = (await import('imagesloaded')).default;
@@ -30,6 +35,7 @@ export default function Portfolio({ gridClass = '' }) {
       isotope.current.layout();
     });
   };
+
   const updateCategory = (val) => {
     setCurrentCategory(val);
     isotope.current.arrange({
@@ -37,12 +43,14 @@ export default function Portfolio({ gridClass = '' }) {
     });
     //   isotope.value.layout();
   };
+
   useEffect(() => {
     /////////////////////////////////////////////////////
     // Magnate Animation
 
     initIsotop();
   }, []);
+
   return (
     <div className="full-wrapper position-relative">
       {/* Works Filter */}
@@ -55,7 +63,7 @@ export default function Portfolio({ gridClass = '' }) {
               currentCategory == elm.category ? 'active' : ''
             }`}
           >
-            {elm.name}
+            {t(elm.name)}
           </a>
         ))}
       </div>
@@ -63,7 +71,7 @@ export default function Portfolio({ gridClass = '' }) {
       {/* Works Grid */}
       <ul
         ref={isotopContainer}
-        className={`works-grid work-grid-gut clearfix hide-titles hover-white ${gridClass} masonry`}
+        className={`works-grid work-grid-gut clearfix hide-titles hover-white image-lazyload-container ${gridClass} masonry`}
         id="work-grid"
       >
         <Gallery>
@@ -72,8 +80,8 @@ export default function Portfolio({ gridClass = '' }) {
               {item.type == 'lightbox' ? (
                 <a className={'work-lightbox-link mfp-image'}>
                   <Item
-                    original={item.imgSrc}
-                    thumbnail={item.imgSrc}
+                    original={item.images[0].imgSrc}
+                    thumbnail={item.images[0].imgSrc}
                     width={719}
                     height={461}
                   >
@@ -81,13 +89,17 @@ export default function Portfolio({ gridClass = '' }) {
                       <>
                         <div className="work-img">
                           <div className="work-img-bg " />
+
                           <Image
                             width={719}
                             height={461}
+                            loading="lazy"
                             ref={ref}
-                            src={item.imgSrc}
-                            alt={item.imgAlt}
-                            data-wow-delay={item.delay}
+                            placeholder="blur"
+                            blurDataURL="/assets/images/portfolio/projects-thumb.gif"
+                            src={item.images[0].imgSrc}
+                            alt={item.images[0].imgAlt}
+                            //  data-wow-delay={item.delay || '1s'}
                           />
                         </div>
                         <div onClick={open} className="work-intro text-start">
@@ -104,18 +116,20 @@ export default function Portfolio({ gridClass = '' }) {
                   className={'work-lightbox-link mfp-image'}
                 >
                   <div className="work-img">
-                    <div className="work-img-bg " />
+                    <div className="work-img-bg wow scalexIn" />
                     <Image
                       width={650}
                       height={773}
-                      src={item.imgSrc}
-                      alt={item.imgAlt}
-                      data-wow-delay={item.delay}
+                      loading="lazy"
+                      src={item.images[0].imgSrc}
+                      alt={item.images[0].imgAlt}
+                      className="wow fadeIn"
+                      data-wow-delay="1s"
                     />
                   </div>
-                  <div className="work-intro text-start">
+                  <div className="work-intro text-center">
                     <h3 className="work-title">{item.title}</h3>
-                    <div className="work-descr">{item.description}</div>
+                    <div className="work-descr">{item.descr}</div>
                   </div>
                 </Link>
               )}

@@ -2,6 +2,7 @@
 
 import { useLanguage } from '@/context/language-context';
 import { useRef, useState } from 'react';
+import { infos } from '@/data/infos';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -44,14 +45,13 @@ export default function Hero() {
             autoPlay
             muted
             loop
+            playsInline
           >
-            {/*             <source src="/assets/videos/video-1.mp4" type="video/mp4" />
-             */}{' '}
             <source src="/assets/videos/video_1.mp4" type="video/mp4" />
           </video>
           <div className="bg-video-overlay bg-dark-alpha-50" />
         </div>
-        <a
+        {/*  <a
           onClick={toggleMuteUnmute}
           href="#"
           role="button"
@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <i className={`mi-volume-${isMuted ? 'up' : 'off'}`} />
           <span className="visually-hidden">Volume On</span>
-        </a>
+        </a> */}
         <a
           onClick={togglePlayPause}
           href="#"
@@ -76,7 +76,7 @@ export default function Hero() {
             {/* Home Section Text */}
             <div className="col-md-10 offset-md-1 mb-20 mb-sm-0">
               <h2 className="hs-title-11 mb-30 mb-xs-10 wow fadeInUp">
-                Stand By Me
+                {infos.company}
               </h2>
               <h1 className="hs-title-12 mb-50 mb-sm-30">
                 <span className="wow charsAnimIn" data-splitting="chars">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 
 import Header from '@/components/header/Header';
+import Contact from '@/components/home/Contact';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
 import { portfolios } from '../../../data/portfolio';
@@ -64,8 +65,7 @@ export default function SingleProject() {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              Branding, UI/UX Design, Front-end Development,
-                              Back-end Development
+                              {portfolioItem.descr}
                             </p>
                           </div>
                         </div>
@@ -85,42 +85,36 @@ export default function SingleProject() {
                     {/* Project Details */}
                     <div className="col-md-4 mb-sm-40 wow fadeInUp">
                       <div className="block-sticky">
-                        <h2 className="h3 mb-20">Project Details</h2>
+                        <h2 className="h3 mb-20">{t('Project Details')}</h2>
                         <hr className="mb-20" />
                         <div className="row text-gray small">
                           <div className="col-sm-4">
-                            <b>Date:</b>
+                            <b>Date :</b>
                           </div>
-                          <div className="col-sm-8">May 1th, 2023</div>
+                          <div className="col-sm-8">{portfolioItem.date}</div>
                         </div>
                         <hr className="mb-20" />
                         <div className="row text-gray small">
                           <div className="col-sm-4">
-                            <b>Client:</b>
+                            <b>Client :</b>
                           </div>
-                          <div className="col-sm-8">Envato Users</div>
+                          <div className="col-sm-8">{portfolioItem.client}</div>
                         </div>
                         <hr className="mb-20" />
                         <div className="row text-gray small">
                           <div className="col-sm-4">
-                            <b>Services:</b>
+                            <b>Services :</b>
                           </div>
                           <div className="col-sm-8">
-                            Branding, UI/UX Design, Front-end Development,
-                            Back-end Development
+                            {portfolioItem.services}
                           </div>
                         </div>
                         <hr className="mb-20" />
                         <div className="text-gray small">
                           <div>
-                            <b>Description:</b>
+                            <b>Description :</b>
                           </div>
-                          <div>
-                            Lorem ipsum dolor sit amet conseur adipisci inerene.
-                            Maecenas volutpat, diam eni sagittis quam porta
-                            quam. Sed id dolor consectetur fermentum volutpat
-                            accumsan purus iaculis libero.
-                          </div>
+                          <div>{portfolioItem.details}</div>
                         </div>
                         <hr className="mb-20" />
                       </div>
@@ -129,44 +123,19 @@ export default function SingleProject() {
                     <div className="col-md-8">
                       <div className="mb-n30">
                         {/* Photo Item */}
-                        <div className="mb-30 wow fadeInUp">
-                          <Image
-                            src="/assets/images/portfolio/full-project-1.jpg"
-                            alt="Image Description"
-                            width={1350}
-                            height={865}
-                          />
-                        </div>
-                        {/* End Photo Item */}
-                        {/* Photo Item */}
-                        <div className="mb-30 wow fadeInUp">
-                          <Image
-                            src="/assets/images/portfolio/full-project-2.jpg"
-                            alt="Image Description"
-                            width={1350}
-                            height={865}
-                          />
-                        </div>
-                        {/* End Photo Item */}
-                        {/* Photo Item */}
-                        <div className="mb-30 wow fadeInUp">
-                          <Image
-                            src="/assets/images/portfolio/full-project-3.jpg"
-                            alt="Image Description"
-                            width={1350}
-                            height={865}
-                          />
-                        </div>
-                        {/* End Photo Item */}
-                        {/* Photo Item */}
-                        <div className="mb-30 wow fadeInUp">
-                          <Image
-                            src="/assets/images/portfolio/full-project-4.jpg"
-                            alt="Image Description"
-                            width={1350}
-                            height={865}
-                          />
-                        </div>
+                        {portfolioItem.images.map((image, index) => {
+                          return (
+                            <div className="mb-30 wow fadeInUp" key={index}>
+                              <Image
+                                src={image.imgSrc}
+                                alt={image.imgAlt}
+                                width={1350}
+                                height={865}
+                              />
+                            </div>
+                          );
+                        })}
+
                         {/* End Photo Item */}
                       </div>
                     </div>
@@ -179,9 +148,41 @@ export default function SingleProject() {
               <hr className="mt-0 mb-0" />
               {/* End Divider */}
             </>
+
+            <section className="page-section pt-0 pb-0" id="contact">
+              <ParallaxContainer
+                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
+                style={{
+                  backgroundImage:
+                    'url(/assets/images/full-width-images/page-title-bg-4.jpg)',
+                }}
+              >
+                <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
+                <div className="container position-relative pt-50">
+                  {/* Section Content */}
+                  <div className="text-center">
+                    <div className="row">
+                      {/* Page Title */}
+                      <div className="col-md-8 offset-md-2">
+                        <h3 className="section-title mb-30">
+                          <AnimatedText text="Say hello" />
+                        </h3>
+                      </div>
+                      {/* End Page Title */}
+                    </div>
+                  </div>
+                  {/* End Section Content */}
+                </div>
+              </ParallaxContainer>
+            </section>
+
+            {/* Contact Section */}
+            <section className="page-section pt-0">
+              <Contact />
+            </section>
           </main>
           <Footer />
-        </div>{' '}
+        </div>
       </div>
     </>
   );

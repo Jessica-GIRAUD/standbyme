@@ -40,7 +40,7 @@ export default function ClientSlider() {
               src={elm.imgSrc}
               width="150"
               height="90"
-              alt="Company Name"
+              alt={elm.name}
               className="image-filter"
             />
           </div>

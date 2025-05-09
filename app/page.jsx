@@ -4,9 +4,10 @@ import Header from '@/components/header/Header';
 import { menuItems } from '@/data/menu';
 import Home1 from '@/components/home/index';
 import Hero from '@/components/home/hero/Hero';
+import { infos } from '@/data/infos';
 
 export const metadata = {
-  title: 'Stand By Me',
+  title: infos.company,
   description:
     'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
 };

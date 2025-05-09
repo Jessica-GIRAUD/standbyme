@@ -79,6 +79,7 @@ a {
 .btn-mod.btn-w:hover,
 .btn-mod.btn-w:focus {
   background: none !important;
+  color: #fff !important;
 }
 @media (max-width: 500px) {
   .team-carousel .owl-prev.owl-prev-testimonial-1 {

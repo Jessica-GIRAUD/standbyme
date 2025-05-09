@@ -1,7 +1,7 @@
 'use client';
 import AnimatedText from '@/components/common/AnimatedText';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
-import Service from './Service';
+import Team from './Team';
 import ClientSlider from './ClientSlider';
 import { useLanguage } from '@/context/language-context';
 import Contact from '@/components/home/Contact';
@@ -10,7 +10,7 @@ export default function Home1({ onePage = false, dark = false }) {
   const { t } = useLanguage();
   return (
     <>
-      <section className="page-section pt-0 pb-0" id="home">
+      <section className="page-section pt-0 pb-0" id="about">
         <ParallaxContainer
           className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
           style={{
@@ -20,7 +20,7 @@ export default function Home1({ onePage = false, dark = false }) {
           <>
             <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
             <div className="container position-relative pt-50">
-              <Service />
+              <Team />
             </div>
           </>
         </ParallaxContainer>
@@ -45,8 +45,9 @@ export default function Home1({ onePage = false, dark = false }) {
                   <AnimatedText text="They trust us" />
                 </h3>
                 <p className="section-descr mb-50 mb-sm-30">
-                  Découvrez les entreprises qui ont choisi Stand By Me pour
-                  sublimer leurs espaces.
+                  {t(
+                    'Découvrez les entreprises qui ont choisi Stand By Me pour sublimer leurs espaces.'
+                  )}
                 </p>
               </div>
             </div>
@@ -79,11 +80,9 @@ export default function Home1({ onePage = false, dark = false }) {
               <div className="row">
                 {/* Page Title */}
                 <div className="col-md-8 offset-md-2">
-                  <h1 className="hs-title-1 mb-0">
-                    <span className="wow charsAnimIn" data-splitting="chars">
-                      {t("Say hello")}
-                    </span>
-                  </h1>
+                  <h3 className="section-title mb-30">
+                    <AnimatedText text="Say hello" />
+                  </h3>
                 </div>
                 {/* End Page Title */}
               </div>
@@ -94,7 +93,7 @@ export default function Home1({ onePage = false, dark = false }) {
       </section>
 
       {/* Contact Section */}
-      <section className="page-section pt-0" >
+      <section className="page-section pt-0">
         <Contact />
       </section>
     </>

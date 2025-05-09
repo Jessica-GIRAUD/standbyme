@@ -6,7 +6,8 @@ import React from 'react';
 import Nav from './Nav';
 import LanguageSelect from './LanguageSelect';
 import { useLanguage } from '@/context/language-context';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { infos } from '@/data/infos';
 
 export default function Header({ links }) {
   const { t } = useLanguage();
@@ -20,12 +21,8 @@ export default function Header({ links }) {
       <div className="nav-logo-wrap local-scroll">
         <Link href={`/`} className="logo">
           <Image
-            src={
-              isRealPage
-                ? '/assets/images/logo-color.png'
-                : '/assets/images/logo-white.png'
-            }
-            alt="Stand By Me"
+            src="/assets/images/logo-color.png"
+            alt={infos.company}
             width={105}
             height={34}
             className="light-mode-logo"
@@ -36,7 +33,7 @@ export default function Header({ links }) {
                 ? '/assets/images/logo-color.png'
                 : '/assets/images/logo-white.png'
             }
-            alt="Stand By Me"
+            alt={infos.company}
             width={105}
             height={34}
             className="dark-mode-logo"
@@ -65,7 +62,7 @@ export default function Header({ links }) {
           <LanguageSelect />
           {/* End Languages */}
           <li>
-            <Link href="/main-pages-contact-1" className="opacity-1 no-hover">
+            <Link href="#contact" className="opacity-1 no-hover">
               <span className="link-hover-anim underline" data-link-animate="y">
                 <span className="link-strong link-strong-unhovered">
                   {t('Contact')}

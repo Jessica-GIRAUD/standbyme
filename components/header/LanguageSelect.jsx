@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 export default function LanguageSelect() {
   const { setLanguage, language, t } = useLanguage();
   // State to manage dropdown visibility
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(true);
 
   const dropdownRef = useRef(null);
 
@@ -23,7 +23,7 @@ export default function LanguageSelect() {
     <li className="languageSelect">
       <a
         href="#"
-        className="mn-has-sub opacity-1"
+        className="mn-has-sub opacity-1 ps-5"
         onClick={(e) => {
           e.preventDefault();
           toggleDropdown();

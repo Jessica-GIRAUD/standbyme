@@ -3,8 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import FooterSocials from './FooterSocials';
 import Link from 'next/link';
-import { footerLinks, navigationLinks } from '@/data/footer';
+import { navigationLinks } from '@/data/footer';
 import { useLanguage } from '@/context/language-context';
+import { infos } from '@/data/infos';
 
 export default function Footer({ dark = false }) {
   const { t } = useLanguage();
@@ -32,7 +33,7 @@ export default function Footer({ dark = false }) {
                 width={105}
                 height={34}
                 className="light-mode-logo mb-10"
-                alt="Stand By Me"
+                alt={infos.company}
               />
 
               <Image
@@ -40,7 +41,7 @@ export default function Footer({ dark = false }) {
                 width={105}
                 height={34}
                 className="dark-mode-logo"
-                alt="Stand By Me"
+                alt={infos.company}
               />
             </Link>
             <p>{t('Slogan')}</p>
@@ -60,7 +61,7 @@ export default function Footer({ dark = false }) {
                 <ul className="fw-menu clearlist local-scroll">
                   {navigationLinks.map((elm, i) => (
                     <li key={i}>
-                      <a href={elm.href}>{elm.text}</a>
+                      <a href={elm.href}>{t(elm.text)}</a>
                     </li>
                   ))}
                 </ul>
@@ -81,7 +82,9 @@ export default function Footer({ dark = false }) {
         <div className="row text-gray">
           <div className="col-md-4 col-lg-3"></div>
           <div className="col-md-7 offset-md-1 offset-lg-2 clearfix">
-            <b>© Stand By Me {new Date().getFullYear()}.</b>{' '}
+            <b>
+              © {infos.company} {new Date().getFullYear()}.
+            </b>{' '}
             <b>{t('Tous droits réservés')}</b>
             {/* Back to Top Link */}
             <div className="local-scroll float-end mt-n20 mt-sm-10">

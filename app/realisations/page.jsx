@@ -1,3 +1,4 @@
+'use client';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 
 import Header from '@/components/header/Header';
@@ -5,19 +6,16 @@ import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
 import Portfolio from '@/components/portfolio/Portfolio';
 import Footer from '@/components/footer/Footer';
+import Contact from '@/components/Home/Contact';
+import { useLanguage } from '@/context/language-context';
 
-export const metadata = {
-  title:
-    'Main Portfolio PageWide 4 Col || Resonance &mdash; One & Multi Page React Nextjs Creative Template',
-  description:
-    'Resonance &mdash; One & Multi Page React Nextjs Creative Template',
-};
-export default function MainPortfolioPageWide4Col() {
+export default function Projects() {
+  const { t } = useLanguage();
   return (
     <>
       <div className="theme-main">
         <div className="page" id="top">
-        <nav className="main-nav transparent stick-fixed wow-menubar">
+          <nav className="main-nav transparent stick-fixed wow-menubar">
             <Header links={menuItems} />
           </nav>
           <main id="main">
@@ -50,7 +48,9 @@ export default function MainPortfolioPageWide4Col() {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              Where every detail counts, our work stands out.
+                              {t(
+                                'Where every detail counts, our work stands out.'
+                              )}
                             </p>
                           </div>
                         </div>
@@ -62,16 +62,47 @@ export default function MainPortfolioPageWide4Col() {
                 </div>
               </ParallaxContainer>
             </section>
-            <>
-              {/* Section */}
-              <section className="page-section">
-                <Portfolio />
-              </section>
-              {/* End Section */}
-            </>
+
+            {/* Section */}
+            <section className="page-section">
+              <Portfolio lazyload gridClass="work-grid-3" />
+            </section>
+            {/* End Section */}
+
+            <section className="page-section pt-0 pb-0" id="contact">
+              <ParallaxContainer
+                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
+                style={{
+                  backgroundImage:
+                    'url(/assets/images/full-width-images/page-title-bg-4.jpg)',
+                }}
+              >
+                <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
+                <div className="container position-relative pt-50">
+                  {/* Section Content */}
+                  <div className="text-center">
+                    <div className="row">
+                      {/* Page Title */}
+                      <div className="col-md-8 offset-md-2">
+                        <h3 className="section-title mb-30">
+                          <AnimatedText text="Say hello" />
+                        </h3>
+                      </div>
+                      {/* End Page Title */}
+                    </div>
+                  </div>
+                  {/* End Section Content */}
+                </div>
+              </ParallaxContainer>
+            </section>
+
+            {/* Contact Section */}
+            <section className="page-section pt-0">
+              <Contact />
+            </section>
           </main>
           <Footer />
-        </div>{' '}
+        </div>
       </div>
     </>
   );
