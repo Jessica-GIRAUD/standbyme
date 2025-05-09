@@ -6,7 +6,7 @@ import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
 import Portfolio from '@/components/portfolio/Portfolio';
 import Footer from '@/components/footer/Footer';
-import Contact from '@/components/Home/Contact';
+import Contact from '@/components/home/Contact';
 import { useLanguage } from '@/context/language-context';
 
 export default function Projects() {
