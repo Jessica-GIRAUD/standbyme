@@ -64,7 +64,7 @@ export default function Hero() {
           onClick={togglePlayPause}
           href="#"
           role="button"
-          className="bg-video-button-pause"
+        className="bg-video-button-muted"
         >
           <i className={`mi-${isPlaying ? 'pause' : 'play'}`} />
           <span className="visually-hidden">Pause</span>
