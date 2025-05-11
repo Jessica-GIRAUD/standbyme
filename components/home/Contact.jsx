@@ -1,11 +1,11 @@
 'use client';
 
-import { useLanguage } from '@/context/language-context';
 import { useState } from 'react';
 import { infos } from '@/data/infos';
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const t = useTranslations('contact');
 
   const [address, setAddress] = useState(infos.googleMap1);
 
@@ -14,9 +14,9 @@ export default function Contact() {
       <div className="row">
         <div className="col-lg-6">
           <div className="pe-lg-5">
-            <h2 className="h3">{t('Contact us')}</h2>
+            <h2 className="h3">{t('title')}</h2>
 
-            <p className="text-gray">{t('Contact speech')} 🚀</p>
+            <p className="text-gray">{t('description')} 🚀</p>
           </div>
         </div>
         <div className="col-lg-6">
@@ -53,7 +53,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </div>
-                <h4 className="alt-features-title">{t('Say hello 2')}</h4>
+                <h4 className="alt-features-title">{t('sayHello')}</h4>
                 <div className="alt-features-descr clearlinks">
                   <div>
                     <a href={`mailto:${infos.email}`}>{infos.email}</a>
@@ -87,7 +87,7 @@ export default function Contact() {
                     <path d="M12 10c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2m0-5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3m-7 2.602c0-3.517 3.271-6.602 7-6.602s7 3.085 7 6.602c0 3.455-2.563 7.543-7 14.527-4.489-7.073-7-11.072-7-14.527m7-7.602c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602" />
                   </svg>
                 </div>
-                <h4 className="alt-features-title">{t('Location')}</h4>
+                <h4 className="alt-features-title">{t('location')}</h4>
                 <div
                   className={`alt-features-descr ${
                     address.includes('Paris') ? 'active' : ''

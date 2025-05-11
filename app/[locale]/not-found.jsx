@@ -1,14 +1,18 @@
-'use client';
-
 import Footer from '@/components/footer/Footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '@/context/language-context';
+import { useTranslations } from 'next-intl';
 import { infos } from '@/data/infos';
 
+export const metadata = {
+  title: `${infos.company} - Page Not Found`,
+  description:
+    'Resonance &mdash; One & Multi Page React Nextjs Creative Template',
+};
+
 export default function NotFound404() {
-  const { t } = useLanguage();
+  const t = useTranslations('notFound');
   return (
     <>
       <div className="theme-main">
@@ -46,14 +50,14 @@ export default function NotFound404() {
                 <div className="inner-nav desktop-nav">
                   <ul className="clearlist scroll-nav local-scroll justify-content-end">
                     <li className="active">
-                      <a href="mailto:projets@standbyme.fr">
-                        <i className="mi-email align-center" />{' '}
-                        projets@standbyme.fr
+                      <a href={`mailto:${infos.email}`}>
+                        <i className="mi-email align-center" /> {infos.email}
                       </a>
                     </li>
                     <li>
-                      <a href="tel:+33611271690">
-                        <i className="mi-call align-center" /> 06 11 27 16 90
+                      <a href={`tel:${infos.phoneNumberRef}`}>
+                        <i className="mi-call align-center" />{' '}
+                        {infos.phoneNumber}
                       </a>
                     </li>
                   </ul>
@@ -86,7 +90,7 @@ export default function NotFound404() {
                             data-wow-delay=".2s"
                           >
                             <h2 className="section-descr mb-20">
-                              {t('not found')}
+                              {t('notFound')}
                             </h2>
                           </div>
                           <div
@@ -98,7 +102,7 @@ export default function NotFound404() {
                               className="btn btn-mod btn-w btn-round btn-medium btn-hover-anim"
                             >
                               <i className="mi-arrow-left size-24 align-center" />
-                              <span>{t('Back To Home Page')}</span>
+                              <span>{t('backHome')}</span>
                             </Link>
                           </div>
                         </div>

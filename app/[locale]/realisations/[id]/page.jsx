@@ -1,4 +1,3 @@
-'use client';
 import Footer from '@/components/footer/Footer';
 import Image from 'next/image';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
@@ -7,13 +6,19 @@ import Header from '@/components/header/Header';
 import Contact from '@/components/home/Contact';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
-import { portfolios } from '../../../data/portfolio';
-import { useLanguage } from '@/context/language-context';
-import { useParams } from 'next/navigation';
+import { portfolios } from '../../../../data/portfolio';
+import { useTranslations } from 'next-intl';
+import { infos } from '@/data/infos';
 
-export default function SingleProject() {
-  const { t } = useLanguage();
-  const params = useParams();
+export const metadata = {
+  title: `${infos.company} - Projet`,
+  description:
+    'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
+};
+
+export default function SingleProject(props) {
+  const params = props.params;
+  const t = useTranslations('portfolio');
 
   const portfolioItem =
     portfolios.filter((elm) => elm.id == params.id)[0] || portfolioItem[0];
@@ -47,7 +52,7 @@ export default function SingleProject() {
                             data-btn-animate="y"
                           >
                             <i className="mi-arrow-left align-center size-18" />{' '}
-                            {t('Back to portfolio')}
+                            {t('backPortfolio')}
                           </a>
                         </div>
                         <h1 className="hs-title-1 mb-20">
@@ -85,7 +90,7 @@ export default function SingleProject() {
                     {/* Project Details */}
                     <div className="col-md-4 mb-sm-40 wow fadeInUp">
                       <div className="block-sticky">
-                        <h2 className="h3 mb-20">{t('Project Details')}</h2>
+                        <h2 className="h3 mb-20"> {t('details')}</h2>
                         <hr className="mb-20" />
                         <div className="row text-gray small">
                           <div className="col-sm-4">
@@ -165,7 +170,7 @@ export default function SingleProject() {
                       {/* Page Title */}
                       <div className="col-md-8 offset-md-2">
                         <h3 className="section-title mb-30">
-                          <AnimatedText text="Say hello" />
+                          <AnimatedText text={t('sayHello')} />
                         </h3>
                       </div>
                       {/* End Page Title */}

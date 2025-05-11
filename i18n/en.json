@@ -1,0 +1,71 @@
+{
+    "home": {
+        "Contact": "Contact us",
+        "Accueil": "Home",
+        "Réalisations": "Projects",
+        "SavoirFaire": "Expertise",
+        "ourTeam": "Our Team",
+        "extraordinary": "An extraordinary creative team.",
+        "learnMore": "Learn more",
+        "trust": "They trust us",
+        "offerNewDimension": "Give a new dimension to your spaces.",
+        "getInTouch": "Get in touch",
+        "trustSubtitle": "Discover the companies that chose Stand By Me to elevate their spaces.",
+        "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success": "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success.",
+        "Vladimir builds strong client relationships and drives business growth with clarity and ambition": "Vladimir builds strong client relationships and drives business growth with clarity and ambition.",
+        "Candice brings fresh energy and precision, ensuring each project runs smoothly from idea to delivery": "Candice brings fresh energy and precision, ensuring each project runs smoothly from idea to delivery.",
+        "Nathalie leads each project with precision, ensuring clarity, coordination, and client satisfaction": "Nathalie leads each project with precision, ensuring clarity, coordination, and client satisfaction.",
+        "Perrine ensures smooth day-to-day operations with precision, care, and unwavering dedication": "Perrine ensures smooth day-to-day operations with precision, care, and unwavering dedication.",
+        "Directeur général": "Managing Director",
+        "Directeur commercial": "Sales Director",
+        "Cheffe de projet": "Project Manager",
+        "Responsable administrative et opérationnel": "Administrative and Operations Manager",
+        "sayHello": "Say hello"
+    },
+    "common": {
+        "backHome": "Back to homepage",
+        "French": "French",
+        "English": "English"
+    },
+    "footer": {
+        "company": "About",
+        "socialMedia": "Social Media",
+        "slogan": "Design agency for spaces: Stand - Showroom - Retail - Virtual",
+        "allRight": "All rights reserved.",
+        "SavoirFaire": "Expertise",
+        "Réalisations": "Projects",
+        "Accueil": "Home",
+        "title": "Feel free to contact us.",
+        "description": "Looking to make an impact with a stand, showroom, or immersive space? Let’s talk about your ideas and create experiences that make a difference.",
+        "location": "Location",
+        "sayHello": "Say hello",
+        "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+    },
+    "notFound": {
+        "backHome": "Back to homepage",
+        "notFound": "The page you’re looking for could not be found."
+    },
+    "construction": {
+        "backHome": "Back to homepage",
+        "sorry": "Oops!",
+        "underConstruction": "This page is currently under construction",
+        "comeBackLater": "We're preparing something great. Come back soon to discover our new experience!"
+    },
+    "contact": {
+        "title": "Feel free to contact us.",
+        "description": "Looking to make an impact with a stand, showroom, or immersive space? Let’s talk about your ideas and create experiences that make a difference.",
+        "location": "Location",
+        "sayHello": "Say hello",
+        "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+    },
+    "portfolio": {
+        "portfolio": "Our projects",
+        "backPortfolio": "Back to projects",
+        "details": "Project details",
+        "everyDetailCounts": "Where every detail matters, our work stands out.",
+        "Intérieur": "Indoor",
+        "Extérieur": "Outdoor",
+        "Tous les stands": "All stands",
+        "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "home": {
+        "Contact": "Contactez-nous",
+        "Accueil": "Accueil",
+        "Réalisations": "Réalisations",
+        "SavoirFaire": "Savoir-faire",
+        "ourTeam": "Notre équipe",
+        "extraordinary": "Une équipe créative exceptionnelle.",
+        "learnMore": "En savoir plus",
+        "trust": "Ils nous font confiance",
+        "offerNewDimension": "Offrez une nouvelle dimension à vos espaces.",
+        "getInTouch": "Prenons contact",
+        "trustSubtitle": "Découvrez les entreprises qui ont choisi Stand By Me pour sublimer leurs espaces.",
+        "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success": "Jean-Baptiste porte la vision et la stratégie, alliant créativité et leadership pour garantir le succès de chaque projet.",
+        "Vladimir builds strong client relationships and drives business growth with clarity and ambition": "Vladimir construit des relations solides avec les clients et stimule la croissance de l’entreprise avec clarté et ambition.",
+        "Candice brings fresh energy and precision, ensuring each project runs smoothly from idea to delivery": "Candice apporte une énergie nouvelle et une grande rigueur, assurant le bon déroulement de chaque projet, de l’idée à la livraison.",
+        "Nathalie leads each project with precision, ensuring clarity, coordination, and client satisfaction": "Nathalie dirige chaque projet avec précision, garantissant clarté, coordination et satisfaction client.",
+        "Perrine ensures smooth day-to-day operations with precision, care, and unwavering dedication": "Perrine assure le bon fonctionnement quotidien avec rigueur, bienveillance et un engagement sans faille.",
+        "Directeur général": "Directeur général",
+        "Directeur commercial": "Directeur commercial",
+        "Cheffe de projet": "Cheffe de projet",
+        "Responsable administrative et opérationnel": "Responsable administrative et opérationnel",
+        "sayHello": "Dites bonjour"
+    },
+    "common": {
+        "backHome": "Retour à la page d'accueil",
+        "French": "Français",
+        "English": "Anglais"
+    },
+    "footer": {
+        "company": "À propos",
+        "socialMedia": "Réseaux sociaux",
+        "slogan": "Agence de conceptions d’espaces Stand - Showroom - Retail - Virtuel",
+        "allRight": "Tous droits réservés.",
+        "SavoirFaire": "Savoir-faire",
+        "Réalisations": "Réalisations",
+        "Accueil": "Accueil",
+        "title": "N’hésitez pas à nous contacter.",
+        "description": "Envie de marquer les esprits avec un stand, un showroom ou un espace immersif ? Parlons-en autour de vos idées, et créons ensemble des expériences qui font la différence.",
+        "location": "Localisation",
+        "sayHello": "Dites bonjour",
+        "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+    },
+    "notFound": {
+        "backHome": "Retour à la page d'accueil",
+        "notFound": "La page que vous recherchez n'a pas pu être trouvée."
+    },
+    "construction": {
+        "backHome": "Retour à la page d'accueil",
+        "sorry": "Oups !",
+        "underConstruction": "Cette page est actuellement en construction",
+        "comeBackLater": "Nous préparons quelque chose de grand. Revenez bientôt pour découvrir notre nouvelle expérience !"
+    },
+    "contact": {
+        "title": "N’hésitez pas à nous contacter.",
+        "description": "Envie de marquer les esprits avec un stand, un showroom ou un espace immersif ? Parlons-en autour de vos idées, et créons ensemble des expériences qui font la différence.",
+        "location": "Localisation",
+        "sayHello": "Dites bonjour",
+        "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+    },
+    "portfolio": {
+        "portfolio": "Nos réalisations",
+        "backPortfolio": "Retour aux réalisations",
+        "details": "Détails du projet",
+        "everyDetailCounts": "Là où chaque détail compte, notre travail se démarque.",
+        "Intérieur": "Intérieur",
+        "Extérieur": "Extérieur",
+        "Tous les stands": "Tous les stands",
+        "sayHello": "Dites bonjour",
+        "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+    }
+}

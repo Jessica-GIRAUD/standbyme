@@ -1,18 +1,20 @@
 'use client';
 import { toggleMobileMenu } from '@/utils/toggleMobileMenu';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
-import Nav from './Nav';
+import Navigation from './Nav';
 import LanguageSelect from './LanguageSelect';
-import { useLanguage } from '@/context/language-context';
 import { usePathname } from 'next/navigation';
 import { infos } from '@/data/infos';
+import { useTranslations } from 'next-intl';
 
 export default function Header({ links }) {
-  const { t } = useLanguage();
+  const t = useTranslations('home');
+
   const pathname = usePathname();
   const isRealPage = pathname.includes('realisations');
+
   return (
     <div className="main-nav-sub full-wrapper">
       {/* Logo  (* Add your text or image to the link tag. Use SVG or PNG image format. 
@@ -54,7 +56,7 @@ export default function Header({ links }) {
       <div className="inner-nav desktop-nav">
         <ul className="clearlist local-scroll">
           {/* Item With Sub */}
-          <Nav links={links} />
+          <Navigation links={links} />
           {/* End Item With Sub */}
         </ul>
         <ul className="items-end clearlist">
