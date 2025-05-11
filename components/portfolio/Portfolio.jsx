@@ -113,14 +113,12 @@ export default function Portfolio({ gridClass = '' }) {
                   className={'work-lightbox-link mfp-image'}
                 >
                   <div className="work-img">
-                    <div className="work-img-bg wow scalexIn" />
+                    <div className="work-img-bg" />
                     <Image
                       width={650}
                       height={773}
                       src={item.images[0].imgSrc}
                       alt={item.images[0].imgAlt}
-                      className="wow fadeIn"
-                      data-wow-delay="1s"
                     />
                   </div>
                   <div className="work-intro text-center">
