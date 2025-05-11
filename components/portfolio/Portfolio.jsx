@@ -25,6 +25,8 @@ export default function Portfolio({ gridClass = '' }) {
     const Isotope = (await import('isotope-layout')).default;
     const imagesloaded = (await import('imagesloaded')).default;
 
+    if (!isotopContainer.current) return;
+
     // Initialize Isotope in the mounted hook
     isotope.current = new Isotope(isotopContainer.current, {
       itemSelector: '.work-item',
@@ -32,7 +34,7 @@ export default function Portfolio({ gridClass = '' }) {
     });
     imagesloaded(isotopContainer.current).on('progress', function () {
       // Trigger Isotope layout
-      isotope.current.layout();
+      isotope.current?.layout();
     });
   };
 
@@ -48,7 +50,9 @@ export default function Portfolio({ gridClass = '' }) {
     /////////////////////////////////////////////////////
     // Magnate Animation
 
-    initIsotop();
+    if (typeof window !== 'undefined') {
+      initIsotop();
+    }
   }, []);
 
   return (
@@ -119,6 +123,7 @@ export default function Portfolio({ gridClass = '' }) {
                       height={773}
                       src={item.images[0].imgSrc}
                       alt={item.images[0].imgAlt}
+                      data-wow-delay="1s"
                     />
                   </div>
                   <div className="work-intro text-center">

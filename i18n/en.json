@@ -66,6 +66,7 @@
         "Intérieur": "Indoor",
         "Extérieur": "Outdoor",
         "Tous les stands": "All stands",
+        "sayHello": "Say hello",
         "SayHelloTitle": "Say hello, and let’s bring your projects to life."
     }
 }
