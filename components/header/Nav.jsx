@@ -1,16 +1,16 @@
 'use client';
 
-import { useLanguage } from '@/context/language-context';
 import addScrollspy from '@/utils/addScrollSpy';
 import { init_classic_menu_resize } from '@/utils/menuToggle';
 import { scrollToElement } from '@/utils/scrollToElement';
 import { closeMobileMenu } from '@/utils/toggleMobileMenu';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function OnePageNav({ links, animateY = false }) {
-  const { t } = useLanguage();
+export default function Navigation({ links, animateY = false }) {
+  const t = useTranslations('home');
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,7 +26,7 @@ export default function OnePageNav({ links, animateY = false }) {
       window.removeEventListener('resize', init_classic_menu_resize);
     };
   }, []);
-  
+
   const pathname = usePathname();
 
   return (

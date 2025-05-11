@@ -1,13 +1,12 @@
-'use client';
 import Footer from '@/components/footer/Footer';
 import Image from 'next/image';
 import React from 'react';
-import Link from 'next/link';
-import { useLanguage } from '@/context/language-context';
+import { Link } from '@/i18n/navigation';
 import { infos } from '@/data/infos';
+import { useTranslations } from 'next-intl';
 
 export default function SavoirFaire() {
-  const { t } = useLanguage();
+  const t = useTranslations('construction');
   return (
     <>
       <div className="theme-main">
@@ -45,14 +44,14 @@ export default function SavoirFaire() {
                 <div className="inner-nav desktop-nav">
                   <ul className="clearlist scroll-nav local-scroll justify-content-end">
                     <li className="active">
-                      <a href="mailto:ibthemes21@gmail.com">
-                        <i className="mi-email align-center" />{' '}
-                        projets@standbyme.fr
+                      <a href={`mailto:${infos.email}`}>
+                        <i className="mi-email align-center" /> {infos.email}
                       </a>
                     </li>
                     <li>
-                      <a href="tel:+33611271690">
-                        <i className="mi-call align-center" /> 06 11 27 16 90
+                      <a href={`tel:${infos.phoneNumberRef}`}>
+                        <i className="mi-call align-center" />{' '}
+                        {infos.phoneNumber}
                       </a>
                     </li>
                   </ul>
@@ -79,7 +78,7 @@ export default function SavoirFaire() {
                         <div className="hs-wrap">
                           <div className="wow fadeInUp" data-wow-delay=".1s">
                             <h1 className="hs-title-12 mb-40 mb-sm-30">
-                              {t('Sorry')}
+                              {t('sorry')}
                             </h1>
                           </div>
                           <div
@@ -87,10 +86,10 @@ export default function SavoirFaire() {
                             data-wow-delay=".2s"
                           >
                             <h2 className="section-descr mb-20">
-                              {t('We are currently under construction.')}
+                              {t('underConstruction')}
                             </h2>
                             <p className="opacity-065 mb-0">
-                              {t('en construction')}
+                              {t('comeBackLater')}
                             </p>
                           </div>
                           <div
@@ -102,7 +101,7 @@ export default function SavoirFaire() {
                               className="btn btn-mod btn-w btn-round btn-medium btn-hover-anim"
                             >
                               <i className="mi-arrow-left size-24 align-center" />
-                              <span>{t('Back To Home Page')}</span>
+                              <span>{t('backHome')}</span>
                             </Link>
                           </div>
                         </div>
@@ -117,7 +116,7 @@ export default function SavoirFaire() {
           </>
 
           <Footer />
-        </div>{' '}
+        </div>
       </div>
     </>
   );

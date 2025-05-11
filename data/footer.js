@@ -43,5 +43,5 @@ export const socialMediaLinks = [
 export const navigationLinks = [
   { href: '/', text: 'Accueil' },
   { href: '/realisations', text: 'Réalisations' },
-  { href: '/savoir-faire', text: 'Savoir-faire' },
+  { href: '/savoir-faire', text: 'SavoirFaire' },
 ];

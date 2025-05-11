@@ -1,4 +1,3 @@
-'use client';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 
 import Header from '@/components/header/Header';
@@ -7,10 +6,18 @@ import { menuItems } from '@/data/menu';
 import Portfolio from '@/components/portfolio/Portfolio';
 import Footer from '@/components/footer/Footer';
 import Contact from '@/components/home/Contact';
-import { useLanguage } from '@/context/language-context';
+import { useTranslations } from 'next-intl';
+import { infos } from '@/data/infos';
+
+export const metadata = {
+  title: `${infos.company} - Portfolio`,
+  description:
+    'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
+};
 
 export default function Projects() {
-  const { t } = useLanguage();
+  const t = useTranslations('portfolio');
+
   return (
     <>
       <div className="theme-main">
@@ -36,7 +43,7 @@ export default function Projects() {
                             className="wow charsAnimIn"
                             data-splitting="chars"
                           >
-                            <AnimatedText text="Portfolio" />
+                            <AnimatedText text={t('portfolio')} />
                           </span>
                         </h1>
                         <div className="row">
@@ -46,9 +53,7 @@ export default function Projects() {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              {t(
-                                'Where every detail counts, our work stands out.'
-                              )}
+                              {t('everyDetailCounts')}
                             </p>
                           </div>
                         </div>
@@ -61,7 +66,7 @@ export default function Projects() {
 
             {/* Portfolio Section */}
             <section className="page-section">
-              <Portfolio lazyload gridClass="work-grid-3" />
+              <Portfolio gridClass="work-grid-3" />
             </section>
             {/* End Portfolio Section */}
 
@@ -80,7 +85,7 @@ export default function Projects() {
                     <div className="row">
                       <div className="col-md-8 offset-md-2">
                         <h3 className="section-title mb-30">
-                          <AnimatedText text="Say hello" />
+                          <AnimatedText text={t('SayHelloTitle')} />
                         </h3>
                       </div>
                     </div>

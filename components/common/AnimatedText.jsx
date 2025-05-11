@@ -1,12 +1,8 @@
-'use client';
-import { useLanguage } from '@/context/language-context';
 import React from 'react';
 
 export default function AnimatedText({
   text = 'Grow your business with a new website.',
 }) {
-  const { t } = useLanguage();
-
   return (
     <>
       <span
@@ -19,7 +15,7 @@ export default function AnimatedText({
           visibility: 'visible',
         }}
       >
-        {t(text)
+        {text
           .trim()
           .split(' ')
           .map((elm, i) => (

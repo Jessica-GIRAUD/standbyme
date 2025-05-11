@@ -1,11 +1,11 @@
 'use client';
 
-import { useLanguage } from '@/context/language-context';
 import { useRef, useState } from 'react';
 import { infos } from '@/data/infos';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const t = useTranslations('home');
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -80,7 +80,7 @@ export default function Hero() {
               </h2>
               <h1 className="hs-title-12 mb-50 mb-sm-30">
                 <span className="wow charsAnimIn" data-splitting="chars">
-                  {t('Offrez une nouvelle dimension à vos espaces.')}
+                  {t('offerNewDimension')}
                 </span>
               </h1>
               <div
@@ -92,14 +92,14 @@ export default function Hero() {
                   className="btn btn-mod btn-border-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  {t('Learn More')}
+                  {t('learnMore')}
                 </a>
                 <a
                   href="#contact"
                   className="btn btn-mod btn-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  {t('Get In Touch')}
+                  {t('getInTouch')}
                 </a>
               </div>
             </div>

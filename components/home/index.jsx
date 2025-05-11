@@ -1,13 +1,12 @@
-'use client';
 import AnimatedText from '@/components/common/AnimatedText';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Team from './Team';
 import ClientSlider from './ClientSlider';
-import { useLanguage } from '@/context/language-context';
 import Contact from '@/components/home/Contact';
+import { useTranslations } from 'next-intl';
 
-export default function Home1({ onePage = false, dark = false }) {
-  const { t } = useLanguage();
+export default function Home1() {
+  const t = useTranslations('home');
   return (
     <>
       {/* Team Section */}
@@ -45,12 +44,10 @@ export default function Home1({ onePage = false, dark = false }) {
             <div className="row text-center wow fadeInUp">
               <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                 <h3 className="section-title mb-30">
-                  <AnimatedText text="They trust us" />
+                  <AnimatedText text={t('trust')} />
                 </h3>
                 <p className="section-descr mb-50 mb-sm-30">
-                  {t(
-                    'Découvrez les entreprises qui ont choisi Stand By Me pour sublimer leurs espaces.'
-                  )}
+                  {t('trustSubtitle')}
                 </p>
               </div>
             </div>
@@ -81,7 +78,7 @@ export default function Home1({ onePage = false, dark = false }) {
               <div className="row">
                 <div className="col-md-8 offset-md-2">
                   <h3 className="section-title mb-30">
-                    <AnimatedText text="Say hello" />
+                    <AnimatedText text={t('sayHello')} />
                   </h3>
                 </div>
               </div>

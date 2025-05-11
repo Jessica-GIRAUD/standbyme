@@ -1,22 +1,22 @@
 'use client';
 
 import AnimatedText from '@/components/common/AnimatedText';
-import { useLanguage } from '@/context/language-context';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { teamMembers } from '@/data/team';
+import { useTranslations } from 'next-intl';
 
 export default function Team() {
-  const { t } = useLanguage();
+  const t = useTranslations('home');
   const [showDescription, setShowDescription] = useState({ 0: false });
 
   return (
     <div className="container position-relative">
       <div className="row justify-content-md-center">
         <div className="col-lg-6 mb-md-60 mb-sm-30">
-          <h2 className="section-caption mb-xs-10">{t('Notre équipe')}</h2>
+          <h2 className="section-caption mb-xs-10">{t('ourTeam')}</h2>
           <h3 className="section-title mb-30">
-            <AnimatedText text="Extraordinary creative team. Minimalism lovers." />
+            <AnimatedText text={t('extraordinary')} />
           </h3>
 
           <ul
@@ -60,7 +60,7 @@ export default function Team() {
               >
                 <div className="services-text">
                   <div className="services-text-container">
-                    <h4 className="services-title">{t(member.role)}</h4>
+                    <h4 className="services-title">{t(member.role)} </h4>
                     {!showDescription[index] ? (
                       <div
                         onClick={() =>
@@ -73,7 +73,7 @@ export default function Team() {
                         data-link-animate="y"
                       >
                         <span className="link-strong link-strong-unhovered">
-                          {t('Learn More')}{' '}
+                          {t('learnMore')}{' '}
                           <i
                             className="mi-arrow-right size-18"
                             aria-hidden="true"
@@ -83,7 +83,7 @@ export default function Team() {
                           className="link-strong link-strong-hovered"
                           aria-hidden="true"
                         >
-                          {t('Learn More')}
+                          {t('learnMore')}{' '}
                           <i
                             className="mi-arrow-right size-18"
                             aria-hidden="true"

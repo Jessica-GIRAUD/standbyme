@@ -1,11 +1,11 @@
 'use client';
 
 import { portfolios } from '@/data/portfolio';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 import { Gallery, Item } from 'react-photoswipe-gallery';
-import { useLanguage } from '@/context/language-context';
 
 const filters = [
   { name: 'Tous les stands', category: 'all' },
@@ -14,7 +14,7 @@ const filters = [
 ];
 
 export default function Portfolio({ gridClass = '' }) {
-  const { t } = useLanguage();
+  const t = useTranslations('portfolio');
 
   const [currentCategory, setCurrentCategory] = useState('all');
 
@@ -96,7 +96,7 @@ export default function Portfolio({ gridClass = '' }) {
                             ref={ref}
                             src={item.images[0].imgSrc}
                             alt={item.images[0].imgAlt}
-                            data-wow-delay={item.delay || '1s'}
+                            data-wow-delay="1s"
                           />
                         </div>
                         <div onClick={open} className="work-intro text-start">
