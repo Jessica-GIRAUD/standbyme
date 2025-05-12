@@ -10,21 +10,7 @@ export default async function Home1() {
   return (
     <>
       {/* Team Section */}
-      <section className="page-section pt-0 pb-0" id="about">
-        <ParallaxContainer
-          className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
-          style={{
-            backgroundImage: 'url(/assets/images/team/team.jpg)',
-          }}
-        >
-          <>
-            <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
-            <div className="container position-relative pt-50">
-              <Team />
-            </div>
-          </>
-        </ParallaxContainer>
-      </section>
+      <Team />
       {/* End Team Section */}
 
       {/* Divider */}

@@ -1,10 +1,10 @@
 export const teamMembers = [
   {
-    name: 'Jean-Baptiste Balaresque',
+    name: 'ourTeam',
     role: 'Directeur général',
     description:
       "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success",
-    image: '/assets/images/team/team_2.jpg',
+    image: 'undefined',
     socials: [
       { platform: 'Facebook', icon: 'fa-facebook-f', url: '#' },
       { platform: 'Twitter', icon: 'fa-twitter', url: '#' },
@@ -17,6 +17,18 @@ export const teamMembers = [
     description:
       'Candice brings fresh energy and precision, ensuring each project runs smoothly from idea to delivery',
     image: '/assets/images/team/team_3.jpg',
+    socials: [
+      { platform: 'Facebook', icon: 'fa-facebook-f', url: '#' },
+      { platform: 'Twitter', icon: 'fa-twitter', url: '#' },
+      { platform: 'Pinterest', icon: 'fa-pinterest-p', url: '#' },
+    ],
+  },
+  {
+    name: 'Jean-Baptiste Balaresque',
+    role: 'Directeur général',
+    description:
+      "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success",
+    image: '/assets/images/team/team_2.jpg',
     socials: [
       { platform: 'Facebook', icon: 'fa-facebook-f', url: '#' },
       { platform: 'Twitter', icon: 'fa-twitter', url: '#' },

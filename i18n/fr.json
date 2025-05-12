@@ -68,5 +68,24 @@
         "Tous les stands": "Tous les stands",
         "sayHello": "Dites bonjour",
         "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+    },
+    "login": {
+        "login": "Se connecter",
+        "registration": "S'enregistrer",
+        "username": "Nom d'utilisateur",
+        "enterUsername": "Saisissez un nom d'utilisateur",
+        "password": "Mot de passe",
+        "enterPassword": "Saisissez un mot de passe",
+        "forgetPassword": "Mot de passe oublié ?",
+        "email": "Email",
+        "enterEmail": "Saisissez votre email",
+        "confirmPassword": "Confirmez le mot de passe",
+        "enterConfirmPassword": "Saisissez à nouveau le mot de passe",
+        "register": "Créer un compte",
+        "fieldsRequiredInfo": " Tous les champs sont requis. En envoyant le formulaire, vous acceptez les",
+        "terms": "Conditions générales",
+        "privacy": "Politique de confidentialité",
+        "account": "Mon Compte",
+        "loginPrompt": "Veuillez vous connecter ou créer un compte."
     }
 }

@@ -10,7 +10,7 @@ import { infos } from '@/data/infos';
 import { useTranslations } from 'next-intl';
 
 export default function Header({ links }) {
-   const t = useTranslations('home');
+  const t = useTranslations('home');
 
   const pathname = usePathname();
   const isRealPage = pathname.includes('realisations');
@@ -56,7 +56,7 @@ export default function Header({ links }) {
       <div className="inner-nav desktop-nav">
         <ul className="clearlist local-scroll">
           {/* Item With Sub */}
-          <Navigation links={links} />
+          {links && <Navigation links={links} />}
           {/* End Item With Sub */}
         </ul>
         <ul className="items-end clearlist">

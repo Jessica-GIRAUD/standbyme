@@ -20,7 +20,9 @@
         "Directeur commercial": "Sales Director",
         "Cheffe de projet": "Project Manager",
         "Responsable administrative et opérationnel": "Administrative and Operations Manager",
-        "sayHello": "Say hello"
+        "sayHello": "Say hello",
+        "logout": "Logout",
+        "StandByMe": "Stand By Me"
     },
     "common": {
         "backHome": "Back to homepage",
@@ -68,5 +70,24 @@
         "Tous les stands": "All stands",
         "sayHello": "Say hello",
         "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+    },
+    "login": {
+        "login": "Login",
+        "registration": "Register",
+        "username": "Username",
+        "enterUsername": "Enter username",
+        "password": "Password",
+        "enterPassword": "Enter password",
+        "forgetPassword": "Forgot password?",
+        "email": "Email",
+        "enterEmail": "Enter your email",
+        "confirmPassword": "Confirm Password",
+        "enterConfirmPassword": "Re-enter your password",
+        "register": "Create account",
+        "fieldsRequiredInfo": " All the fields are required. By sending the form you agree to the",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "account": "Account",
+        "loginPrompt": "Please login or create your new account."
     }
 }
