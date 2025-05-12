@@ -1,11 +1,14 @@
+'use client';
+
 import { infos } from '@/data/infos';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
-export default async function Contact() {
-  const t = await getTranslations('contact');
+export default function Contact() {
+  //const t = await getTranslations('contact');
 
-  // const t = useTranslations('contact');
-  // const [address, setAddress] = useState(infos.googleMap1);
+  const t = useTranslations('contact');
+  const [address, setAddress] = useState(infos.googleMap1);
 
   return (
     <div className="container position-relative">
@@ -93,22 +96,22 @@ export default async function Contact() {
                 </div>
                 <h4 className="alt-features-title">{t('location')}</h4>
                 <div
-                  /*  className={`alt-features-descr ${
+                  className={`alt-features-descr ${
                     address.includes('Paris') ? 'active' : ''
-                  }`} 
+                  }`}
                   style={{ cursor: 'pointer' }}
-                  onClick={() => setAddress(infos.googleMap1)} */
-                  className="alt-features-descr"
+                  onClick={() => setAddress(infos.googleMap1)}
+                  // className="alt-features-descr"
                 >
                   {infos.address1}
                 </div>
                 <div
-                  /*  className={`alt-features-descr ${
+                  className={`alt-features-descr ${
                     address.includes('Thor') ? 'active' : ''
                   }`}
                   style={{ cursor: 'pointer' }}
-                  onClick={() => setAddress(infos.googleMap2)} */
-                  className="alt-features-descr"
+                  onClick={() => setAddress(infos.googleMap2)}
+                  // className="alt-features-descr"
                 >
                   {infos.address2}
                 </div>
@@ -119,9 +122,9 @@ export default async function Contact() {
         </div>
       </div>
       {/* Google Map */}
-      {/*     <div className="row wow fadeInUp" data-wow-delay="0.5s">
+      <div className="row wow fadeInUp" data-wow-delay="0.5s">
         <div className="col-md-12 d-flex align-items-stretch">
-     <div className="map-boxed">
+          <div className="map-boxed">
             <iframe
               src={address}
               width={600}
@@ -131,9 +134,9 @@ export default async function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div> 
+          </div>
         </div>
-      </div>*/}
+      </div>
       {/* End Google Map */}
     </div>
   );

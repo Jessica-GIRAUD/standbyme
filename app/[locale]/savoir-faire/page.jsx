@@ -42,14 +42,14 @@ export default async function SavoirFaire() {
                 </div>
                 {/* Main Menu */}
                 <div className="inner-nav desktop-nav">
-                  <ul className="clearlist scroll-nav local-scroll justify-content-end">
-                    <li className="active">
-                      <a href={`mailto:${infos.email}`}>
+                  <ul className="clearlist scroll-nav local-scroll justify-content-end flex-column align-items-end">
+                    <li>
+                      <a href={`mailto:${infos.email}`} >
                         <i className="mi-email align-center" /> {infos.email}
                       </a>
                     </li>
                     <li>
-                      <a href={`tel:${infos.phoneNumberRef}`}>
+                      <a href={`tel:${infos.phoneNumberRef}`}  style={{height: '30px'}}>
                         <i className="mi-call align-center" />{' '}
                         {infos.phoneNumber}
                       </a>
