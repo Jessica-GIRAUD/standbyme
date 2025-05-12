@@ -1,7 +1,7 @@
 import AnimatedText from '@/components/common/AnimatedText';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Team from './Team';
-import ClientSlider from './ClientSlider';
+import ClientSlider from '../others/ClientSlider';
 import Contact from '@/components/home/Contact';
 import { getTranslations } from 'next-intl/server';
 

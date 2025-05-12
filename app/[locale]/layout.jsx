@@ -1,13 +1,14 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import ClientLayout from '@/components/common/ClientLayout';
+import { notFound } from 'next/navigation';
 
 export default async function RootLayout({ children, params }) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
-    }
+  }
 
   return (
     <html lang={locale} className="no-mobile no-touch">
