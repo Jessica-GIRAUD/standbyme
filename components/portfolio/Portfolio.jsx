@@ -82,7 +82,7 @@ export default function Portfolio({ gridClass = '' }) {
           {portfolios.map((item, index) => {
             return (
               <li key={index} className={'work-item mix  ' + item.mix}>
-                 <Link
+                <Link
                   href={`/realisations/${item.id}`}
                   className={'work-lightbox-link mfp-image'}
                 >
@@ -91,8 +91,8 @@ export default function Portfolio({ gridClass = '' }) {
                     <Image
                       width={650}
                       height={773}
-                      src={item.images[0].imgSrc}
-                      alt={item.images[0].imgAlt}
+                      src={item.thumbnail}
+                      alt={item.title}
                       className="wow fadeIn"
                       data-wow-delay="1s"
                     />

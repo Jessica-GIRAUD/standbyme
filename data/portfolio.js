@@ -3,7 +3,7 @@ export const portfolios = [
     id: 1,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/inter-rhone-2025.webp',
+    thumbnail: '/assets/images/portfolio/thumbnail/inter-rhone-2025.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/inter-rhone-2025.webp',
@@ -46,7 +46,7 @@ export const portfolios = [
     id: 2,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/champagne-virginie-t_1.webp',
+    thumbnail: '/assets/images/portfolio/thumbnail/champagne-virginie-t_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/champagne-virginie-t_1.webp',
@@ -85,7 +85,7 @@ export const portfolios = [
     id: 3,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-guy-degrenne.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/guy-degrenne.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/guy-degrenne.jpg',
@@ -117,7 +117,7 @@ export const portfolios = [
     id: 4,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/wfs_1.webp',
+    thumbnail: '/assets/images/portfolio/thumbnail/wfs_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/wfs_1.webp',
@@ -164,7 +164,7 @@ export const portfolios = [
     id: 5,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-gautier-semences.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/gautier-semences_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/gautier-semences_1.jpg',
@@ -195,7 +195,7 @@ export const portfolios = [
     id: 6,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-delta-plus.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/delta-plus_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/delta-plus_1.jpg',
@@ -242,7 +242,7 @@ export const portfolios = [
     id: 7,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-inter-rhone-2024.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/inter-rhone-2024_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/inter-rhone-2024_1.jpg',
@@ -273,7 +273,7 @@ export const portfolios = [
     id: 8,
     type: 'external',
     mix: 'outdoor',
-    href: '/assets/images/portfolio/full-hoka-utmb.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/hoka-utmb_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/hoka-utmb_1.jpg',
@@ -316,7 +316,7 @@ export const portfolios = [
     id: 9,
     type: 'external',
     mix: 'outdoor',
-    href: '/assets/images/portfolio/full-hoka-roth.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/hoka-roth_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/hoka-roth_1.jpg',
@@ -363,7 +363,7 @@ export const portfolios = [
     id: 10,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-vocalcom.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/vocalcom_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/vocalcom_1.jpg',
@@ -398,7 +398,7 @@ export const portfolios = [
     id: 11,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-sony.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/sony_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/sony_1.jpg',
@@ -437,7 +437,7 @@ export const portfolios = [
     id: 12,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-lsl.jpg',
+    thumbnail: '/assets/images/portfolio/a.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/a.jpg',
@@ -456,7 +456,7 @@ export const portfolios = [
     id: 13,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-schneider.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/schneider_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/schneider_1.jpg',
@@ -491,7 +491,7 @@ export const portfolios = [
     id: 14,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-mc-cain_1.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/mc-cain_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/mc-cain_1.jpg',
@@ -514,7 +514,7 @@ export const portfolios = [
     id: 15,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-fresh-tropical.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/fresh-tropical_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/fresh-tropical_1.jpeg',
@@ -561,7 +561,7 @@ export const portfolios = [
     id: 16,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-gfs.jpg',
+    thumbnail: '/assets/images/portfolio/a.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/a.jpg',
@@ -575,7 +575,7 @@ export const portfolios = [
     id: 17,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-cevital.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/cevital_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/cevital_1.jpg',
@@ -598,7 +598,7 @@ export const portfolios = [
     id: 18,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-citinnov.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/citinnov_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/citinnov_1.jpg',
@@ -625,7 +625,7 @@ export const portfolios = [
     id: 19,
     type: 'external',
     mix: 'indoor',
-    href: '/assets/images/portfolio/full-inca.jpg',
+    thumbnail: '/assets/images/portfolio/thumbnail/inca_1.jpg',
     images: [
       {
         imgSrc: '/assets/images/portfolio/inca_1.jpg',
