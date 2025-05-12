@@ -80,7 +80,6 @@ export default function Portfolio({ gridClass = '' }) {
       >
         <Gallery>
           {portfolios.map((item, index) => {
-            console.log('item', item);
             return (
               <li key={index} className={'work-item mix  ' + item.mix}>
                 <Link
