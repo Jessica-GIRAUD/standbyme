@@ -1,13 +1,11 @@
-'use client';
-
-import { useState } from 'react';
 import { infos } from '@/data/infos';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function Contact() {
-  const t = useTranslations('contact');
+export default async function Contact() {
+  const t = await getTranslations('contact');
 
-  const [address, setAddress] = useState(infos.googleMap1);
+  // const t = useTranslations('contact');
+  // const [address, setAddress] = useState(infos.googleMap1);
 
   return (
     <div className="container position-relative">
@@ -55,6 +53,12 @@ export default function Contact() {
                 </div>
                 <h4 className="alt-features-title">{t('sayHello')}</h4>
                 <div className="alt-features-descr clearlinks">
+                  <div
+                    className={`alt-features-descr`}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {infos.contactName}
+                  </div>
                   <div>
                     <a href={`mailto:${infos.email}`}>{infos.email}</a>
                   </div>
@@ -89,20 +93,22 @@ export default function Contact() {
                 </div>
                 <h4 className="alt-features-title">{t('location')}</h4>
                 <div
-                  className={`alt-features-descr ${
+                  /*  className={`alt-features-descr ${
                     address.includes('Paris') ? 'active' : ''
-                  }`}
+                  }`} 
                   style={{ cursor: 'pointer' }}
-                  onClick={() => setAddress(infos.googleMap1)}
+                  onClick={() => setAddress(infos.googleMap1)} */
+                  className="alt-features-descr"
                 >
                   {infos.address1}
                 </div>
                 <div
-                  className={`alt-features-descr ${
+                  /*  className={`alt-features-descr ${
                     address.includes('Thor') ? 'active' : ''
                   }`}
                   style={{ cursor: 'pointer' }}
-                  onClick={() => setAddress(infos.googleMap2)}
+                  onClick={() => setAddress(infos.googleMap2)} */
+                  className="alt-features-descr"
                 >
                   {infos.address2}
                 </div>
@@ -112,10 +118,10 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="row wow fadeInUp" data-wow-delay="0.5s">
+      {/* Google Map */}
+      {/*     <div className="row wow fadeInUp" data-wow-delay="0.5s">
         <div className="col-md-12 d-flex align-items-stretch">
-          {/* Google Map */}
-          <div className="map-boxed">
+     <div className="map-boxed">
             <iframe
               src={address}
               width={600}
@@ -125,10 +131,10 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
-          {/* End Google Map */}
+          </div> 
         </div>
-      </div>
+      </div>*/}
+      {/* End Google Map */}
     </div>
   );
 }
