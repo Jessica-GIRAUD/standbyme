@@ -7,8 +7,8 @@ import Contact from '@/components/home/Contact';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
 import { portfolios } from '../../../../data/portfolio';
-import { useTranslations } from 'next-intl';
 import { infos } from '@/data/infos';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata = {
   title: `${infos.company} - Projet`,
@@ -16,9 +16,9 @@ export const metadata = {
     'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
 };
 
-export default function SingleProject(props) {
-  const params = props.params;
-  const t = useTranslations('portfolio');
+export default async function SingleProject(props) {
+  const params = await props.params;
+  const t = await getTranslations('portfolio');
 
   const portfolioItem =
     portfolios.filter((elm) => elm.id == params.id)[0] || portfolioItem[0];

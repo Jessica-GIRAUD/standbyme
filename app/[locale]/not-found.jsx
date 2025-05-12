@@ -2,8 +2,8 @@ import Footer from '@/components/footer/Footer';
 import { Link } from '@/i18n/navigation';
 import React from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { infos } from '@/data/infos';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata = {
   title: `${infos.company} - Page Not Found`,
@@ -11,8 +11,8 @@ export const metadata = {
     'Resonance &mdash; One & Multi Page React Nextjs Creative Template',
 };
 
-export default function NotFound404() {
-  const t = useTranslations('notFound');
+export default async function NotFound404() {
+  const t = await getTranslations('notFound');
   return (
     <>
       <div className="theme-main">

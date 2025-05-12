@@ -3,10 +3,10 @@ import Image from 'next/image';
 import React from 'react';
 import { Link } from '@/i18n/navigation';
 import { infos } from '@/data/infos';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function SavoirFaire() {
-  const t = useTranslations('construction');
+export default async function SavoirFaire() {
+  const t = await getTranslations('construction');
   return (
     <>
       <div className="theme-main">

@@ -7,7 +7,7 @@ import { teamMembers } from '@/data/team';
 import { useTranslations } from 'next-intl';
 
 export default function Team() {
-  const t = useTranslations('home');
+   const t = useTranslations('home');
   const [showDescription, setShowDescription] = useState({ 0: false });
 
   return (

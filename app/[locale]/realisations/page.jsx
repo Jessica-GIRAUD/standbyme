@@ -6,8 +6,8 @@ import { menuItems } from '@/data/menu';
 import Portfolio from '@/components/portfolio/Portfolio';
 import Footer from '@/components/footer/Footer';
 import Contact from '@/components/home/Contact';
-import { useTranslations } from 'next-intl';
 import { infos } from '@/data/infos';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata = {
   title: `${infos.company} - Portfolio`,
@@ -15,8 +15,8 @@ export const metadata = {
     'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
 };
 
-export default function Projects() {
-  const t = useTranslations('portfolio');
+export default async function Projects() {
+   const t = await getTranslations('portfolio');
 
   return (
     <>

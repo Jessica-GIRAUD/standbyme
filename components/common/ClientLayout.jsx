@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { parallaxMouseMovement, parallaxScroll } from '@/utils/parallax';
 import { init_wow } from '@/utils/initWowjs';
@@ -39,5 +39,5 @@ export default function ClientLayout({ children }) {
     }
   }, []);
 
-  return <>{children}</>;
+  return <div>{children}</div>;
 }

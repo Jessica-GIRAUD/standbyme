@@ -7,7 +7,7 @@ export default async function RootLayout({ children, params }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
-  }
+    }
 
   return (
     <html lang={locale} className="no-mobile no-touch">

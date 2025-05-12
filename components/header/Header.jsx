@@ -10,7 +10,7 @@ import { infos } from '@/data/infos';
 import { useTranslations } from 'next-intl';
 
 export default function Header({ links }) {
-  const t = useTranslations('home');
+   const t = useTranslations('home');
 
   const pathname = usePathname();
   const isRealPage = pathname.includes('realisations');

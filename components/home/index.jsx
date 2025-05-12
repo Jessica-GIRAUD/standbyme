@@ -3,10 +3,10 @@ import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Team from './Team';
 import ClientSlider from './ClientSlider';
 import Contact from '@/components/home/Contact';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function Home1() {
-  const t = useTranslations('home');
+export default async function Home1() {
+  const t = await getTranslations('home');
   return (
     <>
       {/* Team Section */}
