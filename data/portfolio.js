@@ -437,10 +437,10 @@ export const portfolios = [
     id: 12,
     type: 'external',
     mix: 'indoor',
-    thumbnail: '/assets/images/portfolio/a.jpg',
+    thumbnail: '/assets/images/portfolio/no_pic.webp',
     images: [
       {
-        imgSrc: '/assets/images/portfolio/a.jpg',
+        imgSrc: '/assets/images/portfolio/no_pic.webp',
         imgAlt: 'LSL – NHA 2024',
       },
     ],
@@ -561,10 +561,10 @@ export const portfolios = [
     id: 16,
     type: 'external',
     mix: 'indoor',
-    thumbnail: '/assets/images/portfolio/a.jpg',
+    thumbnail: '/assets/images/portfolio/no_pic.webp',
     images: [
       {
-        imgSrc: '/assets/images/portfolio/a.jpg',
+        imgSrc: '/assets/images/portfolio/no_pic.webp',
         imgAlt: 'GFS – SIAL 2024',
       },
     ],

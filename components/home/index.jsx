@@ -50,30 +50,7 @@ export default async function Home1() {
       {/* End Divider */}
 
       {/* Contact Section */}
-      <section className="page-section pt-0 pb-0" id="contact">
-        <ParallaxContainer
-          className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
-          style={{
-            backgroundImage:
-              'url(/assets/images/full-width-images/page-title-bg-4.jpg)',
-          }}
-        >
-          <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
-          <div className="container position-relative pt-50">
-            <div className="text-center">
-              <div className="row">
-                <div className="col-md-8 offset-md-2">
-                  <h3 className="section-title mb-30">
-                    <AnimatedText text={t('sayHello')} />
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ParallaxContainer>
-        <Contact />
-      </section>
-
+      <Contact />
       {/* End Contact Section */}
     </>
   );

@@ -25,6 +25,7 @@ export default function Team() {
             <div className="container position-relative">
               <div className="row justify-content-md-center">
                 <div className="col-lg-6 mb-md-60 mb-sm-30">
+                <h2 className="section-caption mb-xs-10">{t('ourTeam')}</h2>
                   <h3 className="section-title mb-30">
                     <AnimatedText text={t('extraordinary')} />
                   </h3>

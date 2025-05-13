@@ -20,9 +20,7 @@
         "Directeur commercial": "Sales Director",
         "Cheffe de projet": "Project Manager",
         "Responsable administrative et opérationnel": "Administrative and Operations Manager",
-        "sayHello": "Say hello",
-        "logout": "Logout",
-        "StandByMe": "Stand By Me"
+        "logout": "Logout"
     },
     "common": {
         "backHome": "Back to homepage",
@@ -37,11 +35,7 @@
         "SavoirFaire": "Expertise",
         "Réalisations": "Projects",
         "Accueil": "Home",
-        "title": "Feel free to contact us.",
-        "description": "Looking to make an impact with a stand, showroom, or immersive space? Let’s talk about your ideas and create experiences that make a difference.",
-        "location": "Location",
-        "sayHello": "Say hello",
-        "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+        "location": "Location"
     },
     "notFound": {
         "backHome": "Back to homepage",
@@ -67,9 +61,7 @@
         "everyDetailCounts": "Where every detail matters, our work stands out.",
         "Intérieur": "Indoor",
         "Extérieur": "Outdoor",
-        "Tous les stands": "All stands",
-        "sayHello": "Say hello",
-        "SayHelloTitle": "Say hello, and let’s bring your projects to life."
+        "Tous les stands": "All stands"
     },
     "login": {
         "login": "Login",

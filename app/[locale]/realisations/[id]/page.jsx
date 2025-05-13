@@ -82,109 +82,76 @@ export default async function SingleProject(props) {
                 </div>
               </ParallaxContainer>
             </section>
-            <>
-              {/* Section */}
-              <section className="page-section">
-                <div className="container position-relative">
-                  <div className="row">
-                    {/* Project Details */}
-                    <div className="col-md-4 mb-sm-40 wow fadeInUp">
-                      <div className="block-sticky">
-                        <h2 className="h3 mb-20"> {t('details')}</h2>
-                        <hr className="mb-20" />
-                        <div className="row text-gray small">
-                          <div className="col-sm-4">
-                            <b>Date :</b>
-                          </div>
-                          <div className="col-sm-8">{portfolioItem.date}</div>
-                        </div>
-                        <hr className="mb-20" />
-                        <div className="row text-gray small">
-                          <div className="col-sm-4">
-                            <b>Client :</b>
-                          </div>
-                          <div className="col-sm-8">{portfolioItem.client}</div>
-                        </div>
-                        <hr className="mb-20" />
-                        <div className="row text-gray small">
-                          <div className="col-sm-4">
-                            <b>Services :</b>
-                          </div>
-                          <div className="col-sm-8">
-                            {portfolioItem.services}
-                          </div>
-                        </div>
-                        <hr className="mb-20" />
-                        <div className="text-gray small">
-                          <div>
-                            <b>Description :</b>
-                          </div>
-                          <div>{portfolioItem.details}</div>
-                        </div>
-                        <hr className="mb-20" />
-                      </div>
-                    </div>
-                    {/* End Project Details */}
-                    <div className="col-md-8">
-                      <div className="mb-n30">
-                        {/* Photo Item */}
-                        {portfolioItem.images.map((image, index) => {
-                          return (
-                            <div className="mb-30 wow fadeInUp" key={index}>
-                              <Image
-                                src={image.imgSrc}
-                                alt={image.imgAlt}
-                                width={1350}
-                                height={865}
-                              />
-                            </div>
-                          );
-                        })}
 
-                        {/* End Photo Item */}
+            {/* Section */}
+            <section className="page-section">
+              <div className="container position-relative">
+                <div className="row">
+                  {/* Project Details */}
+                  <div className="col-md-4 mb-sm-40 wow fadeInUp">
+                    <div className="block-sticky">
+                      <h2 className="h3 mb-20"> {t('details')}</h2>
+                      <hr className="mb-20" />
+                      <div className="row text-gray small">
+                        <div className="col-sm-4">
+                          <b>Date :</b>
+                        </div>
+                        <div className="col-sm-8">{portfolioItem.date}</div>
                       </div>
+                      <hr className="mb-20" />
+                      <div className="row text-gray small">
+                        <div className="col-sm-4">
+                          <b>Client :</b>
+                        </div>
+                        <div className="col-sm-8">{portfolioItem.client}</div>
+                      </div>
+                      <hr className="mb-20" />
+                      <div className="row text-gray small">
+                        <div className="col-sm-4">
+                          <b>Services :</b>
+                        </div>
+                        <div className="col-sm-8">{portfolioItem.services}</div>
+                      </div>
+                      <hr className="mb-20" />
+                      <div className="text-gray small">
+                        <div>
+                          <b>Description :</b>
+                        </div>
+                        <div>{portfolioItem.details}</div>
+                      </div>
+                      <hr className="mb-20" />
+                    </div>
+                  </div>
+                  {/* End Project Details */}
+                  <div className="col-md-8">
+                    <div className="mb-n30">
+                      {/* Photo Item */}
+                      {portfolioItem.images.map((image, index) => {
+                        return (
+                          <div className="mb-30 wow fadeInUp" key={index}>
+                            <Image
+                              src={image.imgSrc}
+                              alt={image.imgAlt}
+                              width={1350}
+                              height={865}
+                            />
+                          </div>
+                        );
+                      })}
+
+                      {/* End Photo Item */}
                     </div>
                   </div>
                 </div>
-              </section>
-              {/* End Section */}
-
-              {/* Divider */}
-              <hr className="mt-0 mb-0" />
-              {/* End Divider */}
-            </>
-
-            <section className="page-section pt-0 pb-0" id="contact">
-              <ParallaxContainer
-                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
-                style={{
-                  backgroundImage:
-                    'url(/assets/images/full-width-images/page-title-bg-4.jpg)',
-                }}
-              >
-                <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
-                <div className="container position-relative pt-50">
-                  {/* Section Content */}
-                  <div className="text-center">
-                    <div className="row">
-                      {/* Page Title */}
-                      <div className="col-md-8 offset-md-2">
-                        <h3 className="section-title mb-30">
-                          <AnimatedText text={t('sayHello')} />
-                        </h3>
-                      </div>
-                      {/* End Page Title */}
-                    </div>
-                  </div>
-                  {/* End Section Content */}
-                </div>
-              </ParallaxContainer>
+              </div>
             </section>
+            {/* End Section */}
 
-            {/* Contact Section */}
-            <section className="page-section pt-0">
-              <Contact />
-            </section>
+            {/* Divider */}
+            <hr className="mt-0 mb-0" />
+            {/* End Divider */}
+
+            <Contact />
           </main>
           <Footer />
         </div>
