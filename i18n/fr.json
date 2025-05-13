@@ -20,7 +20,7 @@
         "Directeur commercial": "Directeur commercial",
         "Cheffe de projet": "Cheffe de projet",
         "Responsable administrative et opérationnel": "Responsable administrative et opérationnel",
-        "sayHello": "Dites bonjour"
+        "logout": "Se déconnecter"
     },
     "common": {
         "backHome": "Retour à la page d'accueil",
@@ -35,11 +35,7 @@
         "SavoirFaire": "Savoir-faire",
         "Réalisations": "Réalisations",
         "Accueil": "Accueil",
-        "title": "N’hésitez pas à nous contacter.",
-        "description": "Envie de marquer les esprits avec un stand, un showroom ou un espace immersif ? Parlons-en autour de vos idées, et créons ensemble des expériences qui font la différence.",
-        "location": "Localisation",
-        "sayHello": "Dites bonjour",
-        "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+        "location": "Localisation"
     },
     "notFound": {
         "backHome": "Retour à la page d'accueil",
@@ -65,9 +61,7 @@
         "everyDetailCounts": "Là où chaque détail compte, notre travail se démarque.",
         "Intérieur": "Intérieur",
         "Extérieur": "Extérieur",
-        "Tous les stands": "Tous les stands",
-        "sayHello": "Dites bonjour",
-        "SayHelloTitle": "Dites bonjour, et donnons vie à vos projets."
+        "Tous les stands": "Tous les stands"
     },
     "login": {
         "login": "Se connecter",
