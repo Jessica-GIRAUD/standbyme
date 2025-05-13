@@ -1,17 +1,5 @@
 export const teamMembers = [
   {
-    name: 'ourTeam',
-    role: 'Directeur général',
-    description:
-      "Jean-Baptiste drives the vision and strategy, blending creativity and leadership to shape every project's success",
-    image: 'undefined',
-    socials: [
-      { platform: 'Facebook', icon: 'fa-facebook-f', url: '#' },
-      { platform: 'Twitter', icon: 'fa-twitter', url: '#' },
-      { platform: 'Pinterest', icon: 'fa-pinterest-p', url: '#' },
-    ],
-  },
-  {
     name: 'Candice Cadieu',
     role: 'Cheffe de projet',
     description:
@@ -35,7 +23,6 @@ export const teamMembers = [
       { platform: 'Pinterest', icon: 'fa-pinterest-p', url: '#' },
     ],
   },
-
   {
     name: 'Nathalie André',
     role: 'Cheffe de projet',

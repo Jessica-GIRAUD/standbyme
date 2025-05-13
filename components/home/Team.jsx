@@ -44,9 +44,7 @@ export default function Team() {
                           aria-selected={index === 0 ? 'true' : 'false'}
                           data-bs-toggle="tab"
                         >
-                          {index === 0
-                            ? t(member.name)
-                            : member.name.split(' ')[0]}{' '}
+                          {member.name.split(' ')[0]}{' '}
                           <span className="number">
                             {(index + 1).toString().padStart(2, '0')}
                           </span>
@@ -69,9 +67,6 @@ export default function Team() {
                         }`}
                         id={`services-item-${index + 1}`}
                         role="tabpanel"
-                        style={{
-                          visibility: index === 0 ? 'hidden' : 'initial',
-                        }}
                       >
                         <div className="services-text">
                           <div className="services-text-container">
