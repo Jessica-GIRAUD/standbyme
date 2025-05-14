@@ -1,8 +1,8 @@
 import AnimatedText from '@/components/common/AnimatedText';
-import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Team from './Team';
 import ClientSlider from '../others/ClientSlider';
 import Contact from '@/components/home/Contact';
+import Testimonials from '@/components/home/Testimonials';
 import { getTranslations } from 'next-intl/server';
 
 export default async function Home1() {
@@ -45,6 +45,9 @@ export default async function Home1() {
       </section>
       {/* End Logotypes */}
 
+      <section className="page-section">
+        <Testimonials />
+      </section>
       {/* Divider */}
       <hr className="mt-0 mb-0" />
       {/* End Divider */}
