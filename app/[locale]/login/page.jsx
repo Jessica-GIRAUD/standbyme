@@ -1,19 +1,12 @@
 'use client';
-
-import Link from 'next/link';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
-
 import Header from '@/components/header/Header';
 import AnimatedText from '@/components/common/AnimatedText';
-import Image from 'next/image';
-
-import React from 'react';
 import { menuItems } from '@/data/menu';
 import Account from '@/components/others/Account';
-import { useTranslations } from 'use-intl';
-import Contact from '@/components/home/Contact';
+import { useTranslations } from 'next-intl';
 
-export default function Admin() {
+export default function Login() {
   const t = useTranslations();
 
   return (
@@ -26,7 +19,7 @@ export default function Admin() {
           <main id="main">
             <section className="page-section pt-0 pb-0" id="home">
               <ParallaxContainer
-                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
+                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5 pb-40"
                 style={{
                   backgroundImage:
                     'url(/assets/images/full-width-images/page-title-bg-5.jpg)',
@@ -34,7 +27,7 @@ export default function Admin() {
               >
                 <>
                   <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
-                  <div className="container position-relative pt-50">
+                  <div className="container position-relative">
                     <div className="text-center">
                       <div className="row">
                         <div className="col-md-8 offset-md-2">
@@ -55,35 +48,8 @@ export default function Admin() {
             </section>
 
             {/* Section */}
-            <section className="page-section pt-0">
+            <section className="page-section p-0">
               <Account />
-            </section>
-
-            <hr className="mt-0 mb-0" />
-
-            {/* Contact Section */}
-            <section className="page-section pt-0 pb-0" id="contact">
-              <ParallaxContainer
-                className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
-                style={{
-                  backgroundImage:
-                    'url(/assets/images/full-width-images/page-title-bg-4.jpg)',
-                }}
-              >
-                <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
-                <div className="container position-relative pt-50">
-                  <div className="text-center">
-                    <div className="row">
-                      <div className="col-md-8 offset-md-2">
-                        <h3 className="section-title mb-30">
-                          <AnimatedText text={t('contact.sayHello')} />
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ParallaxContainer>
-              <Contact />
             </section>
           </main>
         </div>

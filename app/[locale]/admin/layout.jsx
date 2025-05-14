@@ -2,11 +2,36 @@
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 import { infos } from '@/data/infos';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function AdminLayout({ children }) {
   const pathname = usePathname();
+  const t = useTranslations('admin');
+
+  const menuItems = [
+    {
+      title: 'dashboard',
+      href: '/admin/dashboard',
+      icon: 'mi-grid',
+    },
+    {
+      title: 'portfolio',
+      href: '/admin/portfolio',
+      icon: 'mi-comment',
+    },
+    {
+      title: 'team',
+      href: '/admin/team',
+      icon: 'mi-users',
+    },
+    {
+      title: 'companyInfo',
+      href: '/admin/company',
+      icon: 'mi-home',
+    },
+  ];
 
   return (
     <>
@@ -29,50 +54,21 @@ export default function AdminLayout({ children }) {
               <div className="admin-sidebar-content">
                 <nav className="admin-navigation">
                   <ul className="nav flex-column">
-                    <li className="nav-item">
-                      <Link
-                        href="/admin/dashboard"
-                        className={`nav-link ${
-                          pathname === '/admin/dashboard' ? 'active' : ''
-                        }`}
-                      >
-                        <i className="fa fa-dashboard me-2"></i>
-                        Dashboard
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/admin/portfolio"
-                        className={`nav-link ${
-                          pathname === '/admin/portfolio' ? 'active' : ''
-                        }`}
-                      >
-                        <i className="fa fa-image me-2"></i>
-                        Portfolio
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/admin/team"
-                        className={`nav-link ${
-                          pathname === '/admin/team' ? 'active' : ''
-                        }`}
-                      >
-                        <i className="fa fa-users me-2"></i>
-                        Équipe
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        href="/admin/company"
-                        className={`nav-link ${
-                          pathname === '/admin/company' ? 'active' : ''
-                        }`}
-                      >
-                        <i className="fa fa-building me-2"></i>
-                        Informations
-                      </Link>
-                    </li>
+                    {menuItems.map((item, index) => {
+                      return (
+                        <li className="nav-item" key={index}>
+                          <Link
+                            href={item.href}
+                            className={`nav-link ${
+                              pathname === item.href ? 'active' : ''
+                            }`}
+                          >
+                            <i className={`${item.icon} me-2`}></i>
+                            {t(item.title)}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </nav>
               </div>
@@ -80,10 +76,10 @@ export default function AdminLayout({ children }) {
               <div className="admin-sidebar-footer">
                 <Link
                   href="/"
-                  className="btn btn-mod btn-border btn-round btn-small bg-white"
+                  className="btn btn-mod btn-border btn-round btn-small bg-white w-100"
                 >
-                  <i className="fa fa-sign-out me-2"></i>
-                  Déconnexion
+                  <i className="mi-log-out me-2" />
+                  {t('logout')}
                 </Link>
               </div>
             </div>

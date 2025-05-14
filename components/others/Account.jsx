@@ -1,45 +1,78 @@
 'use client';
-import { useRouter } from 'next/navigation';
+
+import { signup } from '@/app/actions/auth';
 import { useTranslations } from 'use-intl';
 
 export default function Account() {
   const t = useTranslations('login');
-  const router = useRouter();
 
   return (
     <div className="container wow fadeInUp">
-      {/* Tab Content */}
+      {/* Nav Tabs */}
+      <div className="align-center mb-40 mb-sm-30">
+        <ul
+          className="nav nav-tabs tpl-minimal-tabs animate"
+          id="myTab-account"
+          role="tablist"
+        >
+          <li className="nav-item" role="presentation">
+            <a
+              href="#account-login"
+              className="nav-link active"
+              id="account-login-tab"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-controls="account-login"
+              aria-selected="true"
+            >
+              {t('login')}
+            </a>
+          </li>
+          <li className="nav-item" role="presentation">
+            <a
+              href="#account-registration"
+              className="nav-link"
+              id="account-registration-tab"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-controls="account-registration"
+              aria-selected="false"
+            >
+              {t('registration')}
+            </a>
+          </li>
+        </ul>
+      </div>
+      {/* End Nav Tabs */}
+      {/* Tab panes */}
       <div
         className="tab-content tpl-minimal-tabs-cont section-text"
         id="myTabContent-1"
       >
-        {/* Login Tab */}
         <div
           className="tab-pane fade show active"
           id="account-login"
           role="tabpanel"
           aria-labelledby="account-login-tab"
         >
+          {/* Login Form */}
           <div className="row">
             <div className="col-md-6 offset-md-3">
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  router.push('/admin/dashboard');
-                }}
+                onSubmit={(e) => e.preventDefault()}
                 className="form contact-form"
               >
                 <div className="mb-30">
-                  {/* Username */}
+                  {/* Name */}
                   <div className="form-group">
-                    <label htmlFor="username">{t('username')}</label>
+                    <label htmlFor="email">{t('email')}</label>
                     <input
                       type="text"
-                      name="username"
-                      id="username"
+                      name="email"
+                      id="email"
                       className="input-lg round form-control"
-                      placeholder={t('enterUsername')}
-                      pattern=".{3,100}"
+                      placeholder={t('enterEmail')}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                       required
                       aria-required="true"
                     />
@@ -61,11 +94,13 @@ export default function Account() {
                 </div>
                 <div className="row mb-30">
                   <div className="col-6">
+                    {/* Inform Tip */}
                     <div className="form-tip pt-10">
-                      <a href="#">{t('forgetPassword')}</a>
+                      <a href="/register">{t('goToRegistration')}</a>
                     </div>
                   </div>
                   <div className="col-6">
+                    {/* Send Button */}
                     <div className="text-end">
                       <button
                         className="submit_btn btn btn-white btn-mod btn-large btn-round btn-hover-anim"
@@ -76,15 +111,94 @@ export default function Account() {
                     </div>
                   </div>
                 </div>
-                <div className="form-tip bg-gray-light-1 round p-3 form-tip-2">
-                  <i className="icon-info size-16" />
-                  {t('fieldsRequiredInfo')} <a href="#">{t('terms')}</a>{' '}
-                  {t('privacy') && 'et '}
-                  <a href="#">{t('privacy')}</a>.
+              </form>
+            </div>
+          </div>
+          {/* End Login Form */}
+        </div>
+        <div
+          className="tab-pane fade"
+          id="account-registration"
+          role="tabpanel"
+          aria-labelledby="account-registration-tab"
+        >
+          {/* Registry Form */}
+          <div className="row">
+            <div className="col-md-6 offset-md-3">
+              <form action={signup} className="form contact-form">
+                <div className="clearfix">
+                  {/* Username */}
+                  <div className="form-group">
+                    <label htmlFor="reg-username">{t('username')}</label>
+                    <input
+                      type="text"
+                      name="reg-username"
+                      id="reg-username"
+                      className="input-lg round form-control"
+                      placeholder={t('enterUsername')}
+                      pattern=".{2,100}"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  {/* Email */}
+                  <div className="form-group">
+                    <label htmlFor="reg-email">{t('email')}</label>
+                    <input
+                      type="text"
+                      name="reg-email"
+                      id="reg-email"
+                      className="input-lg round form-control"
+                      placeholder={t('enterEmail')}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  {/* Password */}
+                  <div className="form-group">
+                    <label htmlFor="reg-password">{t('password')}</label>
+                    <input
+                      type="password"
+                      name="reg-password"
+                      id="reg-password"
+                      className="input-lg round form-control"
+                      placeholder={t('enterPassword')}
+                      pattern=".{5,100}"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  {/* Re-enter Password */}
+                  <div className="form-group">
+                    <label htmlFor="reg-confirm-password">
+                      {t('confirmPassword')}
+                    </label>
+                    <input
+                      type="password"
+                      name="reg-confirm-password"
+                      id="reg-confirm-password"
+                      className="input-lg round form-control"
+                      placeholder={t('enterConfirmPassword')}
+                      pattern=".{5,100}"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                </div>
+                {/* Send Button */}
+                <div className="pt-10 mb-30">
+                  <button
+                    className="submit_btn btn btn-mod btn-white btn-large btn-round btn-full btn-hover-anim"
+                    id="reg-btn"
+                  >
+                    <span>{t('signIn')}</span>
+                  </button>
                 </div>
               </form>
             </div>
           </div>
+          {/* End Registry Form */}
         </div>
       </div>
     </div>

@@ -1,62 +1,69 @@
-"use client"
-import { useState } from "react"
-import { portfolios as initialPortfolios } from "@/data/portfolio"
-import PortfolioModal from "@/components/admin/portfolio-modal"
+'use client';
+import { useState } from 'react';
+import { portfolios as initialPortfolios } from '@/data/portfolio';
+import PortfolioModal from '@/components/admin/portfolio-modal';
+import { useTranslations } from 'next-intl';
 
 export default function PortfolioPage() {
-  const [portfolios, setPortfolios] = useState(initialPortfolios)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentPortfolio, setCurrentPortfolio] = useState(null)
-  const [modalMode, setModalMode] = useState("create")
+  const [portfolios, setPortfolios] = useState(initialPortfolios);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPortfolio, setCurrentPortfolio] = useState(null);
+  const [modalMode, setModalMode] = useState('create');
+  const t = useTranslations('admin');
 
   const handleCreate = () => {
     setCurrentPortfolio({
       id: Math.max(...portfolios.map((p) => p.id), 0) + 1,
-      type: "external",
-      mix: "indoor",
-      thumbnail: "",
+      type: 'external',
+      mix: 'indoor',
+      thumbnail: '',
       images: [],
-      title: "",
-      client: "",
-      descr: "",
-      services: "",
-      details: "",
+      title: '',
+      client: '',
+      descr: '',
+      services: '',
+      details: '',
       date: new Date().getFullYear(),
-    })
-    setModalMode("create")
-    setIsModalOpen(true)
-  }
+    });
+    setModalMode('create');
+    setIsModalOpen(true);
+  };
 
   const handleEdit = (portfolio) => {
-    setCurrentPortfolio(portfolio)
-    setModalMode("edit")
-    setIsModalOpen(true)
-  }
+    setCurrentPortfolio(portfolio);
+    setModalMode('edit');
+    setIsModalOpen(true);
+  };
 
   const handleDelete = (id) => {
-    if (window.confirm("Êtes-vous sûr de vouloir supprimer ce projet ?")) {
-      setPortfolios(portfolios.filter((p) => p.id !== id))
+    if (window.confirm(t('confirmDelete'))) {
+      setPortfolios(portfolios.filter((p) => p.id !== id));
     }
-  }
+  };
 
   const handleSave = (portfolio) => {
-    if (modalMode === "create") {
-      setPortfolios([...portfolios, portfolio])
+    if (modalMode === 'create') {
+      setPortfolios([...portfolios, portfolio]);
     } else {
-      setPortfolios(portfolios.map((p) => (p.id === portfolio.id ? portfolio : p)))
+      setPortfolios(
+        portfolios.map((p) => (p.id === portfolio.id ? portfolio : p))
+      );
     }
-    setIsModalOpen(false)
-  }
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="portfolio-admin-page">
       <div className="row mb-30">
         <div className="col-md-6">
-          <h2 className="section-title">Gestion du Portfolio</h2>
+          <h2 className="section-title">{t('projectManagement')}</h2>
         </div>
         <div className="col-md-6 text-end">
-          <button className="btn btn-mod btn-medium btn-round" onClick={handleCreate}>
-            Ajouter un projet
+          <button
+            className="btn btn-mod btn-medium btn-round"
+            onClick={handleCreate}
+          >
+            <i className="mi-add" /> {t('addProject')}
           </button>
         </div>
       </div>
@@ -68,12 +75,12 @@ export default function PortfolioPage() {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Miniature</th>
-                  <th>Titre</th>
-                  <th>Client</th>
-                  <th>Description</th>
-                  <th>Date</th>
-                  <th>Actions</th>
+                  <th>{t('projectDetails.thumbnail')}</th>
+                  <th>{t('projectDetails.title')}</th>
+                  <th>{t('projectDetails.client')}</th>
+                  <th>{t('projectDetails.description')}</th>
+                  <th>{t('projectDetails.year')}</th>
+                  <th>{t('actions')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -83,9 +90,13 @@ export default function PortfolioPage() {
                     <td>
                       {portfolio.thumbnail && (
                         <img
-                          src={portfolio.thumbnail || "/placeholder.svg"}
+                          src={portfolio.thumbnail || '/placeholder.svg'}
                           alt={portfolio.title}
-                          style={{ width: "60px", height: "40px", objectFit: "cover" }}
+                          style={{
+                            width: '60px',
+                            height: '40px',
+                            objectFit: 'cover',
+                          }}
                         />
                       )}
                     </td>
@@ -95,7 +106,10 @@ export default function PortfolioPage() {
                     <td>{portfolio.date}</td>
                     <td>
                       <div className="btn-group">
-                        <button className="btn btn-mod btn-small btn-circle" onClick={() => handleEdit(portfolio)}>
+                        <button
+                          className="btn btn-mod btn-small btn-circle"
+                          onClick={() => handleEdit(portfolio)}
+                        >
                           <i className="fa fa-edit"></i>
                         </button>
                         <button
@@ -123,5 +137,5 @@ export default function PortfolioPage() {
         />
       )}
     </div>
-  )
+  );
 }

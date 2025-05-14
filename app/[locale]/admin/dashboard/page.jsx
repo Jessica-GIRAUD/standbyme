@@ -1,14 +1,17 @@
-'use client';
-import Link from 'next/link';
-import { portfolios } from '@/data/portfolio';
-import { teamMembers } from '@/data/team';
+"use client"
+import Link from "next/link"
+import { portfolios } from "@/data/portfolio"
+import { teamMembers } from "@/data/team"
+import { useTranslations } from "next-intl"
 
 export default function Dashboard() {
+  const t = useTranslations("admin")
+
   return (
     <div className="dashboard-page">
       <div className="row">
         <div className="col-12">
-          <h2 className="section-title mb-40">Tableau de bord</h2>
+          <h2 className="section-title mb-40">{t("dashboard")}</h2>
         </div>
       </div>
 
@@ -16,15 +19,12 @@ export default function Dashboard() {
         <div className="col-md-4 mb-30">
           <div className="card h-100">
             <div className="card-body">
-              <h3 className="card-title h5 mb-20">Portfolio</h3>
+              <h3 className="card-title h5 mb-20">{t("portfolio")}</h3>
               <p className="card-text mb-20">
-                Nombre de projets: {portfolios.length}
+                {t("projectCount")}: {portfolios.length}
               </p>
-              <Link
-                href="/admin/portfolio"
-                className="btn btn-mod btn-border btn-round btn-small"
-              >
-                Gérer le portfolio
+              <Link href="/admin/portfolio" className="btn btn-mod btn-border btn-round btn-small">
+                {t("managePortfolio")}
               </Link>
             </div>
           </div>
@@ -33,15 +33,12 @@ export default function Dashboard() {
         <div className="col-md-4 mb-30">
           <div className="card h-100">
             <div className="card-body">
-              <h3 className="card-title h5 mb-20">Équipe</h3>
+              <h3 className="card-title h5 mb-20">{t("team")}</h3>
               <p className="card-text mb-20">
-                Nombre de membres: {teamMembers.length}
+                {t("teamMemberCount")}: {teamMembers.length}
               </p>
-              <Link
-                href="/admin/team"
-                className="btn btn-mod btn-border btn-round btn-small"
-              >
-                Gérer l'équipe
+              <Link href="/admin/team" className="btn btn-mod btn-border btn-round btn-small">
+                {t("manageTeam")}
               </Link>
             </div>
           </div>
@@ -50,15 +47,10 @@ export default function Dashboard() {
         <div className="col-md-4 mb-30">
           <div className="card h-100">
             <div className="card-body">
-              <h3 className="card-title h5 mb-20">Informations</h3>
-              <p className="card-text mb-20">
-                Coordonnées et adresses de l'entreprise
-              </p>
-              <Link
-                href="/admin/company-info"
-                className="btn btn-mod btn-border btn-round btn-small"
-              >
-                Gérer les informations
+              <h3 className="card-title h5 mb-20">{t("companyInfo")}</h3>
+              <p className="card-text mb-20">{t("companyDetails.company")}</p>
+              <Link href="/admin/company-info" className="btn btn-mod btn-border btn-round btn-small">
+                {t("manageInfo")}
               </Link>
             </div>
           </div>
@@ -69,13 +61,11 @@ export default function Dashboard() {
         <div className="col-12">
           <div className="alert alert-info">
             <p className="mb-0">
-              <strong>Bienvenue dans votre espace d'administration.</strong>{' '}
-              Vous pouvez gérer votre portfolio, votre équipe et les
-              informations de votre entreprise depuis ce tableau de bord.
+              <strong>{t("welcome")}</strong> {t("welcomeMessage")}
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

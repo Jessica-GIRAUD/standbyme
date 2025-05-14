@@ -27,7 +27,7 @@ export default function CompanyInfoPage() {
             className="btn btn-mod btn-medium btn-round"
             onClick={handleEdit}
           >
-            Modifier les informations
+              <i className="mi-edit" />  Modifier les informations
           </button>
         </div>
       </div>

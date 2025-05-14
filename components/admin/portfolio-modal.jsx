@@ -1,9 +1,11 @@
 'use client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
   const [formData, setFormData] = useState(portfolio);
   const [imageFields, setImageFields] = useState(portfolio.images || []);
+  const t = useTranslations('admin');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,7 +72,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
       >
         <div className="modal-header mb-20">
           <h3 className="modal-title">
-            {mode === 'create' ? 'Ajouter un projet' : 'Modifier le projet'}
+            {mode === 'create' ? t('addProject') : t('editProject')}
           </h3>
           <button
             className="modal-close"
@@ -94,7 +96,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="title">Titre</label>
+                  <label htmlFor="title">{t('projectDetails.title')}</label>
                   <input
                     type="text"
                     name="title"
@@ -108,7 +110,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="client">Client</label>
+                  <label htmlFor="client">{t('projectDetails.client')}</label>
                   <input
                     type="text"
                     name="client"
@@ -124,7 +126,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="descr">Description</label>
+                  <label htmlFor="descr">
+                    {t('projectDetails.description')}
+                  </label>
                   <input
                     type="text"
                     name="descr"
@@ -137,7 +141,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="date">Année</label>
+                  <label htmlFor="date">{t('projectDetails.year')}</label>
                   <input
                     type="number"
                     name="date"
@@ -153,7 +157,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="type">Type</label>
+                  <label htmlFor="type">{t('projectDetails.type')}</label>
                   <select
                     name="type"
                     id="type"
@@ -161,14 +165,18 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     value={formData.type}
                     onChange={handleChange}
                   >
-                    <option value="external">Externe</option>
-                    <option value="internal">Interne</option>
+                    <option value="external">
+                      {t('projectDetails.external')}
+                    </option>
+                    <option value="internal">
+                      {t('projectDetails.internal')}
+                    </option>
                   </select>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="mix">Catégorie</label>
+                  <label htmlFor="mix">{t('projectDetails.category')}</label>
                   <select
                     name="mix"
                     id="mix"
@@ -176,8 +184,10 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     value={formData.mix}
                     onChange={handleChange}
                   >
-                    <option value="indoor">Indoor</option>
-                    <option value="outdoor">Outdoor</option>
+                    <option value="indoor">{t('projectDetails.indoor')}</option>
+                    <option value="outdoor">
+                      {t('projectDetails.outdoor')}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -186,7 +196,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-12">
                 <div className="form-group">
-                  <label htmlFor="thumbnail">Miniature</label>
+                  <label htmlFor="thumbnail">
+                    {t('projectDetails.thumbnail')}
+                  </label>
                   <input
                     type="text"
                     name="thumbnail"
@@ -203,7 +215,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-12">
                 <div className="form-group">
-                  <label htmlFor="services">Services</label>
+                  <label htmlFor="services">
+                    {t('projectDetails.services')}
+                  </label>
                   <input
                     type="text"
                     name="services"
@@ -219,7 +233,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-12">
                 <div className="form-group">
-                  <label htmlFor="details">Détails</label>
+                  <label htmlFor="details">{t('projectDetails.details')}</label>
                   <textarea
                     name="details"
                     id="details"
@@ -234,7 +248,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
 
             <div className="row mb-20">
               <div className="col-12">
-                <h4 className="h5 mb-10">Images</h4>
+                <h4 className="h5 mb-10">{t('projectDetails.images')}</h4>
                 <div className="image-fields">
                   {imageFields.map((image, index) => (
                     <div key={index} className="row mb-10">
@@ -242,7 +256,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                         <input
                           type="text"
                           className="input-lg round form-control"
-                          placeholder="URL de l'image"
+                          placeholder={t('projectDetails.imageUrl')}
                           value={image.imgSrc}
                           onChange={(e) =>
                             handleImageChange(index, 'imgSrc', e.target.value)
@@ -253,7 +267,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                         <input
                           type="text"
                           className="input-lg round form-control"
-                          placeholder="Texte alternatif"
+                          placeholder={t('projectDetails.imageAlt')}
                           value={image.imgAlt}
                           onChange={(e) =>
                             handleImageChange(index, 'imgAlt', e.target.value)
@@ -276,7 +290,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     className="btn btn-mod btn-small btn-round"
                     onClick={addImageField}
                   >
-                    Ajouter une image
+                    {t('projectDetails.addImage')}
                   </button>
                 </div>
               </div>
@@ -288,13 +302,13 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                 className="btn btn-mod btn-gray btn-medium btn-round"
                 onClick={onClose}
               >
-                Annuler
+                {t('cancel')}
               </button>
               <button
                 type="submit"
                 className="btn btn-mod btn-medium btn-round"
               >
-                Enregistrer
+                {t('save')}
               </button>
             </div>
           </form>

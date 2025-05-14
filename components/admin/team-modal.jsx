@@ -1,88 +1,86 @@
-'use client';
-import { useState } from 'react';
+"use client"
+import { useState } from "react"
 
 export default function TeamModal({ member, mode, onClose, onSave }) {
-  const [formData, setFormData] = useState(member);
-  const [socialFields, setSocialFields] = useState(member.socials || []);
+  const [formData, setFormData] = useState(member)
+  const [socialFields, setSocialFields] = useState(member.socials || [])
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleSocialChange = (index, field, value) => {
-    const updatedSocials = [...socialFields];
+    const updatedSocials = [...socialFields]
     updatedSocials[index] = {
       ...updatedSocials[index],
       [field]: value,
-    };
-    setSocialFields(updatedSocials);
-  };
+    }
+    setSocialFields(updatedSocials)
+  }
 
   const addSocialField = () => {
-    setSocialFields([...socialFields, { platform: '', icon: '', url: '#' }]);
-  };
+    setSocialFields([...socialFields, { platform: "", icon: "", url: "#" }])
+  }
 
   const removeSocialField = (index) => {
-    const updatedSocials = [...socialFields];
-    updatedSocials.splice(index, 1);
-    setSocialFields(updatedSocials);
-  };
+    const updatedSocials = [...socialFields]
+    updatedSocials.splice(index, 1)
+    setSocialFields(updatedSocials)
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     onSave({
       ...formData,
       socials: socialFields,
-    });
-  };
+    })
+  }
 
   return (
     <div
       className="modal-overlay"
       style={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: "rgba(0,0,0,0.5)",
         zIndex: 1000,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <div
         className="modal-container"
         style={{
-          backgroundColor: 'white',
-          borderRadius: '5px',
-          width: '90%',
-          maxWidth: '800px',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          padding: '20px',
+          backgroundColor: "white",
+          borderRadius: "5px",
+          width: "90%",
+          maxWidth: "800px",
+          maxHeight: "90vh",
+          overflowY: "auto",
+          padding: "20px",
         }}
       >
         <div className="modal-header mb-20">
-          <h3 className="modal-title">
-            {mode === 'create' ? 'Ajouter un membre' : 'Modifier le membre'}
-          </h3>
+          <h3 className="modal-title">{mode === "create" ? "Ajouter un membre" : "Modifier le membre"}</h3>
           <button
             className="modal-close"
             onClick={onClose}
             style={{
-              position: 'absolute',
-              top: '20px',
-              right: '20px',
-              background: 'none',
-              border: 'none',
-              fontSize: '20px',
-              cursor: 'pointer',
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "none",
+              border: "none",
+              fontSize: "20px",
+              cursor: "pointer",
             }}
           >
             &times;
@@ -168,13 +166,7 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
                           className="input-lg round form-control"
                           placeholder="Plateforme"
                           value={social.platform}
-                          onChange={(e) =>
-                            handleSocialChange(
-                              index,
-                              'platform',
-                              e.target.value
-                            )
-                          }
+                          onChange={(e) => handleSocialChange(index, "platform", e.target.value)}
                         />
                       </div>
                       <div className="col-md-3">
@@ -183,9 +175,7 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
                           className="input-lg round form-control"
                           placeholder="Icône"
                           value={social.icon}
-                          onChange={(e) =>
-                            handleSocialChange(index, 'icon', e.target.value)
-                          }
+                          onChange={(e) => handleSocialChange(index, "icon", e.target.value)}
                         />
                       </div>
                       <div className="col-md-4">
@@ -194,9 +184,7 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
                           className="input-lg round form-control"
                           placeholder="URL"
                           value={social.url}
-                          onChange={(e) =>
-                            handleSocialChange(index, 'url', e.target.value)
-                          }
+                          onChange={(e) => handleSocialChange(index, "url", e.target.value)}
                         />
                       </div>
                       <div className="col-md-1">
@@ -210,11 +198,7 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
                       </div>
                     </div>
                   ))}
-                  <button
-                    type="button"
-                    className="btn btn-mod btn-small btn-round"
-                    onClick={addSocialField}
-                  >
+                  <button type="button" className="btn btn-mod btn-small btn-round" onClick={addSocialField}>
                     Ajouter un réseau social
                   </button>
                 </div>
@@ -222,17 +206,10 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
             </div>
 
             <div className="modal-footer mt-30">
-              <button
-                type="button"
-                className="btn btn-mod btn-gray btn-medium btn-round"
-                onClick={onClose}
-              >
+              <button type="button" className="btn btn-mod btn-gray btn-medium btn-round" onClick={onClose}>
                 Annuler
               </button>
-              <button
-                type="submit"
-                className="btn btn-mod btn-medium btn-round"
-              >
+              <button type="submit" className="btn btn-mod btn-medium btn-round">
                 Enregistrer
               </button>
             </div>
@@ -240,5 +217,5 @@ export default function TeamModal({ member, mode, onClose, onSave }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
