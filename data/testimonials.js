@@ -15,6 +15,6 @@ export const testimonials = [
     quote: 'testimonial3',
     author: 'Alexandra Couturier',
     role: 'DELTA PLUS',
-    image: '/assets/images/clients/client_1.png',
+    image: '/assets/images/clients/client_1.jpg',
   },
 ];
