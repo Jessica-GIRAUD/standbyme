@@ -1,17 +1,15 @@
 'use client';
 
-import Link from 'next/link';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 
 import Header from '@/components/header/Header';
 import AnimatedText from '@/components/common/AnimatedText';
-import Image from 'next/image';
 
 import React from 'react';
 import { menuItems } from '@/data/menu';
-import Account from '@/components/others/Account';
 import { useTranslations } from 'use-intl';
-import Contact from '@/components/home/Contact';
+import Account from '@/components/Account';
+import Contact from '@/components/Contact';
 
 export default function Admin() {
   const t = useTranslations();
