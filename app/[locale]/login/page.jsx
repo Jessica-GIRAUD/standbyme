@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Login() {
   const t = useTranslations();
-
+  console.log('test');
   return (
     <>
       <div className="theme-main">
