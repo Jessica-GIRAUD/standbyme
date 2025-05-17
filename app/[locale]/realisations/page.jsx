@@ -3,9 +3,9 @@ import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Header from '@/components/header/Header';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
-import Portfolio from '@/components/portfolio/Portfolio';
+import Portfolio from '@/components/Portfolio';
 import Footer from '@/components/footer/Footer';
-import Contact from '@/components/home/Contact';
+import Contact from '@/components/Contact';
 import { infos } from '@/data/infos';
 import { getTranslations } from 'next-intl/server';
 

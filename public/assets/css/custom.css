@@ -99,3 +99,146 @@ a {
 html {
   scroll-behavior: smooth !important;
 }
+
+/* Custom styles for the timeline */
+
+.timeline-container {
+  position: relative;
+  width: max-content;
+  margin: auto;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--color-secondary-1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-date-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-date {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-secondary-1);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-date::after {
+  right: -25px;
+}
+.timeline-item:nth-child(odd) .timeline-date-col {
+  justify-content: end;
+}
+
+.timeline-item:nth-child(even) .timeline-date::after {
+  left: -25px;
+}
+
+.date-badge {
+  display: inline-block;
+  background-color: var(--color-secondary-1);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.destination-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.destination-info p {
+  opacity: 1;
+  
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.timeline-content:hover .destination-info p {
+  opacity: 0;
+}
+
+.destination-info h2 {
+    display: none;
+  }
+
+@media (max-width: 990px) {
+  .timeline-container {
+    width: 100%;
+  }
+  .timeline-container img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  .destination-info {
+    max-height: -webkit-fill-available;
+  }
+
+  .destination-info .btn {
+    display: none;
+  }
+
+
+
+}
+
+@media (max-width: 767px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+
+    .destination-info h2 {
+    display: inline-block;
+  }
+
+  .timeline-date-col {
+    display: none;
+  }
+
+  .timeline-content {
+    margin-left: 40px;
+  }
+
+  .timeline-content img {
+    height: auto;
+  }
+
+    .destination-info .btn {
+    display: inline-block;
+  }
+}

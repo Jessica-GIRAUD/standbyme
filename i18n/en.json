@@ -82,6 +82,19 @@
         "Extérieur": "Outdoor",
         "Tous les stands": "All stands"
     },
+    "savoir-faire": {
+        "eco": "Sustainability & Environmental Responsibility",
+        "title1": "Tailor-Made Event Excellence",
+        "title2": "Comprehensive Expertise to Turn Your Ideas into Powerful Experiences",
+        "title3": "Powerful event solutions, designed just for you.",
+        "STAND VIRTUEL": "VIRTUAL BOOTH",
+        "Plongez au cœur de l'action avec notre visite virtuelle du stand, où vous pouvez explorer chaque détail, admirer les produits et ressentir l'ambiance du stand": "Dive into the heart of the action with our virtual booth tour, where you can explore every detail, admire the products, and feel the atmosphere of the stand.",
+        "Découvrir le stand": "Explore the booth",
+        "CAPTATION VIDEO": "VIDEO RECORDING",
+        "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique": "Capture the essence of your events with our photo and video footage, enhanced by dynamic editing.",
+        "CAMERA INTELLIGENTE": "SMART CAMERA",
+        "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel": "Maximize the impact of your booth with a measurement tool designed to track its performance in real time."
+    },
     "login": {
         "login": "Login",
         "registration": "Registration",
