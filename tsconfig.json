@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/[locale]/page.jsx", "next.config.mjs", "app/[locale]/admin/portfolio/page.jsx", "app/[locale]/admin/team/page.jsx", "components/admin/team-modal.jsx", "components/admin/portfolio-modal.jsx", "components/admin/company-info-modal.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/[locale]/page.jsx", "next.config.mjs", "app/[locale]/admin/portfolio/page.jsx", "app/[locale]/admin/team/page.jsx", "components/admin/team-modal.jsx", "components/admin/portfolio-modal.jsx", "components/admin/company-info-modal.jsx", "components/others/Account2.sx", "components/LoginRegisterForm.jsx"],
   "exclude": ["node_modules"]
 }

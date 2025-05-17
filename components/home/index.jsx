@@ -1,8 +1,8 @@
 import AnimatedText from '@/components/common/AnimatedText';
-import Team from './Team';
-import ClientSlider from '../others/ClientSlider';
-import Contact from '@/components/home/Contact';
-import Testimonials from '@/components/home/Testimonials';
+import Team from '@/components/Team';
+import ClientSlider from '@/components/ClientSlider';
+import Contact from '@/components/Contact';
+import Testimonials from '@/components/Testimonials';
 import { getTranslations } from 'next-intl/server';
 
 export default async function Home1() {

@@ -82,6 +82,19 @@
         "Extérieur": "Extérieur",
         "Tous les stands": "Tous les stands"
     },
+    "savoir-faire": {
+        "eco": "Engagements & Écoresponsabilité",
+        "title1": "L’excellence événementielle sur mesure.",
+        "title2": "Un savoir-faire global pour transformer vos idées en expériences fortes.",
+        "title3": "Des solutions événementielles puissantes, pensées pour vous.",
+        "STAND VIRTUEL": "STAND VIRTUEL",
+        "Plongez au cœur de l'action avec notre visite virtuelle du stand, où vous pouvez explorer chaque détail, admirer les produits et ressentir l'ambiance du stand": "Plongez au cœur de l'action avec notre visite virtuelle du stand, où vous pouvez explorer chaque détail, admirer les produits et ressentir l'ambiance du stand.",
+        "Découvrir le stand": "Découvrir le stand",
+        "CAPTATION VIDEO": "CAPTATION VIDEO",
+        "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique": "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique.",
+        "CAMERA INTELLIGENTE": "CAMERA INTELLIGENTE",
+        "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel": "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel."
+    },
     "login": {
         "login": "Se connecter",
         "registration": "Créer un compte",

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ParallaxContainer from '@/components/common/ParallaxContainer';
 
 import Header from '@/components/header/Header';
-import Contact from '@/components/home/Contact';
+import Contact from '@/components/Contact';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
 import { portfolios } from '../../../../data/portfolio';

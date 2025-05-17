@@ -4,7 +4,7 @@ import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import { menuItems } from '@/data/menu';
 import Home1 from '@/components/home/index';
-import Hero from '@/components/home/hero/Hero';
+import Hero from '@/components/Hero';
 import { infos } from '@/data/infos';
 
 export const metadata = {
