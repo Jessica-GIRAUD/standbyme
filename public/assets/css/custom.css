@@ -171,7 +171,7 @@ html {
 
 .destination-info {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   padding: 20px;
@@ -181,19 +181,30 @@ html {
   border-bottom-right-radius: 4px;
 }
 
-.destination-info p {
-  opacity: 1;
-  
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+.timeline-content video {
+  border-radius: 4px;
 }
 
-.timeline-content:hover .destination-info p {
-  opacity: 0;
+.destination-info p,
+.destination-info .btn,
+.destination-info h2 {
+  opacity: 1;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  font-size: clamp(13px, 2vw, 16px);
+  margin-bottom: 0;
 }
 
 .destination-info h2 {
-    display: none;
-  }
+  font-size: clamp(13px, 2vw, 20px);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.timeline-content:hover .destination-info p,
+.timeline-content:hover .destination-info .btn,
+.timeline-content:hover .destination-info h2 {
+  opacity: 0;
+}
 
 @media (max-width: 990px) {
   .timeline-container {
@@ -208,26 +219,21 @@ html {
   .destination-info {
     max-height: -webkit-fill-available;
   }
-
-  .destination-info .btn {
-    display: none;
-  }
-
-
-
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .timeline-container::before {
     left: 20px;
   }
 
-    .destination-info h2 {
+  .destination-info h2 {
     display: inline-block;
+    font-size: larger;
   }
 
   .timeline-date-col {
-    display: none;
+    justify-content: start !important;
+    margin-left: 36px;
   }
 
   .timeline-content {
@@ -238,7 +244,8 @@ html {
     height: auto;
   }
 
-    .destination-info .btn {
-    display: inline-block;
+  .timeline-item:nth-child(even) .timeline-date::after,
+  .timeline-item:nth-child(odd) .timeline-date::after {
+    left: -25px;
   }
 }

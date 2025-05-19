@@ -62,28 +62,11 @@ export default function Eco() {
           <div className="col-lg-5 col-xl-5 offset-xl-1 d-flex align-items-center mb-md-60 mb-sm-40">
             <div className="w-100">
               <h3 className="section-title mb-30">
-                Des engagements concrets pour un avenir durable
+                {t('ecoMainTitle')}
               </h3>
               <p className="section-descr mb-50 mb-sm-30">
-                Stand By Me s’engage dans une démarche responsable, durable et
-                innovante, portée par des actions concrètes et mesurables.
+              {t('ecoMainSubtitle')}
               </p>
-              {/* Numbers
-              <div className="row mt-sm-n10">
-                <div className="col-md-6 mt-sm-10">
-                  <div className="number-3-title black">2023</div>
-                  <div className="number-3-descr">
-                    Intégration au réseau Excellence BPI France
-                  </div>
-                </div>
-                <div className="col-md-6 mt-sm-10">
-                  <div className="number-3-title black">2024</div>
-                  <div className="number-3-descr">
-                    Premier bilan carbone avec KIKO ???
-                  </div>
-                </div>
-              </div>
-              {/* End Numbers */}
             </div>
           </div>
           {/* End Section Text */}
@@ -118,9 +101,9 @@ export default function Eco() {
                           <path d={elm.svgPath} />
                         </svg>
                       </div>
-                      <h4 className="alt-features-title">{elm.title}</h4>
+                      <h4 className="alt-features-title">{t(elm.title)}</h4>
                       <div className="alt-features-descr">
-                        {elm.description}
+                        {t(elm.description)}
                       </div>
                     </div>
                   </div>

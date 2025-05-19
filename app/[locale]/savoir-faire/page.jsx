@@ -10,8 +10,6 @@ import AnimatedText from '@/components/common/AnimatedText';
 import { services } from '@/data/services';
 import Eco from '@/components/Eco';
 
-import Link from 'next/link';
-import { features } from '@/data/features';
 import Timeline from '@/components/Timeline';
 import { menuItems } from '@/data/menu';
 import Contact from '@/components/Contact';
@@ -94,12 +92,18 @@ export default async function SavoirFaire() {
                               <path d={elm.path} />
                             </svg>
                           </div>
-                          <h3 className="services-3-title">{elm.title}</h3>
-                          <h3 className="services-3-text">{elm.text}</h3>
+                          <h3 className="services-3-title">{t(elm.title)}</h3>
+                          <h3 className="services-3-text">{t(elm.text)}</h3>
                           <div className="services-3-text text-start d-flex justify-content-center mt-4">
-                            <ul className="">
+                            <ul>
                               {elm.items.map((el, index) => {
-                                return <li key={index}>{el}</li>;
+                                return el.link ? (
+                                  <a href={el.link} key={index}>
+                                    <li key={index}>{t(el.name)}</li>
+                                  </a>
+                                ) : (
+                                  <li key={index}>{t(el.name)}</li>
+                                );
                               })}
                             </ul>
                           </div>
@@ -111,7 +115,10 @@ export default async function SavoirFaire() {
               </div>
             </section>
 
-            <section className="page-section bg-gradient-gray-light-2 bg-scroll">
+            <section
+              className="page-section bg-gradient-gray-light-2 bg-scroll"
+              id="title"
+            >
               <div className="container">
                 <div className="row">
                   <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
