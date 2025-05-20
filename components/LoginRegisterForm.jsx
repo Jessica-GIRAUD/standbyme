@@ -1,9 +1,7 @@
 'use client';
-
-import { signup } from '@/app/actions/auth';
 import { useTranslations } from 'use-intl';
 
-export default function Account() {
+export default function LoginRegisterForm() {
   const t = useTranslations('login');
 
   return (
@@ -125,15 +123,15 @@ export default function Account() {
           {/* Registry Form */}
           <div className="row">
             <div className="col-md-6 offset-md-3">
-              <form action={signup} className="form contact-form">
+              <form className="form contact-form">
                 <div className="clearfix">
-                  {/* Username */}
+                  {/* Name */}
                   <div className="form-group">
-                    <label htmlFor="reg-username">{t('username')}</label>
+                    <label htmlFor="name">{t('username')}</label>
                     <input
                       type="text"
-                      name="reg-username"
-                      id="reg-username"
+                      name="name"
+                      id="name"
                       className="input-lg round form-control"
                       placeholder={t('enterUsername')}
                       pattern=".{2,100}"
@@ -143,11 +141,11 @@ export default function Account() {
                   </div>
                   {/* Email */}
                   <div className="form-group">
-                    <label htmlFor="reg-email">{t('email')}</label>
+                    <label htmlFor="reg_email">{t('email')}</label>
                     <input
                       type="text"
-                      name="reg-email"
-                      id="reg-email"
+                      name="reg_email"
+                      id="reg_email"
                       className="input-lg round form-control"
                       placeholder={t('enterEmail')}
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -157,11 +155,11 @@ export default function Account() {
                   </div>
                   {/* Password */}
                   <div className="form-group">
-                    <label htmlFor="reg-password">{t('password')}</label>
+                    <label htmlFor="reg_password">{t('password')}</label>
                     <input
                       type="password"
-                      name="reg-password"
-                      id="reg-password"
+                      name="reg_password"
+                      id="reg_password"
                       className="input-lg round form-control"
                       placeholder={t('enterPassword')}
                       pattern=".{5,100}"
@@ -171,13 +169,13 @@ export default function Account() {
                   </div>
                   {/* Re-enter Password */}
                   <div className="form-group">
-                    <label htmlFor="reg-confirm-password">
+                    <label htmlFor="reg_confirm_password">
                       {t('confirmPassword')}
                     </label>
                     <input
                       type="password"
-                      name="reg-confirm-password"
-                      id="reg-confirm-password"
+                      name="reg_confirm_password"
+                      id="reg_confirm_password"
                       className="input-lg round form-control"
                       placeholder={t('enterConfirmPassword')}
                       pattern=".{5,100}"

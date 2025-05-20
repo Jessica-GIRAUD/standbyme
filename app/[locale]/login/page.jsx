@@ -22,7 +22,7 @@ export default function Login() {
                 className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5 pb-40"
                 style={{
                   backgroundImage:
-                    'url(/assets/images/full-width-images/page-title-bg-5.jpg)',
+                    'url(/assets/images/full-width-images/page-title-bg-1.jpg)',
                 }}
               >
                 <>
