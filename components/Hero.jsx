@@ -2,13 +2,15 @@
 
 import { useRef, useState } from 'react';
 import { infos } from '@/data/infos';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Hero() {
   const t = useTranslations('home');
+  const locale = useLocale();
+  console.log('locale', locale);
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
+  // const [isMuted, setIsMuted] = useState(true);
 
   const togglePlayPause = () => {
     if (isPlaying) {
@@ -20,6 +22,7 @@ export default function Hero() {
     }
   };
 
+  /* 
   const toggleMuteUnmute = () => {
     if (isMuted) {
       videoRef.current.muted = false;
@@ -28,7 +31,48 @@ export default function Hero() {
       videoRef.current.muted = true;
       setIsMuted(true);
     }
+  }; */
+
+  const playFullscreenVideo = () => {
+    const video = document.createElement('video');
+    video.src =
+      locale === 'en'
+        ? '/assets/videos/video_en.mp4'
+        : '/assets/videos/video_fr.mp4';
+    video.controls = true;
+    video.autoplay = true;
+    video.style.position = 'fixed';
+    video.style.top = '0';
+    video.style.left = '0';
+    video.style.width = '100vw';
+    video.style.height = '100vh';
+    video.style.zIndex = '10000';
+    video.style.backgroundColor = 'black';
+    video.style.objectFit = 'contain';
+    video.style.outline = 'none';
+
+    document.body.appendChild(video);
+
+    const removeVideo = () => {
+      video.pause();
+      video.remove();
+      document.removeEventListener('fullscreenchange', onFullScreenChange);
+    };
+
+    const onFullScreenChange = () => {
+      if (!document.fullscreenElement) {
+        removeVideo();
+      }
+    };
+
+    document.addEventListener('fullscreenchange', onFullScreenChange);
+
+    video.requestFullscreen().catch((err) => {
+      console.error('Fullscreen failed:', err);
+      removeVideo();
+    });
   };
+
   return (
     <section
       className="home-section bg-dark-1 bg-dark-alpha-30 light-content scrollSpysection"
@@ -64,7 +108,7 @@ export default function Hero() {
           onClick={togglePlayPause}
           href="#"
           role="button"
-        className="bg-video-button-muted"
+          className="bg-video-button-muted"
         >
           <i className={`mi-${isPlaying ? 'pause' : 'play'}`} />
           <span className="visually-hidden">Pause</span>
@@ -87,13 +131,13 @@ export default function Hero() {
                 className="local-scroll wch-unset wow fadeInUp"
                 data-wow-delay="0.4s"
               >
-                <a
-                  href="#about"
+                <button
+                  onClick={playFullscreenVideo}
                   className="btn btn-mod btn-border-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  {t('learnMore')}
-                </a>
+                  ▶ {t('showreel')}
+                </button>
                 <a
                   href="#contact"
                   className="btn btn-mod btn-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
@@ -107,6 +151,7 @@ export default function Hero() {
           </div>
         </div>
         {/* End Home Section Content */}
+
         {/* Scroll Down */}
         <div
           className="local-scroll scroll-down-wrap wow fadeInUp"

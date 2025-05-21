@@ -111,12 +111,50 @@ html {
 .timeline-container::before {
   content: '';
   position: absolute;
-  width: 2px;
-  background-color: var(--color-secondary-1);
   top: 0;
   bottom: 0;
   left: 50%;
+  width: 2px;
   margin-left: -1px;
+
+  background-image: repeating-linear-gradient(
+      to bottom,
+      var(--color-secondary-1) 0px,
+      var(--color-secondary-1) 4px,
+      transparent 4px,
+      transparent 8px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(211, 112, 29, 0.5) 0%,
+      rgba(211, 112, 29, 0.5) 100%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--color-secondary-1) 0px,
+      var(--color-secondary-1) 4px,
+      transparent 4px,
+      transparent 8px
+    );
+
+  background-size: 100% 15%, 100% 70%, 100% 15%;
+  background-position: top, center, bottom;
+  background-repeat: no-repeat;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 }
 
 .timeline-item {
@@ -140,8 +178,8 @@ html {
 .timeline-date::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background-color: var(--color-secondary-1);
   border-radius: 50%;
   top: 50%;
@@ -150,14 +188,14 @@ html {
 }
 
 .timeline-item:nth-child(odd) .timeline-date::after {
-  right: -25px;
+  right: -22.5px;
 }
 .timeline-item:nth-child(odd) .timeline-date-col {
   justify-content: end;
 }
 
 .timeline-item:nth-child(even) .timeline-date::after {
-  left: -25px;
+  left: -22.5px;
 }
 
 .date-badge {
@@ -254,7 +292,7 @@ html {
 /* LOADER */
 
 .custom-preloader {
-  background: url("/assets/images/full-width-images/section-bg-4.jpg");
+  background: url('/assets/images/full-width-images/section-bg-4.jpg');
   height: 100vh;
   width: 100vw;
   position: fixed;
