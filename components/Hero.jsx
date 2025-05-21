@@ -34,6 +34,18 @@ export default function Hero() {
   }; */
 
   const playFullscreenVideo = () => {
+    const videoContainer = document.createElement('div');
+    videoContainer.style.position = 'fixed';
+    videoContainer.style.top = '0';
+    videoContainer.style.left = '0';
+    videoContainer.style.width = '100vw';
+    videoContainer.style.height = '100vh';
+    videoContainer.style.zIndex = '10000';
+    videoContainer.style.backgroundColor = 'black';
+    videoContainer.style.display = 'flex';
+    videoContainer.style.justifyContent = 'center';
+    videoContainer.style.alignItems = 'center';
+
     const video = document.createElement('video');
     video.src =
       locale === 'en'
@@ -41,35 +53,60 @@ export default function Hero() {
         : '/assets/videos/video_fr.mp4';
     video.controls = true;
     video.autoplay = true;
-    video.style.position = 'fixed';
-    video.style.top = '0';
-    video.style.left = '0';
-    video.style.width = '100vw';
-    video.style.height = '100vh';
-    video.style.zIndex = '10000';
-    video.style.backgroundColor = 'black';
+    video.style.maxWidth = '100%';
+    video.style.maxHeight = '100%';
     video.style.objectFit = 'contain';
     video.style.outline = 'none';
+    videoContainer.appendChild(video);
 
-    document.body.appendChild(video);
+    // Bouton de fermeture (mobile friendly)
+    const closeButton = document.createElement('button');
+    closeButton.textContent = '✕';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.fontSize = '2rem';
+    closeButton.style.background = 'rgba(0, 0, 0, 0.5)';
+    closeButton.style.color = 'white';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '50%';
+    closeButton.style.width = '40px';
+    closeButton.style.height = '40px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.zIndex = '10001';
+    closeButton.style.display = 'flex';
+    closeButton.style.alignItems = 'center';
+    closeButton.style.justifyContent = 'center';
+    closeButton.addEventListener('click', () => exitFullscreen());
+    videoContainer.appendChild(closeButton);
 
-    const removeVideo = () => {
+    document.body.appendChild(videoContainer);
+
+    const cleanup = () => {
       video.pause();
-      video.remove();
-      document.removeEventListener('fullscreenchange', onFullScreenChange);
+      videoContainer.remove();
+      document.removeEventListener('fullscreenchange', handleFsChange);
     };
 
-    const onFullScreenChange = () => {
-      if (!document.fullscreenElement) {
-        removeVideo();
+    const exitFullscreen = () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(() => cleanup());
+      } else {
+        cleanup();
       }
     };
 
-    document.addEventListener('fullscreenchange', onFullScreenChange);
+    const handleFsChange = () => {
+      if (!document.fullscreenElement) {
+        cleanup();
+      }
+    };
 
-    video.requestFullscreen().catch((err) => {
-      console.error('Fullscreen failed:', err);
-      removeVideo();
+    document.addEventListener('fullscreenchange', handleFsChange);
+
+    videoContainer.requestFullscreen().catch((err) => {
+      console.error('Fullscreen error:', err);
+      cleanup();
     });
   };
 
@@ -136,7 +173,7 @@ export default function Hero() {
                   className="btn btn-mod btn-border-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
                   data-btn-animate="y"
                 >
-                  ▶ {t('showreel')}
+                  {t('showreel')}
                 </button>
                 <a
                   href="#contact"
