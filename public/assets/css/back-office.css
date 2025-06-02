@@ -27,6 +27,10 @@
   overflow-y: auto;
 }
 
+.admin-navigation {
+  margin-top: 40px;
+}
+
 .admin-navigation .nav-link {
   color: var(--color-dark-mode-gray-1);
   font-weight: 500;

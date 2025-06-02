@@ -3,12 +3,12 @@ import ParallaxContainer from '@/components/common/ParallaxContainer';
 import Header from '@/components/header/Header';
 import AnimatedText from '@/components/common/AnimatedText';
 import { menuItems } from '@/data/menu';
-import LoginRegisterForm from '@/components/LoginRegisterForm';
+import LoginForm from '@/components/LoginForm';
 import { useTranslations } from 'next-intl';
 
 export default function Login() {
   const t = useTranslations();
-  
+
   return (
     <>
       <div className="theme-main">
@@ -48,8 +48,8 @@ export default function Login() {
             </section>
 
             {/* Section */}
-            <section className="page-section p-0">
-              <LoginRegisterForm />
+            <section className="page-section p-0 position-relative">
+              <LoginForm />
             </section>
           </main>
         </div>
