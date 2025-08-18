@@ -1,11 +1,12 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
   const [formData, setFormData] = useState(portfolio);
   const [imageFields, setImageFields] = useState(portfolio.images || []);
-  const t = useTranslations('admin');
+  const t = useTranslations();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,7 +53,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
         right: 0,
         bottom: 0,
         backgroundColor: 'rgba(0,0,0,0.5)',
-        zIndex: 1000,
+        zIndex: 9999,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -72,7 +73,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
       >
         <div className="modal-header mb-20">
           <h3 className="modal-title">
-            {mode === 'create' ? t('addProject') : t('editProject')}
+            {mode === 'create' ? t('admin.addProject') : t('admin.editProject')}
           </h3>
           <button
             className="modal-close"
@@ -96,7 +97,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="title">{t('projectDetails.title')}</label>
+                  <label htmlFor="title">
+                    {t('admin.projectDetails.title')}
+                  </label>
                   <input
                     type="text"
                     name="title"
@@ -110,7 +113,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="client">{t('projectDetails.client')}</label>
+                  <label htmlFor="client">
+                    {t('admin.projectDetails.client')}
+                  </label>
                   <input
                     type="text"
                     name="client"
@@ -127,7 +132,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               <div className="col-md-6">
                 <div className="form-group">
                   <label htmlFor="descr">
-                    {t('projectDetails.description')}
+                    {t('admin.projectDetails.description')}
                   </label>
                   <input
                     type="text"
@@ -141,7 +146,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="date">{t('projectDetails.year')}</label>
+                  <label htmlFor="date">{t('admin.projectDetails.year')}</label>
                   <input
                     type="number"
                     name="date"
@@ -157,7 +162,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="type">{t('projectDetails.type')}</label>
+                  <label htmlFor="type">{t('admin.projectDetails.type')}</label>
                   <select
                     name="type"
                     id="type"
@@ -166,17 +171,19 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     onChange={handleChange}
                   >
                     <option value="external">
-                      {t('projectDetails.external')}
+                      {t('admin.projectDetails.external')}
                     </option>
                     <option value="internal">
-                      {t('projectDetails.internal')}
+                      {t('admin.projectDetails.internal')}
                     </option>
                   </select>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="mix">{t('projectDetails.category')}</label>
+                  <label htmlFor="mix">
+                    {t('admin.projectDetails.category')}
+                  </label>
                   <select
                     name="mix"
                     id="mix"
@@ -184,9 +191,11 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     value={formData.mix}
                     onChange={handleChange}
                   >
-                    <option value="indoor">{t('projectDetails.indoor')}</option>
+                    <option value="indoor">
+                      {t('admin.projectDetails.indoor')}
+                    </option>
                     <option value="outdoor">
-                      {t('projectDetails.outdoor')}
+                      {t('admin.projectDetails.outdoor')}
                     </option>
                   </select>
                 </div>
@@ -197,7 +206,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               <div className="col-12">
                 <div className="form-group">
                   <label htmlFor="thumbnail">
-                    {t('projectDetails.thumbnail')}
+                    {t('admin.projectDetails.thumbnail')}
                   </label>
                   <input
                     type="text"
@@ -216,7 +225,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
               <div className="col-12">
                 <div className="form-group">
                   <label htmlFor="services">
-                    {t('projectDetails.services')}
+                    {t('admin.projectDetails.services')}
                   </label>
                   <input
                     type="text"
@@ -233,7 +242,9 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
             <div className="row mb-20">
               <div className="col-12">
                 <div className="form-group">
-                  <label htmlFor="details">{t('projectDetails.details')}</label>
+                  <label htmlFor="details">
+                    {t('admin.projectDetails.details')}
+                  </label>
                   <textarea
                     name="details"
                     id="details"
@@ -248,7 +259,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
 
             <div className="row mb-20">
               <div className="col-12">
-                <h4 className="h5 mb-10">{t('projectDetails.images')}</h4>
+                <h4 className="h5 mb-10">{t('admin.projectDetails.images')}</h4>
                 <div className="image-fields">
                   {imageFields.map((image, index) => (
                     <div key={index} className="row mb-10">
@@ -256,18 +267,25 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                         <input
                           type="text"
                           className="input-lg round form-control"
-                          placeholder={t('projectDetails.imageUrl')}
+                          placeholder={t('admin.projectDetails.imageUrl')}
                           value={image.imgSrc}
                           onChange={(e) =>
                             handleImageChange(index, 'imgSrc', e.target.value)
                           }
+                        />
+
+                        <Image
+                          src={image.imgSrc}
+                          alt={image.imgAlt}
+                          width={100}
+                          height={100}
                         />
                       </div>
                       <div className="col-md-5">
                         <input
                           type="text"
                           className="input-lg round form-control"
-                          placeholder={t('projectDetails.imageAlt')}
+                          placeholder={t('admin.projectDetails.imageAlt')}
                           value={image.imgAlt}
                           onChange={(e) =>
                             handleImageChange(index, 'imgAlt', e.target.value)
@@ -280,7 +298,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                           className="btn btn-mod btn-small btn-circle btn-gray"
                           onClick={() => removeImageField(index)}
                         >
-                          <i className="fa fa-trash"></i>
+                          <i className="mi-delete" />
                         </button>
                       </div>
                     </div>
@@ -290,7 +308,7 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                     className="btn btn-mod btn-small btn-round"
                     onClick={addImageField}
                   >
-                    {t('projectDetails.addImage')}
+                    {t('admin.projectDetails.addImage')}
                   </button>
                 </div>
               </div>
@@ -302,13 +320,13 @@ export default function PortfolioModal({ portfolio, mode, onClose, onSave }) {
                 className="btn btn-mod btn-gray btn-medium btn-round"
                 onClick={onClose}
               >
-                {t('cancel')}
+                {t('common.cancel')}
               </button>
               <button
                 type="submit"
                 className="btn btn-mod btn-medium btn-round"
               >
-                {t('save')}
+                {t('common.save')}
               </button>
             </div>
           </form>

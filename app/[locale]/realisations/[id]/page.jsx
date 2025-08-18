@@ -110,7 +110,19 @@ export default async function SingleProject(props) {
                         <div className="col-sm-4">
                           <b>Services :</b>
                         </div>
-                        <div className="col-sm-8">{portfolioItem.services}</div>
+                         <div className="col-sm-8">
+                          {portfolioItem.services.map((service, index) => {
+                            return (
+                              <a
+                                key={index}
+                                href={`/savoir-faire`}
+                                 className="badge rounded-pill bg-light text-dark me-2 mb-2 text-decoration-none p-2"
+                              >
+                                {service}
+                              </a>
+                            );
+                          })}
+                        </div>
                       </div>
                       <hr className="mb-20" />
                       <div className="text-gray small">

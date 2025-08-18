@@ -20,28 +20,18 @@
         "Directeur général": "Directeur général",
         "Directeur commercial": "Directeur commercial",
         "Cheffe de projet": "Cheffe de projet",
-        "Responsable administrative et opérationnel": "Responsable administrative et opérationnel",
+        "Responsable administrative et opérationnel": "Responsable administrative et opérationnelle",
         "logout": "Se déconnecter",
         "better": "Ils en parlent mieux que",
         "us": "nous !",
-        "testimonial1": "Pour cette deuxième année de collaboration, l’équipe Stand By Me a su faire évoluer notre stand en optimisant ce qui existait déjà, tout en restant engagé dans une démarche RSE. Nous sommes très satisfaits de travailler avec Stand by me, une entreprise locale qui démontre une grande capacité d’adaptation aux besoins spécifiques d’une inter profession. Le montage s’est déroulé sans accroc !",
+        "testimonial1": "Pour cette deuxième année de collaboration, l'équipe Stand By Me a su faire évoluer notre stand en optimisant ce qui existait déjà, tout en restant engagée dans une démarche RSE. Nous sommes très satisfaits de travailler avec Stand By Me, une entreprise locale qui démontre une grande capacité d'adaptation aux besoins spécifiques d'une interprofession. Le montage s'est déroulé sans accroc !",
         "testimonial2": "Nous tenions à vous remercier pour votre aide dans la mise en place de l’UTMB Chamonix qui a été un vrai succès pour HOKA! Votre soutien a été vraiment apprécié, encore merci de votre réactivité sur nos nombreuses demandes!",
-        "testimonial3": "C’est le plus grand stand qu’on ai jamais eu, nous avons à chaque fois de très bons retours de nos clients et partenaires sur vos stands. Je tenais à féliciter vos équipes pour la fluidité de communication, le respect des délais et leur disponibilité. Le démontage du stand a été impeccable. Encore bravo pour cette édition d’A+A qui a été un franc succès"
+        "testimonial3": "C'est le plus grand stand qu'on ait jamais eu, nous avons à chaque fois de très bons retours de nos clients et partenaires sur vos stands. Je tenais à féliciter vos équipes pour la fluidité de communication, le respect des délais et leur disponibilité. Le démontage du stand a été impeccable. Encore bravo pour cette édition d'A+A qui a été un franc succès."
     },
     "common": {
         "backHome": "Retour à la page d'accueil",
         "French": "Français",
-        "English": "Anglais"
-    },
-    "footer": {
-        "company": "À propos",
-        "socialMedia": "Réseaux sociaux",
-        "slogan": "Agence de conceptions d’espaces Stand - Showroom - Retail - Virtuel",
-        "allRight": "Tous droits réservés.",
-        "SavoirFaire": "Savoir-faire",
-        "Réalisations": "Réalisations",
-        "Accueil": "Accueil",
-        "location": "Localisation",
+        "English": "Anglais",
         "loading": "Chargement...",
         "save": "Enregistrer",
         "cancel": "Annuler",
@@ -56,6 +46,16 @@
         "error": "Erreur",
         "warning": "Avertissement",
         "info": "Information"
+    },
+    "footer": {
+        "company": "À propos",
+        "socialMedia": "Réseaux sociaux",
+        "slogan": "Standiste Paris - Agence de création de stands sur mesure - Salon, Foire, Événementiel - Stand VR/AR - Showroom - Retail",
+        "allRight": "Tous droits réservés.",
+        "SavoirFaire": "Savoir-faire",
+        "Réalisations": "Réalisations",
+        "Accueil": "Accueil",
+        "location": "Localisation"
     },
     "notFound": {
         "backHome": "Retour à la page d'accueil",
@@ -94,7 +94,7 @@
         "CAPTATION VIDEO": "CAPTATION VIDEO",
         "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique": "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique.",
         "CAMERA INTELLIGENTE": "CAMERA INTELLIGENTE",
-        "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel": "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel.",
+        "Optimisez l'impact de votre stand grâce à un outil de mesure pensé pour suivre sa performance en temps réel": "Optimisez l'impact de votre stand grâce à un outil de mesure pensé pour suivre sa performance en temps réel.",
         "serviceTitle1": "Design",
         "serviceText1": "Du sourire à l’entrée à l’ambiance musicale, en passant par la sécurité et le service, chaque détail compte pour créer un événement fluide et mémorable.",
         "serviceTitle2": "Conseils",
@@ -102,7 +102,7 @@
         "serviceTitle3": "Production",
         "serviceText3": "Immortalisez vos projets avec des photos et vidéos professionnelles qui valorisent votre savoir-faire et prolongent la vie de vos événements bien au-delà du salon.",
         "Hôtes d’accueil": "Hôtes d’accueil",
-        "Caterin": "Caterin",
+        "Caterin": "Catering",
         "DJ": "DJ",
         "Sécurité Gardiennage": "Sécurité Gardiennage",
         "Stand VR & AR": "Stand VR & AR",
@@ -143,6 +143,7 @@
         "goToLogin": "Déjà un compte ? Par ici"
     },
     "admin": {
+        "welcomeUser": "Bienvenue",
         "dashboard": "Tableau de bord",
         "portfolio": "Projets",
         "team": "Équipe",

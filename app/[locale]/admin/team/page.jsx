@@ -103,10 +103,7 @@ export default function TeamPage() {
                           className="btn btn-mod btn-small btn-circle"
                           onClick={() => handleEdit(member)}
                         >
-                          <i
-                            className="mi-edit-alt
-"
-                          />
+                          <i className="mi-edit-alt" />
                         </button>
                         <button
                           className="btn btn-mod btn-small btn-circle btn-gray"

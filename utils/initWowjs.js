@@ -34,7 +34,7 @@ export function init_wow() {
     }
     var wow_p = new WOW({
       boxClass: "wow-p",
-      animateClass: "animatedfgfg",
+      animateClass: "animated",
       offset: 100,
 
       live: false,

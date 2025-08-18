@@ -110,13 +110,13 @@ export default function PortfolioPage() {
                           className="btn btn-mod btn-small btn-circle"
                           onClick={() => handleEdit(portfolio)}
                         >
-                          <i className="fa fa-edit"></i>
+                          <i className="mi-edit-alt" />
                         </button>
                         <button
                           className="btn btn-mod btn-small btn-circle btn-gray"
                           onClick={() => handleDelete(portfolio.id)}
                         >
-                          <i className="fa fa-trash"></i>
+                          <i className="mi-delete" />
                         </button>
                       </div>
                     </td>

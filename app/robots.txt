@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.standbyme.fr/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+
+# Allow important pages for SEO
+Allow: /fr
+Allow: /en
+Allow: /fr/savoir-faire
+Allow: /en/savoir-faire
+Allow: /fr/realisations
+Allow: /en/realisations

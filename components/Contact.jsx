@@ -13,7 +13,7 @@ export default function Contact() {
   const [address, setAddress] = useState(infos.googleMap1);
 
   return (
-    <section className="page-section pt-0 pb-0" id="contact">
+    <section className="page-section pt-0" id="contact">
       <ParallaxContainer
         className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
         style={{

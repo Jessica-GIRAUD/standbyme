@@ -117,7 +117,6 @@ export default function Hero() {
     >
       <div className="container min-height-100vh d-flex align-items-center pt-100 pb-100 pt-sm-120 pb-sm-120">
         {/* Background Video */}
-        {/* Please replace the video file in folder "video" with your own file */}
         <div className="bg-video-wrapper">
           <video
             ref={videoRef}
@@ -132,15 +131,6 @@ export default function Hero() {
           </video>
           <div className="bg-video-overlay bg-dark-alpha-50" />
         </div>
-        {/*  <a
-          onClick={toggleMuteUnmute}
-          href="#"
-          role="button"
-          className="bg-video-button-muted"
-        >
-          <i className={`mi-volume-${isMuted ? 'up' : 'off'}`} />
-          <span className="visually-hidden">Volume On</span>
-        </a> */}
         <a
           onClick={togglePlayPause}
           href="#"

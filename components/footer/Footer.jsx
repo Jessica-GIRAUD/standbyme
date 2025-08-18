@@ -22,7 +22,7 @@ export default function Footer({ dark = false }) {
     <footer
       className={`page-section footer ${
         dark ? 'bg-dark-2 light-content dark' : 'bg-gray-light-1'
-      }  pb-30`}
+      } pb-30`}
     >
       <div className="container">
         <div className="row pb-120 pb-sm-80 pb-xs-50">

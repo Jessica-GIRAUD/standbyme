@@ -37,7 +37,7 @@ export const portfolios = [
     title: 'INTER RHONE – WINE PARIS 2025',
     client: 'INTER RHONE',
     descr: 'Porte de Versailles – 1600m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2025,
@@ -76,7 +76,7 @@ export const portfolios = [
     title: 'CHAMPAGNE VIRGINIE T – Wines Paris 2025',
     client: 'CHAMPAGNE VIRGINIE T',
     descr: 'Porte de Versailles – 21m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2025,
@@ -107,7 +107,7 @@ export const portfolios = [
     title: 'GUY DEGRENNE – SIRHA 2025',
     client: 'GUY DEGRENNE',
     descr: 'Lyon – 36m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
 
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
@@ -155,7 +155,7 @@ export const portfolios = [
     title: 'WFS – Air Cargo 2024',
     client: 'WFS',
     descr: 'Miami, Floride – 112m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2025,
@@ -186,7 +186,7 @@ export const portfolios = [
     title: 'GAUTIER SEMENCES – Fruit Attraction 2024',
     client: 'GAUTIER SEMENCES',
     descr: 'Madrid – 36m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -233,7 +233,7 @@ export const portfolios = [
     title: 'DELTA PLUS – Expoprotection 2024',
     client: 'DELTA PLUS',
     descr: 'Porte de Versailles – 98m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -264,7 +264,7 @@ export const portfolios = [
     title: 'INTER RHONE – WINE PARIS 2024',
     client: 'INTER PHONE',
     descr: 'Porte de Versailles – 1505m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -307,7 +307,7 @@ export const portfolios = [
     title: 'HOKA – UTMB 2024',
     client: 'HOKA',
     descr: 'Chamonix – 175m² + R+1 93m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -354,7 +354,7 @@ export const portfolios = [
     title: 'HOKA – Challenge ROTH 2024',
     client: 'HOKA',
     descr: 'Nuremberg – 135m² + R+1 135m² + R+2 45m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -389,7 +389,7 @@ export const portfolios = [
     title: 'VOCALCOM – All4Customers 2024',
     client: 'VOCALCOM',
     descr: '52m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -428,7 +428,7 @@ export const portfolios = [
     title: 'SONY – Salon de la photo 2024',
     client: 'SONY',
     descr: 'La Villette – 92m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -447,7 +447,7 @@ export const portfolios = [
     title: 'LSL – NHA 2024',
     client: 'LSL',
     descr: 'Paris parc floral – 54m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -482,7 +482,7 @@ export const portfolios = [
     title: 'SCHNEIDER – SYSTEME U 2024',
     client: 'SCHNEIDER',
     descr: 'Nantes – 36m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -505,7 +505,7 @@ export const portfolios = [
     title: 'MC CAIN – SIAL 2024',
     client: 'MC CAIN',
     descr: 'Paris Nord Villepinte – 68m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -552,7 +552,7 @@ export const portfolios = [
     title: 'FRESH TROPICAL – SIAL 2024',
     client: 'FRESH TROPICAL',
     descr: 'Paris Nord Villepinte – 182m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -589,7 +589,7 @@ export const portfolios = [
     title: 'CEVITAL – SIAL 2024',
     client: 'CEVITAL',
     descr: 'Paris Nord Villepinte – 32m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -616,7 +616,7 @@ export const portfolios = [
     title: 'CITINNOV – SMCL 2024',
     client: 'CITINNOV',
     descr: 'Porte de Versailles – 25m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
@@ -647,7 +647,7 @@ export const portfolios = [
     title: 'INCA – SMCL 2024',
     client: 'INCA',
     descr: 'Porte de Versailles – 18m²',
-    services: 'Lorem ipsum dolor sit amet conseur adipisci inerene.',
+    services: ['VR', 'Video Captation'],
     details:
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,

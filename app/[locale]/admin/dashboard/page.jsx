@@ -49,7 +49,7 @@ export default function Dashboard() {
             <div className="card-body">
               <h3 className="card-title h5 mb-20">{t("companyInfo")}</h3>
               <p className="card-text mb-20">{t("companyDetails.company")}</p>
-              <Link href="/admin/company-info" className="btn btn-mod btn-border btn-round btn-small">
+              <Link href="/admin/company" className="btn btn-mod btn-border btn-round btn-small">
                 {t("manageInfo")}
               </Link>
             </div>

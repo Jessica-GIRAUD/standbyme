@@ -6,7 +6,7 @@ import { redirect, useRouter } from 'next/navigation';
 export default function LoginForm() {
   const t = useTranslations('login');
   const router = useRouter();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -71,6 +71,7 @@ export default function LoginForm() {
                   aria-required="true"
                   disabled={isLoading}
                   onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="email"
                 />
               </div>
               {/* Password */}
@@ -90,6 +91,7 @@ export default function LoginForm() {
                     aria-required="true"
                     disabled={isLoading}
                     onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
                   />
                   <button
                     type="button"

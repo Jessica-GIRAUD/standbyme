@@ -8,7 +8,7 @@ import { getTranslations } from 'next-intl/server';
 export default async function AdminLayout({ children }) {
   const t = await getTranslations('admin');
 
-  const token = cookies().get('token')?.value;
+  const token = await cookies().get('token')?.value;
   const session = getSession(token);
 
   if (!session) {
@@ -32,7 +32,10 @@ export default async function AdminLayout({ children }) {
               >
                 <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
                 <div className="container position-relative">
-                  Welcome {session.name}  {children}
+                  <div className="mb-3">
+                    {t('welcomeUser')} {session.name},
+                  </div>
+                  {children}
                 </div>
               </ParallaxContainer>
             </section>
