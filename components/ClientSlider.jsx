@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { clients } from '@/data/brands';
-import Image from 'next/image';
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { clients } from "@/data/clients";
+import Image from "next/image";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function ClientSlider() {
   return (
@@ -29,7 +29,7 @@ export default function ClientSlider() {
       className="small-item-carousel black owl-carousel mb-0 autoplay owl-theme"
       style={{
         opacity: 1,
-        display: 'block',
+        display: "block",
       }}
     >
       {/* Team item */}
@@ -38,10 +38,17 @@ export default function ClientSlider() {
           <div className="logo-item">
             <Image
               src={elm.imgSrc}
-              width="150"
-              height="90"
+              width={0}
+              height={0}
+              sizes="100vw"
               alt={elm.name}
               className="image-filter"
+              style={{
+                width: "auto",
+                height: "120px",
+                maxWidth: "160px",
+                objectFit: "contain",
+              }}
             />
           </div>
         </SwiperSlide>

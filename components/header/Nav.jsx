@@ -35,17 +35,25 @@ export default function Navigation({ links, animateY = false }) {
         links.map((link, index) => (
           <li key={index}>
             <Link
-              className={
-                pathname.split('/')[1] == link.href.split('/')[1]
-                  ? 'active'
-                  : ''
-              }
+              className={(() => {
+                // Handle home page case
+                if (
+                  link.href === '/' &&
+                  (pathname === '/' || pathname.split('/').length <= 2)
+                ) {
+                  return 'active';
+                }
+                // Handle other pages
+                const currentPage = pathname.split('/')[2] || '';
+                const linkPage = link.href.split('/')[1] || '';
+                return currentPage === linkPage ? 'active' : '';
+              })()}
               href={link.href}
             >
               {animateY ? (
-                <span className="btn-animate-y">
-                  <span className="btn-animate-y-1">{link.text}</span>
-                  <span className="btn-animate-y-2" aria-hidden="true">
+                <span className='btn-animate-y'>
+                  <span className='btn-animate-y-1'>{link.text}</span>
+                  <span className='btn-animate-y-2' aria-hidden='true'>
                     {t(link.text)}
                   </span>
                 </span>
@@ -57,12 +65,12 @@ export default function Navigation({ links, animateY = false }) {
         ))}
       {!links[0].href?.includes('/') &&
         links.map((link, index) => (
-          <li className="scrollspy-link" key={index}>
-            <a onClick={() => closeMobileMenu()} className="" href={link.href}>
+          <li className='scrollspy-link' key={index}>
+            <a onClick={() => closeMobileMenu()} className='' href={link.href}>
               {animateY ? (
-                <span className="btn-animate-y">
-                  <span className="btn-animate-y-1">{link.text}</span>
-                  <span className="btn-animate-y-2" aria-hidden="true">
+                <span className='btn-animate-y'>
+                  <span className='btn-animate-y-1'>{link.text}</span>
+                  <span className='btn-animate-y-2' aria-hidden='true'>
                     {t(link.text)}
                   </span>
                 </span>

@@ -1,37 +1,36 @@
 export const services = [
   {
-    width: 48,
+    width: 36,
     height: 64,
-    path: 'M16 18.75l32 32-4.25 4.25-32-32zM18.625 27l25.125 25.125 1.375-1.375-25.125-25.25zM15 13v-5h2v5h-2zM15 38.5v-5h2v5h-2zM27 24v-2h5v2h-5zM0 24v-2h5v2h-5zM5.875 11.75l3.625 3.625-1.5 1.375-3.5-3.5zM9.5 31.25l-3.625 3.5-1.375-1.375 3.5-3.5zM27.5 13.25l-3.5 3.5-1.5-1.375 3.625-3.625z',
+    path: 'M36 21.625c0 3.875-1.625 7.375-3.75 10.375v0c-1.375 1.875-2.75 3.5-4 5.625-2.75 4.75-2.25 9.125-2.25 10.25v0.125h-16v-0.125c0-0.875 0.375-5.5-2.375-10.25-1.25-2.125-2.5-3.75-3.875-5.625v0c-2.125-3-3.75-6.5-3.75-10.375 0-9.75 8.25-17.625 18-17.625s18 7.875 18 17.625zM29.875 31.75l0.75-1c2-2.75 3.375-5.875 3.375-9.125 0-4.125-2-8.125-5-11.125s-6.875-4.5-11-4.5-8 1.5-11 4.5-5 7-5 11.125c0 3.25 1.375 6.375 3.375 9.125l2.375 3.25c0.625 0.75 1.125 1.625 1.625 2.625 2.125 3.625 2.625 7.25 2.625 9.375h2v-14l-4-8h2.125l3.875 8v14h4v-14l3.875-8h2.125l-4 8v14h2c0-2.125 0.5-5.625 2.625-9.375 1-1.75 2-3.125 3-4.5 0.125-0.125 0.125-0.25 0.25-0.375zM14 60v-2h8v2h-8zM12 56v-2h12v2h-12zM12 52v-2h12v2h-12z',
     title: 'serviceTitle1',
     text: 'serviceText1',
-    items: [
-      { name: 'Hôtes d’accueil' },
-      { name: 'Caterin' },
-      { name: 'DJ' },
-      { name: 'Sécurité Gardiennage' },
-    ],
+    objectif: 'serviceObjectif1',
   },
   {
-    width: 60,
+    width: 52,
     height: 64,
-    path: 'M60 48h-22v2h8v2h-32.125v-2h8v-2h-21.875v-36h60v36zM2 14v32h56v-32h-56z',
+    path: 'M16 18.75l32 32-4.25 4.25-32-32zM18.625 27l25.125 25.125 1.375-1.375-25.125-25.25zM15 13v-5h2v5h-2zM15 38.5v-5h2v5h-2zM27 24v-2h5v2h-5zM0 24v-2h5v2h-5zM5.875 11.75l3.625 3.625-1.5 1.375-3.5-3.5zM9.5 31.25l-3.625 3.5-1.375-1.375 3.5-3.5zM27.5 13.25l-3.5 3.5-1.5-1.375 3.625-3.625z',
+
     title: 'serviceTitle2',
     text: 'serviceText2',
-    items: [
-      { name: 'Stand VR & AR' },
-      { name: 'Datas ROI' },
-      { name: 'Collecte de leads' },
-    ],
+    objectif: 'serviceObjectif2',
+  },
+  {
+    width: 50,
+    height: 64,
+    path: 'M46 16h6v40h-52v-40h6v-2h4v2h6v-4c0-2.25 1.25-4 3.625-4h12.375c2.375 0 4 1.75 4 4v4h6v-2h4v2zM18 16v0h16v-3.75c0-1.25-0.875-2.25-2.125-2.25h-12.125c-1.375 0-1.75 1-1.75 2.25v3.75zM50 54v-28h-48v28h48zM50 24v-6h-4v2h-4v-2h-32v2h-4v-2h-4v6h48z',
+
+    title: 'serviceTitle3',
+    text: 'serviceText3',
+    objectif: 'serviceObjectif3',
   },
   {
     width: 50,
     height: 64,
     path: 'M0 11h50v42h-50v-42zM9 51v-6h-7v6h7zM9 43v-6h-7v6h7zM9 35v-6h-7v6h7zM9 27v-6h-7v6h7zM9 19v-6h-7v6h7zM39 51v-18h-28v18h28zM39 31v-18h-28v18h28zM48 51v-6h-7v6h7zM48 43v-6h-7v6h7zM48 35v-6h-7v6h7zM48 27v-6h-7v6h7zM48 19v-6h-7v6h7z',
-    title: 'Contenu',
-    text: '',
-    title: 'serviceTitle3',
-    text: 'serviceText3',
-    items: [{ name: 'Photos pro' }, { name: 'Vidéos pro' }],
+    title: 'serviceTitle4',
+    text: 'serviceText4',
+    objectif: 'serviceObjectif4',
   },
 ];

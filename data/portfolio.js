@@ -262,7 +262,7 @@ export const portfolios = [
       },
     ],
     title: 'INTER RHONE – WINE PARIS 2024',
-    client: 'INTER PHONE',
+    client: 'INTER RHONE',
     descr: 'Porte de Versailles – 1505m²',
     services: ['VR', 'Video Captation'],
     details:
@@ -652,4 +652,18 @@ export const portfolios = [
       'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
     date: 2024,
   },
+  /*  {
+    id: 20,
+    type: 'external',
+    mix: 'outdoor',
+    thumbnail: '/assets/images/portfolio/thumbnail/hoka-roth_1.jpg',
+    images: [],
+    title: 'HOKA – Challenge ROTH 2024',
+    client: 'HOKA',
+    descr: 'Nuremberg – 135m² + R+1 135m² + R+2 45m²',
+    services: [],
+    details:
+      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    date: 2025,
+  }, */
 ];

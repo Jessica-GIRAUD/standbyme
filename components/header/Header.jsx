@@ -1,19 +1,19 @@
-'use client';
-import { toggleMobileMenu } from '@/utils/toggleMobileMenu';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import React from 'react';
-import Navigation from './Nav';
-import LanguageSelect from './LanguageSelect';
-import { usePathname } from 'next/navigation';
-import { infos } from '@/data/infos';
-import { useTranslations } from 'next-intl';
+"use client";
+import { toggleMobileMenu } from "@/utils/toggleMobileMenu";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import React from "react";
+import Navigation from "./Nav";
+import LanguageSelect from "./LanguageSelect";
+import { usePathname } from "next/navigation";
+import { infos } from "@/data/infos";
+import { useTranslations } from "next-intl";
 
 export default function Header({ links }) {
-  const t = useTranslations('home');
+  const t = useTranslations("home");
 
   const pathname = usePathname();
-  const isRealPage = pathname.includes('realisations');
+  const isRealPage = pathname.includes("realisations");
 
   return (
     <div className="main-nav-sub full-wrapper">
@@ -25,18 +25,18 @@ export default function Header({ links }) {
           <Image
             src="/assets/images/logo-color.png"
             alt={infos.company}
-            width={105}
+            width={140}
             height={34}
             className="light-mode-logo"
           />
           <Image
             src={
               isRealPage
-                ? '/assets/images/logo-color.png'
-                : '/assets/images/logo-white.png'
+                ? "/assets/images/logo-color.png"
+                : "/assets/images/logo-white.png"
             }
             alt={infos.company}
-            width={105}
+            width={140}
             height={34}
             className="dark-mode-logo"
           />
@@ -67,13 +67,13 @@ export default function Header({ links }) {
             <Link href="#contact" className="opacity-1 no-hover">
               <span className="link-hover-anim underline" data-link-animate="y">
                 <span className="link-strong link-strong-unhovered">
-                  {t('Contact')}
+                  {t("Contact")}
                 </span>
                 <span
                   className="link-strong link-strong-hovered"
                   aria-hidden="true"
                 >
-                  {t('Contact')}
+                  {t("Contact")}
                 </span>
               </span>
             </Link>

@@ -17,37 +17,37 @@ export default function CompanyInfoPage() {
   };
 
   return (
-    <div className="company-info-admin-page">
-      <div className="row mb-30">
-        <div className="col-md-6">
-          <h2 className="section-title">Informations de l'Entreprise</h2>
+    <div className='company-info-admin-page'>
+      <div className='row mb-30'>
+        <div className='col-md-6'>
+          <h2 className='section-title'>Informations de l'Entreprise</h2>
         </div>
-        <div className="col-md-6 text-end">
+        <div className='col-md-6 text-end'>
           <button
-            className="btn btn-mod btn-medium btn-round"
+            className='btn btn-mod btn-medium btn-round'
             onClick={handleEdit}
           >
-              <i className="mi-edit" />  Modifier les informations
+            <i className='mi-edit' /> Modifier les informations
           </button>
         </div>
       </div>
 
-      <div className="row">
-        <div className="col-md-6 mb-40">
-          <div className="card">
-            <div className="card-body">
-              <h3 className="card-title h5 mb-20">Informations générales</h3>
-              <ul className="list-unstyled">
-                <li className="mb-10">
+      <div className='row'>
+        <div className='col-md-6 mb-40'>
+          <div className='card'>
+            <div className='card-body'>
+              <h3 className='card-title h5 mb-20'>Informations générales</h3>
+              <ul className='list-unstyled'>
+                <li className='mb-10'>
                   <strong>Entreprise:</strong> {infos.company}
                 </li>
-                <li className="mb-10">
-                  <strong>Contact:</strong> {infos.contactName}
+                <li className='mb-10'>
+                  <strong>Contact:</strong> {infos.commercialName}
                 </li>
-                <li className="mb-10">
-                  <strong>Téléphone:</strong> {infos.phoneNumber}
+                <li className='mb-10'>
+                  <strong>Téléphone:</strong> {infos.phoneNumberCommercial}
                 </li>
-                <li className="mb-10">
+                <li className='mb-10'>
                   <strong>Email:</strong> {infos.email}
                 </li>
               </ul>
@@ -55,16 +55,16 @@ export default function CompanyInfoPage() {
           </div>
         </div>
 
-        <div className="col-md-6 mb-40">
-          <div className="card">
-            <div className="card-body">
-              <h3 className="card-title h5 mb-20">Adresses</h3>
-              <div className="mb-20">
-                <h4 className="h6">Adresse 1:</h4>
+        <div className='col-md-6 mb-40'>
+          <div className='card'>
+            <div className='card-body'>
+              <h3 className='card-title h5 mb-20'>Adresses</h3>
+              <div className='mb-20'>
+                <h4 className='h6'>Adresse 1:</h4>
                 <p>{infos.address1}</p>
               </div>
               <div>
-                <h4 className="h6">Adresse 2:</h4>
+                <h4 className='h6'>Adresse 2:</h4>
                 <p>{infos.address2}</p>
               </div>
             </div>

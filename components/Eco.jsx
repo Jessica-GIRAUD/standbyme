@@ -1,25 +1,25 @@
-'use client';
-import { ecoFeatures } from '@/data/features';
-import React, { useEffect, useRef } from 'react';
-import ParallaxContainer from './common/ParallaxContainer';
-import AnimatedText from './common/AnimatedText';
-import { useTranslations } from 'next-intl';
+"use client";
+import { ecoFeatures } from "@/data/eco";
+import React, { useEffect, useRef } from "react";
+import ParallaxContainer from "./common/ParallaxContainer";
+import AnimatedText from "./common/AnimatedText";
+import { useTranslations } from "next-intl";
 
 export default function Eco() {
-  const t = useTranslations('savoir-faire');
+  const t = useTranslations("savoir-faire");
 
   const isotopContainer = useRef();
   const initIsotop = async () => {
-    const Isotope = (await import('isotope-layout')).default;
-    const imagesloaded = (await import('imagesloaded')).default;
+    const Isotope = (await import("isotope-layout")).default;
+    const imagesloaded = (await import("imagesloaded")).default;
 
     // Initialize Isotope in the mounted hook
     const isotope = new Isotope(isotopContainer.current, {
-      itemSelector: '.col-md-6',
-      layoutMode: 'masonry', // or 'fitRows', depending on your layout needs
+      itemSelector: ".col-md-6",
+      layoutMode: "masonry", // or 'fitRows', depending on your layout needs
     });
     imagesloaded(isotopContainer.current).on(
-      'progress',
+      "progress",
       function (instance, image) {
         // Trigger Isotope layout
         isotope.layout();
@@ -39,7 +39,7 @@ export default function Eco() {
         className="page-section bg-gray-light-1 bg-light-alpha-70 parallax-5"
         style={{
           backgroundImage:
-            'url(/assets/images/full-width-images/page-title-bg-5.jpg)',
+            "url(/assets/images/full-width-images/page-title-bg-5.jpg)",
         }}
       >
         <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
@@ -48,7 +48,7 @@ export default function Eco() {
             <div className="row">
               <div className="col-md-8 offset-md-2">
                 <h3 className="section-title mb-30">
-                  <AnimatedText text={t('eco')} />
+                  <AnimatedText text={t("eco")} />
                 </h3>
               </div>
             </div>
@@ -61,11 +61,9 @@ export default function Eco() {
           {/* Section Text */}
           <div className="col-lg-5 col-xl-5 offset-xl-1 d-flex align-items-center mb-md-60 mb-sm-40">
             <div className="w-100">
-              <h3 className="section-title mb-30">
-                {t('ecoMainTitle')}
-              </h3>
+              <h3 className="section-title mb-30">{t("ecoMainTitle")}</h3>
               <p className="section-descr mb-50 mb-sm-30">
-              {t('ecoMainSubtitle')}
+                {t("ecoMainSubtitle")}
               </p>
             </div>
           </div>
@@ -82,7 +80,7 @@ export default function Eco() {
                   <div
                     key={i}
                     className={`col-md-6 ${
-                      i == 1 ? 'mt-50 mt-sm-0' : ''
+                      i == 1 ? "mt-50 mt-sm-0" : ""
                     } mb-30`}
                   >
                     <div className="alt-features-item box-shadow text-center mt-0">
