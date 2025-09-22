@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "lint": "next lint",
-    "build": "next build && next export",
-    "export": "next export",
-    "start": "npx serve@latest out"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@popperjs/core": "2.11.8",
