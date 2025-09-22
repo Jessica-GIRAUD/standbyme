@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Preloader() {
   return (
@@ -7,11 +7,11 @@ export default function Preloader() {
         <div className="custom-loader-container">
           <div className="custom-loader-icon">
             <Image
-              src="/assets/images/logo-white.png"
+              src="/assets/images/logo-white.webp"
               alt="Preloader"
               width={400}
               height={400}
-              style={{ height: 'auto' }}
+              style={{ height: "auto" }}
             />
           </div>
         </div>

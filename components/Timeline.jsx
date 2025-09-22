@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import React, { useRef, useState } from "react";
 
 export default function Timeline() {
-  const t = useTranslations('savoir-faire');
+  const t = useTranslations("savoir-faire");
 
   const [isPlaying, setIsPlaying] = useState([false, false]);
   const videoRef1 = useRef(null);
@@ -31,29 +31,29 @@ export default function Timeline() {
 
   const timelineItems = [
     {
-      title: 'STAND VIRTUEL',
+      title: "STAND VIRTUEL",
       description:
         "Plongez au cœur de l'action avec notre visite virtuelle du stand, où vous pouvez explorer chaque détail, admirer les produits et ressentir l'ambiance du stand",
-      btn: 'Découvrir le stand',
-      link: 'https://deltaplus-preventica2023.fr/',
-      image: '/assets/images/delta_vr.png',
+      btn: "Découvrir le stand",
+      link: "https://deltaplus-preventica2023.fr/",
+      image: "/assets/images/delta_vr.webp",
     },
     {
-      title: 'CAPTATION VIDEO',
+      title: "CAPTATION VIDEO",
       description:
-        'Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique',
-      videoUrl: '/assets/videos/media_2.mp4',
+        "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique",
+      videoUrl: "/assets/videos/media_2.mp4",
       ref: videoRef1,
       place: 0,
     },
     {
-      title: 'CAMERA INTELLIGENTE',
+      title: "CAMERA INTELLIGENTE",
       description:
-        'Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel',
-      videoUrl: '/assets/videos/media_1.mp4',
+        "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel",
+      videoUrl: "/assets/videos/media_1.mp4",
       ref: videoRef2,
       place: 1,
-      poster: '/assets/images/cam.png',
+      poster: "/assets/images/cam.webp",
     },
   ];
 
@@ -62,7 +62,7 @@ export default function Timeline() {
       {timelineItems.map((el, index) => {
         return (
           <div className="row timeline-item mb-5" key={index}>
-            <div className={`col-md-6 ${index % 2 === 0 ? 'order-md-2' : ''}`}>
+            <div className={`col-md-6 ${index % 2 === 0 ? "order-md-2" : ""}`}>
               <div className="timeline-content">
                 <div className="position-relative">
                   {el.videoUrl ? (
@@ -75,8 +75,7 @@ export default function Timeline() {
                       playsInline
                       width={600}
                       height={400}
-                      controls 
-                      
+                      controls
                     />
                   ) : (
                     <Image
@@ -107,9 +106,9 @@ export default function Timeline() {
                     >
                       <i
                         className={`mi-${
-                          isPlaying[el.place] ? 'pause' : 'play'
+                          isPlaying[el.place] ? "pause" : "play"
                         } ms-2 fs-5`}
-                        style={{ color: '#fff' }}
+                        style={{ color: "#fff" }}
                       />
                       <span className="visually-hidden">Pause</span>
                     </a>

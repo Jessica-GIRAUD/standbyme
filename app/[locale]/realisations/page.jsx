@@ -1,22 +1,22 @@
-import ParallaxContainer from '@/components/common/ParallaxContainer';
+import ParallaxContainer from "@/components/common/ParallaxContainer";
 
-import Header from '@/components/header/Header';
-import AnimatedText from '@/components/common/AnimatedText';
-import { menuItems } from '@/data/menu';
-import Portfolio from '@/components/Portfolio';
-import Footer from '@/components/footer/Footer';
-import Contact from '@/components/Contact';
-import { infos } from '@/data/infos';
-import { getTranslations } from 'next-intl/server';
+import Header from "@/components/header/Header";
+import AnimatedText from "@/components/common/AnimatedText";
+import { menuItems } from "@/data/menu";
+import Portfolio from "@/components/Portfolio";
+import Footer from "@/components/footer/Footer";
+import Contact from "@/components/Contact";
+import { infos } from "@/data/infos";
+import { getTranslations } from "next-intl/server";
 
 export const metadata = {
   title: `${infos.company} - Réalisations`,
   description:
-    'Stand By Me, standiste sur Paris, conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
+    "Stand By Me, standiste sur Paris, conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.",
 };
 
 export default async function Projects() {
-  const t = await getTranslations('portfolio');
+  const t = await getTranslations("portfolio");
 
   return (
     <>
@@ -31,7 +31,7 @@ export default async function Projects() {
                 className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
                 style={{
                   backgroundImage:
-                    'url(/assets/images/full-width-images/section-bg-1.jpg)',
+                    "url(/assets/images/full-width-images/section-bg-1.webp)",
                 }}
               >
                 <div className="container position-relative pt-30 pt-sm-50">
@@ -43,7 +43,7 @@ export default async function Projects() {
                             className="wow charsAnimIn"
                             data-splitting="chars"
                           >
-                            <AnimatedText text={t('portfolio')} />
+                            <AnimatedText text={t("portfolio")} />
                           </span>
                         </h1>
                         <div className="row">
@@ -53,7 +53,7 @@ export default async function Projects() {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              {t('everyDetailCounts')}
+                              {t("everyDetailCounts")}
                             </p>
                           </div>
                         </div>

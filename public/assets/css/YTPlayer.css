@@ -227,16 +227,16 @@
   box-sizing: border-box;
 }
 /* .YTPOverlay.raster {
-  background: url(../images/raster.png);
+  background: url(../images/raster.webp);
 }
 .YTPOverlay.raster.retina {
-  background: url(../images/raster@2x.png);
+  background: url(../images/raster@2x.webp);
 }
 .YTPOverlay.raster-dot {
-  background: url(../images/raster_dot.png);
+  background: url(../images/raster_dot.webp);
 }
 .YTPOverlay.raster-dot.retina {
-  background: url(../images/raster_dot@2x.png);
+  background: url(../images/raster_dot@2x.webp);
 } */
 .mb_YTPBar .simpleSlider {
   position: relative;

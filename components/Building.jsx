@@ -1,12 +1,12 @@
-import Footer from '@/components/footer/Footer';
-import Image from 'next/image';
-import React from 'react';
-import { Link } from '@/i18n/navigation';
-import { infos } from '@/data/infos';
-import { getTranslations } from 'next-intl/server';
+import Footer from "@/components/footer/Footer";
+import Image from "next/image";
+import React from "react";
+import { Link } from "@/i18n/navigation";
+import { infos } from "@/data/infos";
+import { getTranslations } from "next-intl/server";
 
 export default async function Building() {
-  const t = await getTranslations('construction');
+  const t = await getTranslations("construction");
   return (
     <>
       <div className="theme-main">
@@ -20,14 +20,14 @@ export default async function Building() {
                 <div className="nav-logo-wrap local-scroll">
                   <Link href={`/`} className="logo">
                     <Image
-                      src="/assets/images/logo-white.png"
+                      src="/assets/images/logo-white.webp"
                       alt={infos.company}
                       width={105}
                       height={34}
                       className="logo-white"
                     />
                     <Image
-                      src="/assets/images/logo-color.png"
+                      src="/assets/images/logo-color.webp"
                       alt={infos.company}
                       width={105}
                       height={34}
@@ -51,9 +51,9 @@ export default async function Building() {
                     <li>
                       <a
                         href={`tel:${infos.phoneNumberRef}`}
-                        style={{ height: '30px' }}
+                        style={{ height: "30px" }}
                       >
-                        <i className="mi-call align-center" />{' '}
+                        <i className="mi-call align-center" />{" "}
                         {infos.phoneNumber}
                       </a>
                     </li>
@@ -69,7 +69,7 @@ export default async function Building() {
                 className="home-section bg-dark-1 bg-dark-alpha-60 light-content parallax-5"
                 style={{
                   backgroundImage:
-                    'url(/assets/images/full-width-images/section-bg-3.jpg)',
+                    "url(/assets/images/full-width-images/section-bg-3.webp)",
                 }}
                 id="home"
               >
@@ -81,7 +81,7 @@ export default async function Building() {
                         <div className="hs-wrap">
                           <div className="wow fadeInUp" data-wow-delay=".1s">
                             <h1 className="hs-title-12 mb-40 mb-sm-30">
-                              {t('sorry')}
+                              {t("sorry")}
                             </h1>
                           </div>
                           <div
@@ -89,10 +89,10 @@ export default async function Building() {
                             data-wow-delay=".2s"
                           >
                             <h2 className="section-descr mb-20">
-                              {t('underConstruction')}
+                              {t("underConstruction")}
                             </h2>
                             <p className="opacity-065 mb-0">
-                              {t('comeBackLater')}
+                              {t("comeBackLater")}
                             </p>
                           </div>
                           <div
@@ -104,7 +104,7 @@ export default async function Building() {
                               className="btn btn-mod btn-w btn-round btn-medium btn-hover-anim"
                             >
                               <i className="mi-arrow-left size-24 align-center" />
-                              <span>{t('backHome')}</span>
+                              <span>{t("backHome")}</span>
                             </Link>
                           </div>
                         </div>

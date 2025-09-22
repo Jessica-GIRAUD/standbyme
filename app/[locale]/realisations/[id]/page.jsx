@@ -1,24 +1,24 @@
-import Footer from '@/components/footer/Footer';
-import Image from 'next/image';
-import ParallaxContainer from '@/components/common/ParallaxContainer';
+import Footer from "@/components/footer/Footer";
+import Image from "next/image";
+import ParallaxContainer from "@/components/common/ParallaxContainer";
 
-import Header from '@/components/header/Header';
-import Contact from '@/components/Contact';
-import AnimatedText from '@/components/common/AnimatedText';
-import { menuItems } from '@/data/menu';
-import { portfolios } from '../../../../data/portfolio';
-import { infos } from '@/data/infos';
-import { getTranslations } from 'next-intl/server';
+import Header from "@/components/header/Header";
+import Contact from "@/components/Contact";
+import AnimatedText from "@/components/common/AnimatedText";
+import { menuItems } from "@/data/menu";
+import { portfolios } from "../../../../data/portfolio";
+import { infos } from "@/data/infos";
+import { getTranslations } from "next-intl/server";
 
 export const metadata = {
   title: `${infos.company} - Projet`,
   description:
-    'Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.',
+    "Stand By Me conçoit et réalise des stands sur mesure pour vos événements en France et à l’international. Design épuré, créativité, savoir-faire : faites rayonner votre marque avec un stand à votre image.",
 };
 
 export default async function SingleProject(props) {
   const params = await props.params;
-  const t = await getTranslations('portfolio');
+  const t = await getTranslations("portfolio");
 
   const portfolioItem =
     portfolios.filter((elm) => elm.id == params.id)[0] || portfolioItem[0];
@@ -36,7 +36,7 @@ export default async function SingleProject(props) {
                 className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
                 style={{
                   backgroundImage:
-                    'url(/assets/images/full-width-images/section-bg-1.jpg)',
+                    "url(/assets/images/full-width-images/section-bg-1.webp)",
                 }}
               >
                 <div className="container position-relative pt-30 pt-sm-50">
@@ -51,8 +51,8 @@ export default async function SingleProject(props) {
                             className="btn btn-mod btn-small btn-border btn-circle"
                             data-btn-animate="y"
                           >
-                            <i className="mi-arrow-left align-center size-18" />{' '}
-                            {t('backPortfolio')}
+                            <i className="mi-arrow-left align-center size-18" />{" "}
+                            {t("backPortfolio")}
                           </a>
                         </div>
                         <h1 className="hs-title-1 mb-20">
@@ -90,7 +90,7 @@ export default async function SingleProject(props) {
                   {/* Project Details */}
                   <div className="col-md-4 mb-sm-40 wow fadeInUp">
                     <div className="block-sticky">
-                      <h2 className="h3 mb-20"> {t('details')}</h2>
+                      <h2 className="h3 mb-20"> {t("details")}</h2>
                       <hr className="mb-20" />
                       <div className="row text-gray small">
                         <div className="col-sm-4">
@@ -110,13 +110,13 @@ export default async function SingleProject(props) {
                         <div className="col-sm-4">
                           <b>Services :</b>
                         </div>
-                         <div className="col-sm-8">
+                        <div className="col-sm-8">
                           {portfolioItem.services.map((service, index) => {
                             return (
                               <a
                                 key={index}
                                 href={`/savoir-faire`}
-                                 className="badge rounded-pill bg-light text-dark me-2 mb-2 text-decoration-none p-2"
+                                className="badge rounded-pill bg-light text-dark me-2 mb-2 text-decoration-none p-2"
                               >
                                 {service}
                               </a>

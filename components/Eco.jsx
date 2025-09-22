@@ -39,7 +39,7 @@ export default function Eco() {
         className="page-section bg-gray-light-1 bg-light-alpha-70 parallax-5"
         style={{
           backgroundImage:
-            "url(/assets/images/full-width-images/page-title-bg-5.jpg)",
+            "url(/assets/images/full-width-images/page-title-bg-5.webp)",
         }}
       >
         <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />

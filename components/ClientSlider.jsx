@@ -38,9 +38,9 @@ export default function ClientSlider() {
           <div className="logo-item">
             <Image
               src={elm.imgSrc}
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={160}
+              height={120}
+              sizes="(max-width: 768px) 50vw, (max-width: 1199px) 25vw, 16.67vw"
               alt={elm.name}
               className="image-filter"
               style={{
@@ -49,6 +49,9 @@ export default function ClientSlider() {
                 maxWidth: "160px",
                 objectFit: "contain",
               }}
+              priority={i < 6} // Priorité pour les 6 premières images visibles
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
           </div>
         </SwiperSlide>

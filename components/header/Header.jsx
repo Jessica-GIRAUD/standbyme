@@ -23,7 +23,7 @@ export default function Header({ links }) {
       <div className="nav-logo-wrap local-scroll">
         <Link href={`/`} className="logo">
           <Image
-            src="/assets/images/logo-color.png"
+            src="/assets/images/logo-color.webp"
             alt={infos.company}
             width={140}
             height={34}
@@ -32,8 +32,8 @@ export default function Header({ links }) {
           <Image
             src={
               isRealPage
-                ? "/assets/images/logo-color.png"
-                : "/assets/images/logo-white.png"
+                ? "/assets/images/logo-color.webp"
+                : "/assets/images/logo-white.webp"
             }
             alt={infos.company}
             width={140}
