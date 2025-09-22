@@ -598,7 +598,7 @@ export const portfolios = [
     id: 18,
     type: "external",
     mix: "indoor",
-    thumbnail: "/assets/images/portfolio/thumbnail/citinnov_1.JPG",
+    thumbnail: "/assets/images/portfolio/thumbnail/citinnov_1.webp",
     images: [
       {
         imgSrc: "/assets/images/portfolio/citinnov_1.JPG",
