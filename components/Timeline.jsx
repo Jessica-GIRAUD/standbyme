@@ -32,24 +32,21 @@ export default function Timeline() {
   const timelineItems = [
     {
       title: "STAND VIRTUEL",
-      description:
-        "Plongez au cœur de l'action avec notre visite virtuelle du stand, où vous pouvez explorer chaque détail, admirer les produits et ressentir l'ambiance du stand",
+      description: "Jump",
       btn: "Découvrir le stand",
       link: "https://deltaplus-preventica2023.fr/",
       image: "/assets/images/delta_vr.webp",
     },
     {
       title: "CAPTATION VIDEO",
-      description:
-        "Capturez l’essence de vos événements avec nos prises de vues photo et vidéo, accompagnées d’un montage dynamique",
+      description: "Capture",
       videoUrl: "/assets/videos/media_2.mp4",
       ref: videoRef1,
       place: 0,
     },
     {
       title: "CAMERA INTELLIGENTE",
-      description:
-        "Optimisez l’impact de votre stand grâce à un outil mesure pensé pour suivre sa performance en temps réel",
+      description: "Optimise",
       videoUrl: "/assets/videos/media_1.mp4",
       ref: videoRef2,
       place: 1,
