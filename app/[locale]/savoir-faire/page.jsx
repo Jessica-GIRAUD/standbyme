@@ -152,19 +152,16 @@ export default async function SavoirFaire() {
               className="page-section bg-gradient-gray-light-2 bg-scroll"
               id="title"
             >
-              <div className="container">
+              <div className="container pt-50 pb-100 pb-sm-20">
                 <div className="row">
-                  <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-                    <h3 className="section-title mb-50 mb-sm-30">
-                      <span className="wow charsAnimIn" data-splitting="chars">
-                        {t("title3")}
-                      </span>
+                  <div className="col-md-8 offset-md-2">
+                    <h3 className="section-title mb-30">
+                      <AnimatedText text={t("title3")} />
                     </h3>
                   </div>
                 </div>
-
-                <Timeline />
               </div>
+              <Timeline />
             </section>
 
             <section className="page-section">

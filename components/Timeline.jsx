@@ -58,7 +58,11 @@ export default function Timeline() {
     <div className="timeline-container">
       {timelineItems.map((el, index) => {
         return (
-          <div className="row timeline-item mb-5" key={index}>
+          <div
+            className="row timeline-item wow fadeInUp mb-5"
+            key={index}
+            data-wow-delay={`${index * 0.12}s`}
+          >
             <div className={`col-md-6 ${index % 2 === 0 ? "order-md-2" : ""}`}>
               <div className="timeline-content">
                 <div className="position-relative">
