@@ -7,10 +7,12 @@ Sitemap: https://www.standbyme.fr/sitemap.xml
 # Crawl-delay for better server performance
 Crawl-delay: 1
 
-# Block admin areas
-Disallow: /admin/
-Disallow: /login/
-Disallow: /api/
+# Block Next.js internal paths
+Disallow: /_next/
+Disallow: /_error
+Disallow: /_app
+Disallow: /_document
+Disallow: /_api/ns
 
 # Allow important pages for SEO
 Allow: /fr
