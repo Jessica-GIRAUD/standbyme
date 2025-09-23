@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function ClientSlider() {
+export default function Slider() {
   return (
     <Swiper
       spaceBetween={0}

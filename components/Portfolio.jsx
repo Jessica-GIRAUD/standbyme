@@ -56,58 +56,60 @@ export default function Portfolio({ gridClass = '' }) {
   }, []);
 
   return (
-    <div className="full-wrapper position-relative">
-      {/* Works Filter */}
-      <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
-        {filters.map((elm, i) => (
-          <a
-            onClick={() => updateCategory(elm.category)}
-            key={i}
-            className={`filter ${
-              currentCategory == elm.category ? 'active' : ''
-            }`}
-          >
-            {t(elm.name)}
-          </a>
-        ))}
+    <section className="page-section">
+      <div className="full-wrapper position-relative">
+        {/* Works Filter */}
+        <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
+          {filters.map((elm, i) => (
+            <a
+              onClick={() => updateCategory(elm.category)}
+              key={i}
+              className={`filter ${
+                currentCategory == elm.category ? 'active' : ''
+              }`}
+            >
+              {t(elm.name)}
+            </a>
+          ))}
+        </div>
+        {/* End Works Filter */}
+        {/* Works Grid */}
+        <ul
+          ref={isotopContainer}
+          className={`works-grid work-grid-gut clearfix hide-titles hover-white image-lazyload-container ${gridClass} masonry`}
+          id="work-grid"
+        >
+          <Gallery>
+            {portfolios.map((item, index) => {
+              return (
+                <li key={index} className={'work-item mix  ' + item.mix}>
+                  <Link
+                    href={`/realisations/${item.id}`}
+                    className={'work-lightbox-link mfp-image'}
+                  >
+                    <div className="work-img">
+                      <div className="work-img-bg wow scalexIn" />
+                      <Image
+                        width={650}
+                        height={773}
+                        src={item.thumbnail}
+                        alt={item.title}
+                        className="wow fadeIn"
+                        data-wow-delay="1s"
+                      />
+                    </div>
+                    <div className="work-intro text-center">
+                      <h3 className="work-title">{item.title}</h3>
+                      <div className="work-descr">{item.descr}</div>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </Gallery>
+        </ul>
+        {/* End Works Grid */}
       </div>
-      {/* End Works Filter */}
-      {/* Works Grid */}
-      <ul
-        ref={isotopContainer}
-        className={`works-grid work-grid-gut clearfix hide-titles hover-white image-lazyload-container ${gridClass} masonry`}
-        id="work-grid"
-      >
-        <Gallery>
-          {portfolios.map((item, index) => {
-            return (
-              <li key={index} className={'work-item mix  ' + item.mix}>
-                <Link
-                  href={`/realisations/${item.id}`}
-                  className={'work-lightbox-link mfp-image'}
-                >
-                  <div className="work-img">
-                    <div className="work-img-bg wow scalexIn" />
-                    <Image
-                      width={650}
-                      height={773}
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="wow fadeIn"
-                      data-wow-delay="1s"
-                    />
-                  </div>
-                  <div className="work-intro text-center">
-                    <h3 className="work-title">{item.title}</h3>
-                    <div className="work-descr">{item.descr}</div>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </Gallery>
-      </ul>
-      {/* End Works Grid */}
-    </div>
+    </section>
   );
 }
