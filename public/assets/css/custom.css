@@ -20,13 +20,6 @@
   color: rgba(211, 111, 29) !important;
 }
 
-@media (max-width: 769px) {
-  .team-parallax {
-    background-position-x: 30% !important;
-    background-size: cover !important;
-  }
-}
-
 .Typewriter,
 .typewrite {
   display: inline-block;
