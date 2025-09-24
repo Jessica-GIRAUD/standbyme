@@ -1,7 +1,112 @@
 export const portfolios = [
   {
+    id: 26,
+    type: 'external',
+    mix: 'outdoor',
+    thumbnail: '/assets/images/portfolio/thumbnail/Hoka_1.webp',
+    images: [
+      {
+        imgSrc: '/assets/images/portfolio/2025/Hoka_1.webp',
+        imgAlt: 'HOKA REFUGE – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/Hoka_2.webp',
+        imgAlt: 'HOKA REFUGE – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/Hoka_3.webp',
+        imgAlt: 'HOKA REFUGE – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/Hoka_4.webp',
+        imgAlt: 'HOKA REFUGE – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/Hoka_5.webp',
+        imgAlt: 'HOKA REFUGE – 2025',
+      },
+    ],
+    title: 'HOKA REFUGE – 2025',
+    client: 'HOKA REFUGE',
+    descr: 'Paris – 0m²',
+    services: ['Video Captation'],
+    videoSrc: '/assets/videos/HOKA.mp4',
+    details:
+      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    date: 2025,
+  },
+  {
+    id: 25,
+    type: 'external',
+    mix: 'indoor',
+    thumbnail: '/assets/images/portfolio/thumbnail/PTC_1.webp',
+    images: [
+      {
+        imgSrc: '/assets/images/portfolio/2025/PTC_1.webp',
+        imgAlt: 'PTC – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/PTC_2.webp',
+        imgAlt: 'PTC – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/PTC_3.webp',
+        imgAlt: 'PTC – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/PTC_4.webp',
+        imgAlt: 'PTC – 2025',
+      },
+    ],
+    title: 'PTC – 2025',
+    client: 'PTC',
+    descr: 'Paris – 0m²',
+    services: ['Video Captation'],
+    videoSrc: '/assets/videos/STAND_PTC_2025.mp4',
+    details:
+      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    date: 2025,
+  },
+  {
     id: 24,
-    type: 'internal',
+    type: 'external',
+    mix: 'indoor',
+    thumbnail: '/assets/images/portfolio/thumbnail/revolut_1.webp',
+    images: [
+      {
+        imgSrc: '/assets/images/portfolio/2025/revolut_1.webp',
+        imgAlt: 'REVOLUT – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/revolut_2.webp',
+        imgAlt: 'REVOLUT – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/revolut_4.webp',
+        imgAlt: 'REVOLUT – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/revolut_5.webp',
+        imgAlt: 'REVOLUT – 2025',
+      },
+      {
+        imgSrc: '/assets/images/portfolio/2025/revolut_6.webp',
+        imgAlt: 'REVOLUT – 2025',
+      },
+    ],
+    title: 'REVOLUT – 2025',
+    client: 'REVOLUT',
+    descr: 'Paris – 0m²',
+    services: ['Video Captation'],
+    videoSrc: '/assets/videos/REVOLUT.mp4',
+    details:
+      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    date: 2025,
+  },
+
+  {
+    id: 23,
+    type: 'external',
     mix: 'indoor',
     thumbnail: '/assets/images/portfolio/thumbnail/saint_gobain_1.webp',
     images: [
@@ -36,40 +141,8 @@ export const portfolios = [
     date: 2025,
   },
   {
-    id: 23,
-    type: 'internal',
-    mix: 'indoor',
-    thumbnail: '/assets/images/portfolio/thumbnail/PTC_1.webp',
-    images: [
-      {
-        imgSrc: '/assets/images/portfolio/2025/PTC_1.webp',
-        imgAlt: 'PTC – 2025',
-      },
-      {
-        imgSrc: '/assets/images/portfolio/2025/PTC_2.webp',
-        imgAlt: 'PTC – 2025',
-      },
-      {
-        imgSrc: '/assets/images/portfolio/2025/PTC_3.webp',
-        imgAlt: 'PTC – 2025',
-      },
-      {
-        imgSrc: '/assets/images/portfolio/2025/PTC_4.webp',
-        imgAlt: 'PTC – 2025',
-      },
-    ],
-    title: 'PTC – 2025',
-    client: 'PTC',
-    descr: 'Paris – 0m²',
-    services: ['Video Captation'],
-    videoSrc: '/assets/videos/STAND_PTC_2025.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
-    date: 2025,
-  },
-  {
     id: 22,
-    type: 'internal',
+    type: 'external',
     mix: 'indoor',
     thumbnail: '/assets/images/portfolio/thumbnail/global_blue_1.webp',
     images: [
@@ -105,7 +178,7 @@ export const portfolios = [
   },
   {
     id: 21,
-    type: 'internal',
+    type: 'external',
     mix: 'indoor',
     thumbnail: '/assets/images/portfolio/thumbnail/databricks_1.webp',
     images: [
@@ -141,7 +214,7 @@ export const portfolios = [
   },
   {
     id: 20,
-    type: 'internal',
+    type: 'external',
     mix: 'indoor',
     thumbnail: '/assets/images/portfolio/thumbnail/yoplait_1.webp',
     images: [
