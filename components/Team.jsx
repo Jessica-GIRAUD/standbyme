@@ -14,7 +14,7 @@ export default function Team() {
   return (
     <section className="page-section pt-0 pb-0" id="about">
       <ParallaxContainer
-        className="page-section bg-gray-light-1 bg-light-alpha-80 parallax-5 team-parallax"
+        className="page-section bg-gray-light-1 bg-light-alpha-80 parallax-4 team-parallax"
         style={{
           backgroundImage: "url(/assets/images/team/team.webp)",
         }}

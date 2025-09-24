@@ -22,7 +22,7 @@
 
 @media (max-width: 769px) {
   .team-parallax {
-    background-position: 30%;
+    background-position: 30% !important;
   }
 }
 
