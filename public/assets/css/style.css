@@ -6167,6 +6167,9 @@ img.services-image {
   color: var(--color-gray-1);
   font-size: 16px;
   line-height: 1.65;
+  @media (max-width: 767.98px) {
+    text-align: justify;
+  }
 }
 .light-content .services-3-item {
   background: var(--color-dark-3);

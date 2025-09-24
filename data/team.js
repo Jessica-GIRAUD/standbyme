@@ -1,11 +1,5 @@
 export const teamMembers = [
   {
-    name: "Candice Cadieu",
-    role: "Cheffe de projet",
-    description: "CandiceDescription",
-    image: "/assets/images/team/team_3.webp",
-  },
-  {
     name: "Jean-Baptiste Balaresque",
     role: "Directeur général",
     description: "JBDescription",
