@@ -1,3 +1,25 @@
+/* Animation de scintillement pour le badge vidéo */
+@keyframes subtleGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px -3px rgba(211, 111, 29, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+.video-badge {
+  transition: all 0.3s ease;
+  animation: subtleGlow 5s infinite ease-in-out;
+}
+
+.video-badge:hover {
+  color: rgba(211, 111, 29) !important;
+}
+
 .Typewriter,
 .typewrite {
   display: inline-block;
@@ -100,6 +122,10 @@ html {
   scroll-behavior: smooth !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Custom styles for the timeline */
 
 .timeline-container {
@@ -109,7 +135,7 @@ html {
 }
 
 .timeline-container::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -176,7 +202,7 @@ html {
 }
 
 .timeline-date::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 15px;
   height: 15px;
@@ -292,7 +318,7 @@ html {
 /* LOADER */
 
 .custom-preloader {
-  background: url("/assets/images/full-width-images/section-bg-4.webp");
+  background: url('/assets/images/full-width-images/section-bg-4.webp');
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -313,7 +339,7 @@ html {
 }
 
 .custom-preloader .custom-loader .custom-loader-container::before {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   top: 50%;

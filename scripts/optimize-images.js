@@ -21,7 +21,7 @@ const OPTIMIZATION_CONFIG = {
 };
 
 // Dossiers à traiter
-const IMAGE_DIRECTORIES = ["public/assets/images", "public/assets/css"];
+const IMAGE_DIRECTORIES = ["public/assets/images/portfolio/2025"];
 
 // Extensions supportées
 const SUPPORTED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff"];
