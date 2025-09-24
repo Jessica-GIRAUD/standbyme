@@ -90,26 +90,26 @@ export default function SingleProject() {
                       <h2 className="h3 mb-20"> {t('details')}</h2>
                       <hr className="mb-20" />
                       <div className="row text-gray small">
-                        <div className="col-sm-4">
+                        <div className="col-4">
                           <b>Date :</b>
                         </div>
-                        <div className="col-sm-8">{portfolioItem.date}</div>
+                        <div className="col-8">{portfolioItem.date}</div>
                       </div>
                       <hr className="mb-20" />
                       <div className="row text-gray small">
-                        <div className="col-sm-4">
+                        <div className="col-4">
                           <b>Client :</b>
                         </div>
-                        <div className="col-sm-8">{portfolioItem.client}</div>
+                        <div className="col-8">{portfolioItem.client}</div>
                       </div>
                       {portfolioItem.services.length > 0 && (
                         <>
                           <hr className="mb-20" />
-                          <div className="row text-gray small">
-                            <div className="col-sm-4">
+                          <div className="row text-gray small align-items-center">
+                            <div className="col-4">
                               <b>Services :</b>
                             </div>
-                            <div className="col-sm-8">
+                            <div className="col-8 d-flex align-content-center">
                               {portfolioItem.services.map((service, index) => {
                                 if (
                                   portfolioItem.videoSrc &&
@@ -122,7 +122,7 @@ export default function SingleProject() {
                                     >
                                       <span
                                         key={index}
-                                        className="video-badge badge rounded-pill bg-light text-dark me-2 mb-2 text-decoration-none p-2 px-3 cursor-pointer"
+                                        className="video-badge badge rounded-pill bg-light text-dark me-2 text-decoration-none p-2 px-3 cursor-pointer"
                                         style={{
                                           position: 'relative',
                                           overflow: 'hidden',
@@ -150,7 +150,7 @@ export default function SingleProject() {
                       )}
                       <hr className="mb-20" />
                       <div className="text-gray small">
-                        <div>
+                        <div className='mb-2'>
                           <b>Description :</b>
                         </div>
                         <div>{portfolioItem.details}</div>

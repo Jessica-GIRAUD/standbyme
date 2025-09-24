@@ -7,10 +7,12 @@ export default function FullscreenVideo({ videoSrc, children }) {
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
   const isMounted = useRef(true);
+  const errorCount = useRef(0);
+  const MAX_RETRIES = 2;
 
   const openFullscreen = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    e?.preventDefault();
+    e?.stopPropagation();
     if (!isOpen) {
       setIsOpen(true);
     }
@@ -22,7 +24,7 @@ export default function FullscreenVideo({ videoSrc, children }) {
         await document.exitFullscreen();
       }
     } catch (err) {
-      console.error('Error exiting fullscreen:', err);
+      console.warn('Error exiting fullscreen:', err);
     } finally {
       cleanup();
     }
@@ -32,16 +34,21 @@ export default function FullscreenVideo({ videoSrc, children }) {
     if (!isMounted.current) return;
 
     if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.src = '';
-      videoRef.current.load();
+      try {
+        videoRef.current.pause();
+        videoRef.current.removeAttribute('src');
+        videoRef.current.load();
+      } catch (err) {
+        console.warn('Error cleaning up video:', err);
+      }
     }
 
-    if (
-      videoContainerRef.current &&
-      document.body.contains(videoContainerRef.current)
-    ) {
-      document.body.removeChild(videoContainerRef.current);
+    if (videoContainerRef.current && document.body.contains(videoContainerRef.current)) {
+      try {
+        document.body.removeChild(videoContainerRef.current);
+      } catch (err) {
+        console.warn('Error removing video container:', err);
+      }
     }
 
     document.body.style.overflow = 'auto';
@@ -54,115 +61,159 @@ export default function FullscreenVideo({ videoSrc, children }) {
     }
   };
 
+  const handleVideoError = (e) => {
+    console.error('Video error:', e);
+    errorCount.current += 1;
+    
+    if (errorCount.current <= MAX_RETRIES) {
+      console.log(`Retrying video (${errorCount.current}/${MAX_RETRIES})...`);
+      if (videoRef.current) {
+        videoRef.current.src = videoSrc;
+        videoRef.current.load().catch(console.error);
+      }
+    } else {
+      console.error('Max retries reached, closing video');
+      cleanup();
+    }
+  };
+
   useEffect(() => {
     isMounted.current = true;
-
+    errorCount.current = 0;
+    
     return () => {
       isMounted.current = false;
       cleanup();
     };
-  }, []);
+  }, [videoSrc]); // Reset on videoSrc change
 
   useEffect(() => {
     if (!isOpen || !isMounted.current) return;
 
     const videoContainer = document.createElement('div');
-    videoContainer.style.position = 'fixed';
-    videoContainer.style.top = '0';
-    videoContainer.style.left = '0';
-    videoContainer.style.width = '100vw';
-    videoContainer.style.height = '100vh';
-    videoContainer.style.zIndex = '10000';
-    videoContainer.style.backgroundColor = 'black';
-    videoContainer.style.display = 'flex';
-    videoContainer.style.justifyContent = 'center';
-    videoContainer.style.alignItems = 'center';
-
-    const video = document.createElement('video');
-    video.src = videoSrc;
-    video.controls = true;
-    video.playsInline = true; // Important pour iOS
-    video.setAttribute('webkit-playsinline', 'true'); // Pour les anciennes versions d'iOS
-    video.setAttribute('playsinline', 'true'); // Pour iOS 10+
-    video.style.maxWidth = '100%';
-    video.style.maxHeight = '100%';
-    video.style.objectFit = 'contain';
-    video.style.outline = 'none';
-
-    video.addEventListener('error', (e) => {
-      console.error('Video error:', e);
-      cleanup();
+    videoContainer.className = 'fullscreen-video-container';
+    Object.assign(videoContainer.style, {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      zIndex: 10000,
+      backgroundColor: 'black',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
     });
 
-    video.addEventListener('ended', cleanup);
-    videoContainer.appendChild(video);
+    const video = document.createElement('video');
+    video.preload = 'metadata';
+    video.src = videoSrc;
+    video.controls = true;
+    video.playsInline = true;
+    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('playsinline', 'true');
+    video.crossOrigin = 'anonymous';
+    Object.assign(video.style, {
+      maxWidth: '100%',
+      maxHeight: '100%',
+      objectFit: 'contain',
+      outline: 'none'
+    });
+
+    // Gestion des erreurs
+    const errorHandler = (e) => {
+      console.error('Video error event:', e);
+      handleVideoError(e);
+    };
+
+    video.addEventListener('error', errorHandler, { once: true });
+    video.addEventListener('ended', cleanup, { once: true });
 
     // Bouton de fermeture
     const closeButton = document.createElement('button');
-    closeButton.textContent = '✕';
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '20px';
-    closeButton.style.right = '20px';
-    closeButton.style.fontSize = '2rem';
-    closeButton.style.background = 'rgba(0, 0, 0, 0.5)';
-    closeButton.style.color = 'white';
-    closeButton.style.border = 'none';
-    closeButton.style.borderRadius = '50%';
-    closeButton.style.width = '40px';
-    closeButton.style.height = '40px';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.zIndex = '10001';
-    closeButton.style.display = 'flex';
-    closeButton.style.alignItems = 'center';
-    closeButton.style.justifyContent = 'center';
+    closeButton.innerHTML = '&times;';
+    closeButton.ariaLabel = 'Fermer';
+    Object.assign(closeButton.style, {
+      position: 'absolute',
+      top: '20px',
+      right: '20px',
+      fontSize: '2rem',
+      background: 'rgba(0, 0, 0, 0.5)',
+      color: 'white',
+      border: 'none',
+      borderRadius: '50%',
+      width: '40px',
+      height: '40px',
+      cursor: 'pointer',
+      zIndex: 10001,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 0
+    });
 
     const handleCloseClick = (e) => {
-      e.stopPropagation();
+      e?.stopPropagation();
       closeFullscreen();
     };
 
-    closeButton.addEventListener('click', handleCloseClick);
+    closeButton.addEventListener('click', handleCloseClick, { once: true });
     videoContainer.appendChild(closeButton);
-
+    videoContainer.appendChild(video);
     document.body.appendChild(videoContainer);
     document.body.style.overflow = 'hidden';
+    
     videoContainerRef.current = videoContainer;
     videoRef.current = video;
 
     // Gestion du plein écran
     const requestFullscreen = async () => {
       try {
-        if (videoContainer.requestFullscreen) {
-          await videoContainer.requestFullscreen();
-        } else if (videoContainer.webkitRequestFullscreen) {
-          // Safari
-          await videoContainer.webkitRequestFullscreen();
-        } else if (videoContainer.msRequestFullscreen) {
-          // IE11
-          await videoContainer.msRequestFullscreen();
+        const container = videoContainer;
+        if (container.requestFullscreen) {
+          await container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+          await container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+          await container.msRequestFullscreen();
         }
       } catch (err) {
-        console.error('Fullscreen error:', err);
+        console.warn('Fullscreen error:', err);
         cleanup();
       }
     };
 
     requestFullscreen();
-    document.addEventListener('fullscreenchange', handleFsChange);
-    document.addEventListener('webkitfullscreenchange', handleFsChange); // Pour Safari
 
+    // Gestion des événements
+    const fullscreenChangeHandler = () => {
+      if (!document.fullscreenElement && !document.webkitIsFullScreen) {
+        cleanup();
+      }
+    };
+
+    document.addEventListener('fullscreenchange', fullscreenChangeHandler);
+    document.addEventListener('webkitfullscreenchange', fullscreenChangeHandler);
+
+    // Nettoyage
     return () => {
-      document.removeEventListener('fullscreenchange', handleFsChange);
-      document.removeEventListener('webkitfullscreenchange', handleFsChange);
+      document.removeEventListener('fullscreenchange', fullscreenChangeHandler);
+      document.removeEventListener('webkitfullscreenchange', fullscreenChangeHandler);
       closeButton.removeEventListener('click', handleCloseClick);
-      video.removeEventListener('error', cleanup);
+      video.removeEventListener('error', errorHandler);
       video.removeEventListener('ended', cleanup);
       cleanup();
     };
   }, [isOpen, videoSrc]);
 
   return (
-    <div onClick={openFullscreen} style={{ display: 'inline' }}>
+    <div 
+      onClick={openFullscreen} 
+      style={{ 
+        display: 'inline-block',
+        cursor: 'pointer'
+      }}
+    >
       {children}
     </div>
   );
