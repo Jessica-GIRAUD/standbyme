@@ -57,10 +57,6 @@ export const portfolios = [
         imgSrc: '/assets/images/portfolio/2025/PTC_4.webp',
         imgAlt: 'PTC – 2025',
       },
-      {
-        imgSrc: '/assets/images/portfolio/2025/PTC_5.webp',
-        imgAlt: 'PTC – 2025',
-      },
     ],
     title: 'PTC – 2025',
     client: 'PTC',
@@ -655,7 +651,7 @@ export const portfolios = [
     date: 2024,
   },
   {
-    id: 6, 
+    id: 6,
     type: 'external',
     mix: 'indoor',
     thumbnail: '/assets/images/portfolio/thumbnail/mc-cain_1.webp',
