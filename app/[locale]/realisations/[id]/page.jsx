@@ -126,7 +126,7 @@ export default function SingleProject() {
                                         style={{
                                           position: 'relative',
                                           overflow: 'hidden',
-                                          zIndex: 1
+                                          zIndex: 1,
                                         }}
                                       >
                                         {service}
@@ -148,13 +148,17 @@ export default function SingleProject() {
                           </div>{' '}
                         </>
                       )}
-                      <hr className="mb-20" />
-                      <div className="text-gray small">
-                        <div className='mb-2'>
-                          <b>Description :</b>
-                        </div>
-                        <div>{portfolioItem.details}</div>
-                      </div>
+                      {portfolioItem.details && (
+                        <>
+                          <hr className="mb-20" />
+                          <div className="text-gray small">
+                            <div className="mb-2">
+                              <b>Description :</b>
+                            </div>
+                            <div>{portfolioItem.details}</div>
+                          </div>
+                        </>
+                      )}
                       <hr className="mb-20" />
                     </div>
                   </div>

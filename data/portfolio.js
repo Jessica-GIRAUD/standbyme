@@ -31,8 +31,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/HOKA.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -63,8 +62,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/STAND_PTC_2025.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -99,8 +97,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/REVOLUT.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
 
@@ -136,8 +133,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/SAINTGOBAIN_STAND_SBM_2025.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -172,8 +168,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/GLOBAL_BLUE_2025.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -208,8 +203,7 @@ export const portfolios = [
     descr: 'Paris – 0m²',
     services: ['Video Captation'],
     videoSrc: '/assets/videos/DATABRICKS_2025.mp4',
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -231,8 +225,7 @@ export const portfolios = [
     client: 'YOPLAIT',
     descr: 'Japan Expo – 0m²',
     services: [],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -274,8 +267,7 @@ export const portfolios = [
     client: 'INTER RHONE',
     descr: 'Porte de Versailles – 1600m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -313,8 +305,7 @@ export const portfolios = [
     client: 'CHAMPAGNE VIRGINIE T',
     descr: 'Porte de Versailles – 21m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -345,8 +336,7 @@ export const portfolios = [
     descr: 'Lyon – 36m²',
     services: ['VR', 'Video Captation'],
 
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -392,8 +382,7 @@ export const portfolios = [
     client: 'WFS',
     descr: 'Miami, Floride – 112m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2025,
   },
   {
@@ -423,8 +412,7 @@ export const portfolios = [
     client: 'GAUTIER SEMENCES',
     descr: 'Madrid – 36m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -470,8 +458,7 @@ export const portfolios = [
     client: 'DELTA PLUS',
     descr: 'Porte de Versailles – 98m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -501,8 +488,7 @@ export const portfolios = [
     client: 'INTER RHONE',
     descr: 'Porte de Versailles – 1505m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -544,8 +530,7 @@ export const portfolios = [
     client: 'HOKA',
     descr: 'Chamonix – 175m² + R+1 93m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -591,8 +576,7 @@ export const portfolios = [
     client: 'HOKA',
     descr: 'Nuremberg – 135m² + R+1 135m² + R+2 45m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -626,8 +610,7 @@ export const portfolios = [
     client: 'VOCALCOM',
     descr: '52m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -665,8 +648,7 @@ export const portfolios = [
     client: 'SONY',
     descr: 'La Villette – 92m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -684,8 +666,7 @@ export const portfolios = [
     client: 'LSL',
     descr: 'Paris parc floral – 54m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -719,8 +700,7 @@ export const portfolios = [
     client: 'SCHNEIDER',
     descr: 'Nantes – 36m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -742,8 +722,7 @@ export const portfolios = [
     client: 'MC CAIN',
     descr: 'Paris Nord Villepinte – 68m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -789,8 +768,7 @@ export const portfolios = [
     client: 'FRESH TROPICAL',
     descr: 'Paris Nord Villepinte – 182m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -826,8 +804,7 @@ export const portfolios = [
     client: 'CEVITAL',
     descr: 'Paris Nord Villepinte – 32m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -853,8 +830,7 @@ export const portfolios = [
     client: 'CITINNOV',
     descr: 'Porte de Versailles – 25m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
   {
@@ -884,8 +860,7 @@ export const portfolios = [
     client: 'INCA',
     descr: 'Porte de Versailles – 18m²',
     services: ['VR', 'Video Captation'],
-    details:
-      'Lorem ipsum dolor sit amet conseur adipisci inerene. Maecenas volutpat, diam eni sagittis quam porta quam. Sed id dolor consectetur fermentum volutpat accumsan purus iaculis libero.',
+    details: '',
     date: 2024,
   },
 ];
