@@ -13,7 +13,7 @@ export default function ClientSection() {
       }}
     >
       <div className="container relative">
-        <div className="row wow fadeInUpShort">
+        <div className="row wow fadeInUpShort d-flex justify-content-center">
           <div className="row text-center wow fadeInUp">
             <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
               <h3 className="section-title mb-30">

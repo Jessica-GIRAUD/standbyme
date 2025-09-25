@@ -88,6 +88,11 @@ a {
   .mobile-on .mn-sub {
     display: none;
   }
+  .home-section {
+    .btn-mod {
+      min-width: fit-content;
+    }
+  }
 }
 @media (max-width: 1024px) {
   .mobile-on .js-opened .mn-sub.mobile-sub-active {
@@ -106,6 +111,12 @@ a {
 @media (max-width: 500px) {
   .team-carousel .owl-prev.owl-prev-testimonial-1 {
     left: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-mod {
+    width: 70vw;
   }
 }
 
