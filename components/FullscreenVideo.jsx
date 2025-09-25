@@ -109,6 +109,7 @@ export default function FullscreenVideo({ videoSrc, children }) {
     video.preload = 'metadata';
     video.src = videoSrc;
     video.controls = true;
+    video.autoplay = true;
     video.playsInline = true;
     video.setAttribute('webkit-playsinline', 'true');
     video.setAttribute('playsinline', 'true');
