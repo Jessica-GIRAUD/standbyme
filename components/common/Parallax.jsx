@@ -1,20 +1,37 @@
-"use client";
+'use client';
 
-import { jarallax } from "jarallax";
-import { useEffect } from "react";
+import { jarallax } from 'jarallax';
+import { useEffect, useRef } from 'react';
 
-export default function ParallaxContainer(props) {
+export default function ParallaxContainer({ className = '', children, ...props }) {
+  const containerRef = useRef(null);
+  
   useEffect(() => {
-    jarallax(document.querySelectorAll(".parallax-5"), {
+    if (!containerRef.current) return;
+    
+    const isMobile = window.innerWidth < 768;
+    const isTeam = containerRef.current.closest('.team-parallax-container') !== null;
+    
+    jarallax(containerRef.current, {
       speed: 0.5,
+      imgPosition: isTeam && isMobile ? '30%' : 'center',
     });
+    
+    // Nettoyage
+    return () => {
+      if (containerRef.current) {
+        jarallax(containerRef.current, 'destroy');
+      }
+    };
   }, []);
+
   return (
     <div
-      //   ref={parallax.ref}
+      ref={containerRef}
+      className={`jarallax ${className}`}
       {...props}
     >
-      {props.children}
+      {children}
     </div>
   );
 }

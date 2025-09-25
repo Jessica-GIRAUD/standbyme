@@ -12,7 +12,7 @@ export default function Team() {
   const [showDescription, setShowDescription] = useState({ 0: false });
 
   return (
-    <section className="page-section pt-0 pb-0" id="about">
+    <section className="page-section pt-0 pb-0  team-parallax-container" id="about">
       <ParallaxContainer
         className="page-section bg-gray-light-1 bg-light-alpha-80 parallax-5"
         style={{
