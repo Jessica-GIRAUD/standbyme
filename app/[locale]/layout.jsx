@@ -20,6 +20,8 @@ export default async function RootLayout({ children, params }) {
         <meta name="geo.position" content="48.8566;2.3522" />
         <meta name="ICBM" content="48.8566, 2.3522" />
         
+        <meta name="google-site-verification" content="bFlrjdJoz2DlCtmCR8QhCb9bVjFcBzvOOI8t4mPHIoo" />
+        
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
           rel="stylesheet"
