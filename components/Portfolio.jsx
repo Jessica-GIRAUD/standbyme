@@ -81,6 +81,8 @@ export default function Portfolio({ gridClass = '' }) {
         >
           <Gallery>
             {portfolios.map((item, index) => {
+              const title = item.client + ' ' + item.salon + ' - ' + item.date;
+              const descr = item.location + ' – ' + item.surface;
               return (
                 <li key={index} className={'work-item mix  ' + item.mix}>
                   <Link
@@ -93,14 +95,14 @@ export default function Portfolio({ gridClass = '' }) {
                         width={650}
                         height={773}
                         src={item.thumbnail}
-                        alt={item.title}
+                        alt={title}
                         className="wow fadeIn"
                         data-wow-delay="1s"
                       />
                     </div>
                     <div className="work-intro text-center">
-                      <h3 className="work-title">{item.title}</h3>
-                      <div className="work-descr">{item.descr}</div>
+                      <h3 className="work-title">{title}</h3>
+                      <div className="work-descr">{descr}</div>
                     </div>
                   </Link>
                 </li>
