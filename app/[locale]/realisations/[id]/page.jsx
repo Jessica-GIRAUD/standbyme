@@ -20,6 +20,7 @@ export default function SingleProject() {
   const portfolioItem =
     portfolios.filter((elm) => elm.id == params.id)[0] || portfolioItem[0];
 
+  const title = portfolioItem.client + ' – ' + portfolioItem.salon + ' ' + portfolioItem.date;
   return (
     <>
       <div className="theme-main">
@@ -57,7 +58,7 @@ export default function SingleProject() {
                             className="wow charsAnimIn"
                             data-splitting="chars"
                           >
-                            <AnimatedText text={portfolioItem.title} />
+                            <AnimatedText text={title} />
                           </span>
                         </h1>
                         <div className="row">
@@ -67,7 +68,9 @@ export default function SingleProject() {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              {portfolioItem.descr}
+                              {portfolioItem.location +
+                                ' – ' +
+                                portfolioItem.surface}
                             </p>
                           </div>
                         </div>
@@ -91,9 +94,11 @@ export default function SingleProject() {
                       <hr className="mb-20" />
                       <div className="row text-gray small">
                         <div className="col-4">
-                          <b>Date :</b>
+                          <b>{t('salon')} :</b>
                         </div>
-                        <div className="col-8">{portfolioItem.date}</div>
+                        <div className="col-8">
+                          {portfolioItem.salon + ' – ' + portfolioItem.date}
+                        </div>
                       </div>
                       <hr className="mb-20" />
                       <div className="row text-gray small">
@@ -102,64 +107,29 @@ export default function SingleProject() {
                         </div>
                         <div className="col-8">{portfolioItem.client}</div>
                       </div>
-                      {portfolioItem.services.length > 0 && (
-                        <>
-                          <hr className="mb-20" />
-                          <div className="row text-gray small align-items-center">
-                            <div className="col-4">
-                              <b>Services :</b>
-                            </div>
-                            <div className="col-8 d-flex align-content-center">
-                              {portfolioItem.services.map((service, index) => {
-                                if (
-                                  portfolioItem.videoSrc &&
-                                  service === 'Video Captation'
-                                ) {
-                                  return (
-                                    <FullscreenVideo
-                                      key={index}
-                                      videoSrc={portfolioItem.videoSrc}
-                                    >
-                                      <span
-                                        key={index}
-                                        className="video-badge badge rounded-pill bg-light text-dark me-2 text-decoration-none p-2 px-3 cursor-pointer"
-                                        style={{
-                                          position: 'relative',
-                                          overflow: 'hidden',
-                                          zIndex: 1,
-                                        }}
-                                      >
-                                        {service}
-                                      </span>
-                                    </FullscreenVideo>
-                                  );
-                                }
-                                return (
-                                  <a
-                                    key={index}
-                                    href={`/savoir-faire`}
-                                    className="badge rounded-pill bg-light text-dark me-2 mb-2 text-decoration-none p-2 px-3"
-                                  >
-                                    {service}
-                                  </a>
-                                );
-                              })}
-                            </div>
-                          </div>{' '}
-                        </>
-                      )}
-                      {portfolioItem.details && (
-                        <>
-                          <hr className="mb-20" />
-                          <div className="text-gray small">
-                            <div className="mb-2">
-                              <b>Description :</b>
-                            </div>
-                            <div>{portfolioItem.details}</div>
-                          </div>
-                        </>
-                      )}
+
                       <hr className="mb-20" />
+                      <div className="row text-gray small align-items-center">
+                        <div className="col-4">
+                          <b>{t('surface')} :</b>
+                        </div>
+                        <div className="col-8">{portfolioItem.surface}</div>
+                      </div>
+
+                      <hr className="mb-20" />
+
+                      <div className="col-12">
+                        {portfolioItem.videoSrc && (
+                          <FullscreenVideo
+                            videoSrc={portfolioItem.videoSrc}
+                            className="w-100"
+                          >
+                            <span className="badge rounded-pill bg-light text-dark p-2 px-4 video-badge">
+                              {t('videoCaptation')}
+                            </span>
+                          </FullscreenVideo>
+                        )}
+                      </div>
                     </div>
                   </div>
                   {/* End Project Details */}

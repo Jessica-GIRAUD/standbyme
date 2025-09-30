@@ -4,10 +4,13 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import useScreenSize from '@/hooks/useScreenSize';
 
 export default function Testimonials() {
   const t = useTranslations('home');
-  return (
+  const { isMobile } = useScreenSize();
+
+  return isMobile ? null : (
     <section className="page-section">
       <div className="container position-relative">
         <div className="pt-80 pb-80 pt-sm-70 pb-sm-70 px-4 bg-gray-light-1">

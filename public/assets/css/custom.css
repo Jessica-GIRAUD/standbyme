@@ -246,7 +246,7 @@ html {
 
 .destination-info {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 0;
   right: 0;
   padding: 20px;

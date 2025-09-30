@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function FullscreenVideo({ videoSrc, children }) {
+export default function FullscreenVideo({ videoSrc, className, children }) {
   const [isOpen, setIsOpen] = useState(false);
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
@@ -209,6 +209,7 @@ export default function FullscreenVideo({ videoSrc, children }) {
 
   return (
     <div 
+      className={className} 
       onClick={openFullscreen} 
       style={{ 
         display: 'inline-block',

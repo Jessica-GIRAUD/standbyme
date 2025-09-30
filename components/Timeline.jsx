@@ -1,56 +1,34 @@
-"use client";
+'use client';
 
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import React, { useRef, useState } from "react";
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import React from 'react';
+import FullscreenVideo from './FullscreenVideo';
+import useScreenSize from '@/hooks/useScreenSize';
 
 export default function Timeline() {
-  const t = useTranslations("savoir-faire");
-
-  const [isPlaying, setIsPlaying] = useState([false, false]);
-  const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
-
-  const togglePlayPause = (index) => {
-    const refs = [videoRef1, videoRef2];
-    const video = refs[index].current;
-    if (!video) return;
-
-    if (isPlaying[index]) {
-      video.pause();
-    } else {
-      video.play();
-    }
-
-    setIsPlaying((prev) => {
-      const newStates = [...prev];
-      newStates[index] = !prev[index];
-      return newStates;
-    });
-  };
+  const t = useTranslations('savoir-faire');
+  const { isMobile } = useScreenSize();
 
   const timelineItems = [
     {
-      title: "STAND VIRTUEL",
-      description: "Jump",
-      btn: "Découvrir le stand",
-      link: "https://deltaplus-preventica2023.fr/",
-      image: "/assets/images/delta_vr.webp",
+      title: 'STAND VIRTUEL',
+      description: 'Jump',
+      btn: 'Découvrir le stand',
+      link: 'https://deltaplus-preventica2023.fr/',
+      image: '/assets/images/delta_vr.webp',
     },
     {
-      title: "CAPTATION VIDEO",
-      description: "Capture",
-      videoUrl: "/assets/videos/media_2.mp4",
-      ref: videoRef1,
-      place: 0,
+      title: 'CAPTATION VIDEO',
+      description: 'Capture',
+      videoUrl: '/assets/videos/media_2.mp4',
+      thumbnail: '/assets/images/captation-video.png',
     },
     {
-      title: "CAMERA INTELLIGENTE",
-      description: "Optimise",
-      videoUrl: "/assets/videos/media_1.mp4",
-      ref: videoRef2,
-      place: 1,
-      poster: "/assets/images/cam.webp",
+      title: 'CAMERA INTELLIGENTE',
+      description: 'Optimise',
+      videoUrl: '/assets/videos/media_1.mp4',
+      thumbnail: '/assets/images/cam.webp',
     },
   ];
 
@@ -63,28 +41,36 @@ export default function Timeline() {
             key={index}
             data-wow-delay={`${index * 0.12}s`}
           >
-            <div className={`col-md-6 ${index % 2 === 0 ? "order-md-2" : ""}`}>
+            <div className={`col-md-6 ${index % 2 === 0 ? 'order-md-2' : ''}`}>
               <div className="timeline-content">
                 <div className="position-relative">
                   {el.videoUrl ? (
-                    <video
-                      poster={el.poster || undefined}
-                      src={el.videoUrl}
-                      ref={el.ref}
-                      preload="auto"
-                      loop
-                      playsInline
-                      width={600}
-                      height={400}
-                      controls
-                    />
+                    <FullscreenVideo videoSrc={el.videoUrl}>
+                      <div className="position-relative">
+                        <Image
+                          src={el.thumbnail}
+                          alt={el.title}
+                          width={600}
+                          height={400}
+                          className="img-fluid rounded cursor-pointer"
+                          style={{
+                            height: isMobile ? 'auto' : '250px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                    </FullscreenVideo>
                   ) : (
                     <Image
                       src={el.image}
-                      alt="Paris"
+                      alt={el.title}
                       width={600}
                       height={400}
                       className="img-fluid rounded"
+                      style={{
+                        height: isMobile ? 'auto' : '250px',
+                        objectFit: 'cover',
+                      }}
                     />
                   )}
 
@@ -98,22 +84,15 @@ export default function Timeline() {
             <div className="col-md-6 order-md-1 timeline-date-col">
               <div className="timeline-date">
                 {el.videoUrl ? (
-                  <div className="btn btn-mod btn-large btn-round d-flex ms-1 me-1 mt-2 align-middle">
-                    {t(el.title)}
-                    <a
-                      onClick={() => togglePlayPause(el.place)}
-                      role="button"
-                      className="d-flex"
-                    >
+                  <FullscreenVideo videoSrc={el.videoUrl}>
+                    <button className="btn btn-mod btn-large btn-round d-flex ms-1 me-1 mt-2 align-middle">
+                      {t(el.title)}{' '}
                       <i
-                        className={`mi-${
-                          isPlaying[el.place] ? "pause" : "play"
-                        } ms-2 fs-5`}
-                        style={{ color: "#fff" }}
+                        className="mi-play ms-2 fs-5"
+                        style={{ color: '#fff' }}
                       />
-                      <span className="visually-hidden">Pause</span>
-                    </a>
-                  </div>
+                    </button>
+                  </FullscreenVideo>
                 ) : el.btn ? (
                   <a
                     href={el.link}
