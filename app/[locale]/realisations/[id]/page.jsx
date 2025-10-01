@@ -12,15 +12,22 @@ import { portfolios } from '../../../../data/portfolio';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import FullscreenVideo from '@/components/FullscreenVideo';
+import useScreenSize from '@/hooks/useScreenSize';
 
 export default function SingleProject() {
   const params = useParams();
   const t = useTranslations('portfolio');
+  const { isMobile } = useScreenSize();
 
   const portfolioItem =
     portfolios.filter((elm) => elm.id == params.id)[0] || portfolioItem[0];
 
-  const title = portfolioItem.client + ' – ' + portfolioItem.salon + ' ' + portfolioItem.date;
+  const title =
+    portfolioItem.client +
+    ' – ' +
+    portfolioItem.salon +
+    ' ' +
+    portfolioItem.date;
   return (
     <>
       <div className="theme-main">
@@ -122,7 +129,7 @@ export default function SingleProject() {
                         {portfolioItem.videoSrc && (
                           <FullscreenVideo
                             videoSrc={portfolioItem.videoSrc}
-                            className="w-100"
+                            className={`w-100 ${isMobile ? 'd-flex justify-content-center' : ''}`}
                           >
                             <span className="badge rounded-pill bg-light text-dark p-2 px-4 video-badge">
                               {t('videoCaptation')}
