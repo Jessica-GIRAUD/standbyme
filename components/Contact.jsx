@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { infos } from "@/data/infos";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
-import ParallaxContainer from "./common/ParallaxContainer";
-import AnimatedText from "./common/AnimatedText";
+import { infos } from '@/data/infos';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import ParallaxContainer from './common/ParallaxContainer';
+import AnimatedText from './common/AnimatedText';
+import useScreenSize from '@/hooks/useScreenSize';
 
 export default function Contact() {
-  //const t = await getTranslations('contact');
-
-  const t = useTranslations("contact");
+  const { isMobile } = useScreenSize();
+  const t = useTranslations('contact');
   const [address, setAddress] = useState(infos.googleMap1);
 
   return (
@@ -18,7 +18,7 @@ export default function Contact() {
         className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
         style={{
           backgroundImage:
-            "url(/assets/images/full-width-images/page-title-bg-4.webp)",
+            'url(/assets/images/full-width-images/page-title-bg-4.webp)',
         }}
       >
         <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
@@ -27,7 +27,7 @@ export default function Contact() {
             <div className="row">
               <div className="col-md-8 offset-md-2">
                 <h3 className="section-title mb-30">
-                  <AnimatedText text={t("contactProjectTitle")} />
+                  <AnimatedText text={t('contactProjectTitle')} />
                 </h3>
               </div>
             </div>
@@ -42,11 +42,11 @@ export default function Contact() {
                 className=" mb-30 mb-xs-20 wow fadeInUp"
                 data-wow-duration="1.2s"
               >
-                {t("title")}
+                {t('title')}
               </h2>
 
               <p className="text-gray wow fadeInUp" data-wow-duration="0.8s">
-                {t("description")} 🚀
+                {t('description')} 🚀
               </p>
             </div>
           </div>
@@ -84,27 +84,51 @@ export default function Contact() {
                       </svg>
                     </div>
                   </div>
-                  <h4 className="alt-features-title">{t("contactProject")}</h4>
+                  <h4 className="alt-features-title">{t('contactProject')}</h4>
                   <div className="alt-features-descr clearlinks mb-20">
-                    <div>
+                    <div
+                      className={
+                        isMobile
+                          ? 'rounded-pill bg-light text-dark p-2 px-4 mb-2'
+                          : ''
+                      }
+                    >
                       <a href={`mailto:${infos.email}`}>{infos.email}</a>
                     </div>
-                    <div>
+                    <div
+                      className={
+                        isMobile
+                          ? 'rounded-pill bg-light text-dark p-2 px-4'
+                          : ''
+                      }
+                    >
                       <a href={`tel:${infos.phoneNumberProjectRef}`}>
                         {infos.phoneNumberProject}
                       </a>
                     </div>
                   </div>
                   <h4 className="alt-features-title">
-                    {t("contactCommercial")}
+                    {t('contactCommercial')}
                   </h4>
                   <div className="alt-features-descr clearlinks">
-                    <div>
+                    <div
+                      className={
+                        isMobile
+                          ? 'rounded-pill bg-light text-dark p-2 px-4 mb-2'
+                          : ''
+                      }
+                    >
                       <a href={`mailto:${infos.emailCommercial}`}>
                         {infos.emailCommercial}
                       </a>
                     </div>
-                    <div>
+                    <div
+                      className={
+                        isMobile
+                          ? 'rounded-pill bg-light text-dark p-2 px-4'
+                          : ''
+                      }
+                    >
                       <a href={`tel:${infos.phoneNumberCommercialRef}`}>
                         {infos.phoneNumberCommercial}
                       </a>
@@ -133,12 +157,12 @@ export default function Contact() {
                       <path d="M12 10c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2m0-5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3m-7 2.602c0-3.517 3.271-6.602 7-6.602s7 3.085 7 6.602c0 3.455-2.563 7.543-7 14.527-4.489-7.073-7-11.072-7-14.527m7-7.602c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602" />
                     </svg>
                   </div>
-                  <h4 className="alt-features-title">{t("location")}</h4>
+                  <h4 className="alt-features-title">{t('location')}</h4>
                   <div
                     className={`alt-features-descr ${
-                      address.includes("Paris") ? "active" : ""
+                      address.includes('Paris') ? 'active' : ''
                     }`}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => setAddress(infos.googleMap1)}
                     // className="alt-features-descr"
                   >
@@ -146,9 +170,9 @@ export default function Contact() {
                   </div>
                   <div
                     className={`alt-features-descr ${
-                      address.includes("Thor") ? "active" : ""
+                      address.includes('Thor') ? 'active' : ''
                     }`}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => setAddress(infos.googleMap2)}
                     // className="alt-features-descr"
                   >

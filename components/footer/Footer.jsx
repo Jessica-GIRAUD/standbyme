@@ -6,9 +6,11 @@ import { Link } from "@/i18n/navigation";
 import { navigationLinks } from "@/data/footer";
 import { infos } from "@/data/infos";
 import { useTranslations } from "next-intl";
+import useScreenSize from "@/hooks/useScreenSize";
 
 export default function Footer({ dark = false }) {
   const t = useTranslations("footer");
+  const { isMobile } = useScreenSize();
 
   const scrollToTop = (event) => {
     event.preventDefault();
@@ -45,7 +47,7 @@ export default function Footer({ dark = false }) {
               />
             </Link>
             <p>{t("slogan")}</p>
-            <div className="clearlinks">
+            <div className={`clearlinks ${isMobile ? "rounded-pill bg-light text-dark p-2 px-4 w-fit" : ""}`}>
               <a href={`tel:${infos.phoneNumberProjectRef}`}>
                 {infos.phoneNumberProject}
               </a>
