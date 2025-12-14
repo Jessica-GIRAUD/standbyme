@@ -1,15 +1,18 @@
 "use client";
 
 import { clients } from "@/data/clients";
+import useScreenSize from "@/hooks/useScreenSize";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Slider() {
+  const { isMobile } = useScreenSize();
   return (
     <Swiper
       spaceBetween={0}
       slidesPerView={6}
+      speed={2500}
       breakpoints={{
         1199: {
           slidesPerView: 6, // When window width is <= 1199px
@@ -19,12 +22,17 @@ export default function Slider() {
           slidesPerView: 4, // When window width is <= 768px
         },
         0: {
-          slidesPerView: 2, // When window width is <= 480px
+          slidesPerView: 3, // When window width is <= 480px
+          spaceBetween: 30,
         },
       }}
       watchSlidesProgress
       modules={[Autoplay]}
-      autoplay
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: false,
+      }}
+      loop
       resizeObserver
       className="small-item-carousel black owl-carousel mb-0 autoplay owl-theme"
       style={{
@@ -33,7 +41,7 @@ export default function Slider() {
       }}
     >
       {/* Team item */}
-      {[...clients, ...clients].map((elm, i) => (
+      {clients.map((elm, i) => (
         <SwiperSlide className="owl-item" key={i}>
           <div className="logo-item">
             <Image
@@ -45,8 +53,8 @@ export default function Slider() {
               className="image-filter"
               style={{
                 width: "auto",
-                height: "120px",
-                maxWidth: "160px",
+                height: isMobile ? "80px" : "120px",
+                maxWidth: isMobile ? "120px" : "160px",
                 objectFit: "contain",
               }}
               priority={i < 6} // Priorité pour les 6 premières images visibles
