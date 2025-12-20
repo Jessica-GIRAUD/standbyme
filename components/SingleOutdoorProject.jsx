@@ -3,20 +3,26 @@
 import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import ParallaxContainer from "@/components/common/ParallaxContainer";
-
 import Header from "@/components/header/Header";
 import Contact from "@/components/Contact";
 import AnimatedText from "@/components/common/AnimatedText";
 import { menuItems } from "@/data/menu";
+import { outdoorProjects } from "@/data/outdoorProjects";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import FullscreenVideo from "@/components/FullscreenVideo";
 import useScreenSize from "@/hooks/useScreenSize";
 
-export default function SingleProject({ project, backLink = "/realisations" }) {
-  const t = useTranslations("portfolio");
+export default function SingleOutdoorProject() {
+  const params = useParams();
+  const t = useTranslations("outdoor");
   const { isMobile } = useScreenSize();
 
-  const title = project.client + " – " + project.salon + " " + project.date;
+  const project =
+    outdoorProjects.filter((p) => p.id == params.id)[0] || outdoorProjects[0];
+
+  const title = `${project.client} – ${project.title} ${project.date}`;
+  console.log("title", title);
   return (
     <>
       <div className="theme-main">
@@ -25,6 +31,7 @@ export default function SingleProject({ project, backLink = "/realisations" }) {
             <Header links={menuItems} />
           </nav>
           <main id="main">
+            {/* Hero */}
             <section className="page-section pt-0 pb-0" id="home">
               <ParallaxContainer
                 className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
@@ -34,23 +41,19 @@ export default function SingleProject({ project, backLink = "/realisations" }) {
                 }}
               >
                 <div className="container position-relative pt-30 pt-sm-50">
-                  {/* Section Content */}
                   <div className="text-center">
                     <div className="row">
-                      {/* Page Title */}
                       <div className="col-md-8 offset-md-2">
                         <div className="mb-20">
                           <a
-                            href={backLink}
+                            href="/outdoor"
                             className="btn btn-mod btn-small btn-border btn-circle"
                             data-btn-animate="y"
                           >
                             <i className="mi-arrow-left align-center size-18" />{" "}
-                            {t(
-                              backLink === "/realisations"
-                                ? "backPortfolio"
-                                : "backOutdoor"
-                            )}
+                            {t("backOutdoor", {
+                              defaultValue: "Back to outdoor",
+                            })}
                           </a>
                         </div>
                         <h1 className="hs-title-1 mb-20">
@@ -68,36 +71,25 @@ export default function SingleProject({ project, backLink = "/realisations" }) {
                               data-wow-delay="0.2s"
                               data-wow-duration="1.2s"
                             >
-                              {project.location + " – " + project.surface}
+                              {project.location}
                             </p>
                           </div>
                         </div>
                       </div>
-                      {/* End Page Title */}
                     </div>
                   </div>
-                  {/* End Section Content */}
                 </div>
               </ParallaxContainer>
             </section>
 
-            {/* Section */}
+            {/* Details & Media */}
             <section className="page-section">
               <div className="container position-relative">
                 <div className="row">
-                  {/* Project Details */}
+                  {/* Details */}
                   <div className="col-md-4 mb-sm-40 wow fadeInUp">
                     <div className="block-sticky">
                       <h2 className="h3 mb-20"> {t("details")}</h2>
-                      <hr className="mb-20" />
-                      <div className="row text-gray small">
-                        <div className="col-4">
-                          <b>{t("salon")} :</b>
-                        </div>
-                        <div className="col-8">
-                          {project.salon + " – " + project.date}
-                        </div>
-                      </div>
                       <hr className="mb-20" />
                       <div className="row text-gray small">
                         <div className="col-4">
@@ -113,54 +105,37 @@ export default function SingleProject({ project, backLink = "/realisations" }) {
                         </div>
                         <div className="col-8">{project.surface}</div>
                       </div>
-
-                      <hr className="mb-20" />
-
-                      <div className="col-12">
-                        {project.videoSrc && (
-                          <FullscreenVideo
-                            videoSrc={project.videoSrc}
-                            className={`w-100 ${
-                              isMobile ? "d-flex justify-content-center" : ""
-                            }`}
-                          >
-                            <span className="badge rounded-pill bg-light text-dark p-2 px-4 video-badge">
-                              {t("videoCaptation")}
-                            </span>
-                          </FullscreenVideo>
-                        )}
-                      </div>
                     </div>
                   </div>
-                  {/* End Project Details */}
+                  {/* Media */}
                   <div className="col-md-8">
                     <div className="mb-n30">
-                      {/* Photo Item */}
-                      {project.images.map((image, index) => {
-                        return (
-                          <div className="mb-30 wow fadeInUp" key={index}>
-                            <Image
-                              src={image.imgSrc}
-                              alt={image.imgAlt}
-                              width={1350}
-                              height={865}
-                            />
-                          </div>
-                        );
-                      })}
-
-                      {/* End Photo Item */}
+                      <div className="mb-30 wow fadeInUp">
+                        <iframe
+                          src={project.videoSrc}
+                          width={"100%"}
+                          height={400}
+                          allowFullScreen=""
+                          style={{ marginBottom: "20px" }}
+                        />
+                      </div>
+                      {project.images.map((img, index) => (
+                        <div className="mb-30 wow fadeInUp" key={index}>
+                          <Image
+                            src={img.imgSrc}
+                            alt={img.imgAlt}
+                            width={1350}
+                            height={865}
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-            {/* End Section */}
 
-            {/* Divider */}
             <hr className="mt-0 mb-0" />
-            {/* End Divider */}
-
             <Contact />
           </main>
           <Footer />

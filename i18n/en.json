@@ -4,6 +4,7 @@
     "Accueil": "Home",
     "Réalisations": "Projects",
     "SavoirFaire": "Expertise",
+    "Outdoor": "Outdoor",
     "ourTeam": "Our Team",
     "extraordinary": "An extraordinary creative team.",
     "learnMore": "Learn more",
@@ -29,6 +30,20 @@
     "testimonial1": "For this second year of collaboration, the Stand By Me team successfully evolved our booth by optimizing what already existed, all while remaining committed to a CSR approach. We are very satisfied working with Stand By Me, a local company that demonstrates great adaptability to the specific needs of an inter-professional organization. The setup went smoothly without a hitch!",
     "testimonial2": "We wanted to thank you for your help in setting up the UTMB Chamonix, which was a real success for HOKA! Your support was truly appreciated — thank you again for your responsiveness to our many requests!",
     "testimonial3": "This is the largest booth we’ve ever had, and every time we receive great feedback from our clients and partners about your stands. I want to commend your teams for their smooth communication, punctuality, and availability. The booth takedown was flawless. Once again, congratulations on this highly successful A+A edition!"
+  },
+  "outdoor": {
+    "title1": "Outdoor Structures & Global Reach",
+    "subtitle": "Designing and installing event structures worldwide to make your brand shine outdoors.",
+    "outdoorShowcaseTitle": "Tailor-Made Outdoor Solutions",
+    "outdoorShowcaseDescr": "From timber frames to converted containers, explore our wide range of outdoor event possibilities.",
+    "backOutdoor": "Back to Outdoor page",
+    "viewProject": "View project"
+  },
+  "international": {
+    "title1": "International presence in expansion",
+    "title2": "Our installations are implanted on every continent, supported by recognized technical expertise and solutions designed to last everywhere in the world.",
+    "superficie": "Square meters",
+    "revenu": "Revenue"
   },
   "common": {
     "backHome": "Back to homepage",

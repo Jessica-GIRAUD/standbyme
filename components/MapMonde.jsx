@@ -4,25 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import AnimatedText from "./common/AnimatedText";
 import { useTranslations } from "next-intl";
-
-const CITIES = [
-  { name: "Singapore", x: 78, y: 65, ca: 360, m2: 2200 },
-  { name: "Paris", x: 48, y: 35, ca: 80000, m2: 2800 },
-  { name: "Dubai", x: 62, y: 45, ca: 410, m2: 2600 },
-  { name: "Stockholm", x: 52, y: 26, ca: 320, m2: 1800 },
-  { name: "Tokyo", x: 87, y: 43, ca: 520, m2: 3200 },
-  { name: "New York", x: 27, y: 35, ca: 580, m2: 3500 },
-  { name: "London", x: 45, y: 30, ca: 380, m2: 2100 },
-  { name: "Sydney", x: 92, y: 83, ca: 290, m2: 1600 },
-  { name: "Madrid", x: 46, y: 41, ca: 290, m2: 1600 },
-];
+import { cities } from "@/data/cities";
 
 export default function MapMonde() {
   const t = useTranslations("international");
   const [hoveredCity, setHoveredCity] = useState(null);
 
   const getPointSize = (ca) => {
-    const maxCa = Math.max(...CITIES.map((c) => c.ca));
+    const maxCa = Math.max(...cities.map((c) => c.ca));
     return 12 + (ca / maxCa) * 5;
   };
 
@@ -73,7 +62,7 @@ export default function MapMonde() {
           />
 
           {/* Animated Data Points */}
-          {CITIES.map((city, index) => {
+          {cities.map((city, index) => {
             const size = getPointSize(city.ca);
             const isHovered = hoveredCity === city.name;
 
@@ -86,6 +75,7 @@ export default function MapMonde() {
                 style={{
                   left: `${city.x}%`,
                   top: `${city.y}%`,
+                  zIndex: hoveredCity === city.name ? 20 : 10,
                 }}
                 onMouseEnter={() => setHoveredCity(city.name)}
                 onMouseLeave={() => setHoveredCity(null)}
@@ -103,11 +93,11 @@ export default function MapMonde() {
                 {/* Main point */}
                 <button
                   className="data-point"
-                  style={{ width: size, height: size }}
+                  style={{ width: size, height: size, zIndex: 1 }}
                   aria-label={`${city.name}: ${formatNumber(
                     city.ca
                   )} revenue, ${city.m2} square meters`}
-                ></button>
+                />
 
                 {/* Tooltip on hover */}
                 {isHovered && (
@@ -115,13 +105,17 @@ export default function MapMonde() {
                     <div className="tooltip-city">{city.name}</div>
                     <div className="tooltip-stats">
                       <div className="tooltip-stat">
-                        <span className="tooltip-stat-label">Revenu:</span>
+                        <span className="tooltip-stat-label">
+                          {t("revenu")}:
+                        </span>
                         <span className="tooltip-stat-value">
                           {formatNumber(city.ca)}€
                         </span>
                       </div>
                       <div className="tooltip-stat">
-                        <span className="tooltip-stat-label">Superficie:</span>
+                        <span className="tooltip-stat-label">
+                          {t("superficie")}:
+                        </span>
                         <span className="tooltip-stat-value">
                           {city.m2.toLocaleString()} m²
                         </span>

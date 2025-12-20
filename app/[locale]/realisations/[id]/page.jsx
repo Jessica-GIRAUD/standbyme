@@ -2,8 +2,8 @@ import SingleProject from "@/components/SingleProject";
 import { portfolios } from "@/data/portfolio";
 
 export async function generateMetadata({ params }) {
-  const item = portfolios.find((elm) => elm.id == params.id);
-
+  const dynamicParams = await params;
+  const item = portfolios.find((elm) => elm.id == dynamicParams?.id);
   const title = `${item.client} – ${item.salon} ${item.date}`;
 
   return {
@@ -13,6 +13,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Page() {
-  return <SingleProject />;
+export default function Page({ params }) {
+  const project = portfolios.find((p) => p.id == params.id);
+  return <SingleProject project={project} />;
 }
