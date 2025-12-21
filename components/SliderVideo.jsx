@@ -65,7 +65,7 @@ export default function SliderVideo() {
                       height="400"
                       controls
                       preload="metadata"
-                      autoPlay
+                      playsInline
                     />
                   )}
                 </div>
