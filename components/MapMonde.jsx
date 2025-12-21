@@ -65,6 +65,7 @@ export default function MapMonde() {
           {cities.map((city, index) => {
             const size = getPointSize(city.ca);
             const isHovered = hoveredCity === city.name;
+            const tooltipLeft = city.x > 80;
 
             return (
               <div
@@ -101,7 +102,11 @@ export default function MapMonde() {
 
                 {/* Tooltip on hover */}
                 {isHovered && (
-                  <div className="data-tooltip">
+                  <div
+                    className={`data-tooltip ${
+                      tooltipLeft ? "tooltip-left" : "tooltip-top"
+                    }`}
+                  >
                     <div className="tooltip-city">{city.name}</div>
                     <div className="tooltip-stats">
                       <div className="tooltip-stat">

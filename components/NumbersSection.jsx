@@ -2,7 +2,8 @@
 
 import { numberItems } from "@/data/numbers";
 import React, { useEffect, useState, useRef } from "react";
-import ParallaxContainer from "./common/ParallaxContainer";
+import AnimatedText from "./common/AnimatedText";
+import { useTranslations } from "next-intl";
 
 const useCountUp = (end, start = 0, duration = 2000, delay = 0) => {
   const [count, setCount] = useState(start);
@@ -45,7 +46,6 @@ const useCountUp = (end, start = 0, duration = 2000, delay = 0) => {
     // Convertir le délai de chaîne (ex: "0.4s") en millisecondes
     const delayMs =
       typeof delay === "string" ? parseFloat(delay) * 1000 : delay;
-    console.log("delay", delay);
 
     // Extraire la valeur numérique et le symbole
     const match = String(end).match(/^(\d*\.?\d*)([^\d.]*)$/);
@@ -98,44 +98,74 @@ const useCountUp = (end, start = 0, duration = 2000, delay = 0) => {
 };
 
 export default function NumbersSection() {
-  const dark = true;
-
+  const t = useTranslations("home");
   return (
-    <ParallaxContainer
-      className="page-section bg-dark-1 bg-dark-alpha-90 parallax-5 light-content"
-      style={{
-        backgroundImage:
-          "url(/assets/images/full-width-images/section-bg-2.jpg)",
-      }}
-    >
-      <div
-        className="container d-flex justify-content-center flex-wrap"
-        style={{ maxWidth: "100vw" }}
-      >
-        {numberItems.map((item, index) => {
-          const [count, ref] = useCountUp(item.title, 0, 2000, item.delay);
-          return (
-            <div
-              key={index}
-              className={`col-sm-6 col-lg-3 wow fadeScaleIn text-center px-4`}
-              ref={ref}
-              data-wow-delay={item.delay}
-            >
-              <div
-                className="number-title mb-10"
-                style={{
-                  fontVariantNumeric: "tabular-nums",
-                  minHeight: "1.2em",
-                  display: "inline-block",
-                }}
-              >
-                {count}
+    <section className="page-section bg-gray-light-1">
+      <div className="container relative pt-30">
+        <div className="text-center">
+          <div className="row">
+            <div className="col-md-8 offset-md-2">
+              <h3 className="section-title mb-30">
+                <AnimatedText text={t("chiffreTitle")} />
+              </h3>
+              <div className="row">
+                <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                  <p
+                    className="section-descr mb-0 wow fadeIn"
+                    data-wow-delay="0.2s"
+                    data-wow-duration="1.2s"
+                  >
+                    {t("chiffreDescription")}
+                  </p>
+                </div>
               </div>
-              <div className="number-descr">{item.description}</div>
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
-    </ParallaxContainer>
+      <div>
+        <div className="numbers-section">
+          {numberItems.map((item, index) => {
+            const isNumeric = /^\d/.test(item.title);
+            const [displayValue, ref] = isNumeric
+              ? useCountUp(item.title, 0, 2000, item.delay)
+              : [item.title, null];
+            return (
+              <div
+                key={index}
+                className="col-sm-6 col-lg-3 wow fadeScaleIn px-2"
+                ref={isNumeric ? ref : null}
+                data-wow-delay={item.delay}
+              >
+                <div className="box-shadow text-center h-100 mt-0 p-4">
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt={item.title}
+                      style={{ maxWidth: 90, marginBottom: 10 }}
+                    />
+                  ) : (
+                    <div
+                      className="number-title"
+                      style={{
+                        fontVariantNumeric: "tabular-nums",
+                        minHeight: "1.2em",
+                        display: "inline-block",
+                      }}
+                    >
+                      {displayValue}
+                    </div>
+                  )}
+                  {item.suite && (
+                    <div className="number-suite mb-10">{item.suite}</div>
+                  )}
+                  <div className="number-descr">{item.description}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

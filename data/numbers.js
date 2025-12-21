@@ -3,24 +3,33 @@ export const numberItems = [
     id: 1,
     delay: "0.4s",
     title: "1350+",
-    description: "stands réalisés depuis notre création en 2008",
+    suite: "stands conçus et réalisés",
+    description:
+      "Depuis notre création, pour des projets sur-mesure, de toutes tailles.",
   },
+
   {
     id: 2,
     delay: "0.6s",
     title: "9",
-    description: "pays d'accompagnement de nos clients sur 3 continents",
+    suite: "pays sur 3 continents",
+    description:
+      "Une expertise reconnue pour accompagner nos clients à l’international.",
   },
   {
     id: 3,
     delay: "0.8s",
-    title: "18",
-    description: "ans d’existence depuis la création en 2008",
+    title: "15",
+    suite: "années d’expertise",
+    description: "Au service de projets ambitieux depuis 2008.",
   },
   {
     id: 4,
     delay: "1s",
-    title: "100%",
-    description: "Certifié Entreprise BPI Excellence",
+    title: "Certifié BPI Excellence",
+    suite: "Entreprise labellisée",
+    description:
+      "Une reconnaissance officielle de notre savoir-faire et de notre performance.",
+    logo: "/assets/images/logo_excellence.png",
   },
 ];

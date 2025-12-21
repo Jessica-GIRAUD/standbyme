@@ -422,7 +422,7 @@ html {
 /* Map viewport */
 .map-viewport {
   aspect-ratio: 16 / 9;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   background: transparent;
 }
@@ -508,9 +508,6 @@ html {
 /* Modern glass tooltip */
 .data-tooltip {
   position: absolute;
-  bottom: calc(100% + 16px);
-  left: 50%;
-  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 8px;
@@ -519,7 +516,13 @@ html {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 2;
+  z-index: 1200;
+}
+
+.tooltip-top {
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
   animation: tooltip-appear 0.3s ease-out;
 }
 
@@ -531,6 +534,20 @@ html {
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-top-color: rgba(255, 255, 255, 0.7);
+}
+
+.tooltip-left {
+  left: auto;
+  right: calc(100% + 16px);
+  transform: none;
+  bottom: calc(100% - 60px);
+}
+.tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes point-appear {
@@ -614,4 +631,22 @@ html {
   .point-label {
     font-size: 0.5rem;
   }
+}
+
+.numbers-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.number-card {
+  background: #ffffff7c;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }

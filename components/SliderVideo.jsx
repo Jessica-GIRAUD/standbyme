@@ -6,10 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { outdoorProjects } from "@/data/outdoorProjects";
 import { useTranslations } from "next-intl";
+import useScreenSize from "@/hooks/useScreenSize";
 
 export default function SliderVideo() {
   const swiperRef = useRef(null);
   const t = useTranslations("outdoor");
+  const { isMobile } = useScreenSize();
 
   return (
     <Swiper
@@ -83,6 +85,7 @@ export default function SliderVideo() {
                       height="400"
                       controls
                       preload="metadata"
+                      autoPlay
                     />
                   )}
                 </div>
@@ -95,7 +98,7 @@ export default function SliderVideo() {
                     {elm.title}
                   </h2>
                   <p className="text-gray mb-40 mb-sm-30">{elm.description}</p>
-                  <div>
+                  <div className={isMobile ? "text-center" : ""}>
                     <a
                       href={`/outdoor/${elm.id}`}
                       className="btn btn-mod btn-white btn-round btn-large btn-hover-anim"
@@ -112,36 +115,38 @@ export default function SliderVideo() {
       ))}
       <div className="owl-controls clickable">
         <div className="owl-pagination sp3"></div>
-        <div className="owl-buttons">
-          <div className="owl-prev snbp3 " role="button" tabIndex="0">
-            <span className="visually-hidden">Previous Slide</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="27px"
-              height="57px"
-              viewBox="0 0 27 57"
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M5.005,28.500 L27.000,54.494 L24.000,56.994 L0.005,28.500 L24.000,0.006 L27.000,2.506 L5.005,28.500 Z"></path>
-            </svg>
+        {!isMobile && (
+          <div className="owl-buttons">
+            <div className="owl-prev snbp3 " role="button" tabIndex="0">
+              <span className="visually-hidden">Previous Slide</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27px"
+                height="57px"
+                viewBox="0 0 27 57"
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M5.005,28.500 L27.000,54.494 L24.000,56.994 L0.005,28.500 L24.000,0.006 L27.000,2.506 L5.005,28.500 Z"></path>
+              </svg>
+            </div>
+            <div className="owl-next snbn3" role="button" tabIndex="0">
+              <span className="visually-hidden">Next Slide</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27px"
+                height="57px"
+                viewBox="0 0 27 57"
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M21.995,28.500 L-0.000,54.494 L3.000,56.994 L26.995,28.500 L3.000,0.006 L-0.000,2.506 L21.995,28.500 Z"></path>
+              </svg>
+            </div>
           </div>
-          <div className="owl-next snbn3" role="button" tabIndex="0">
-            <span className="visually-hidden">Next Slide</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="27px"
-              height="57px"
-              viewBox="0 0 27 57"
-              fill="currentColor"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M21.995,28.500 L-0.000,54.494 L3.000,56.994 L26.995,28.500 L3.000,0.006 L-0.000,2.506 L21.995,28.500 Z"></path>
-            </svg>
-          </div>
-        </div>
+        )}
       </div>
     </Swiper>
   );
