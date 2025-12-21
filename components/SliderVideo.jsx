@@ -9,31 +9,11 @@ import { useTranslations } from "next-intl";
 import useScreenSize from "@/hooks/useScreenSize";
 
 export default function SliderVideo() {
-  const swiperRef = useRef(null);
   const t = useTranslations("outdoor");
   const { isMobile } = useScreenSize();
 
   return (
     <Swiper
-      onSwiper={(swiper) => {
-        swiperRef.current = swiper;
-        // play video in first slide if present
-        const firstVideo =
-          swiper.slides[swiper.activeIndex]?.querySelector("video");
-        firstVideo?.play?.().catch(() => {});
-      }}
-      onSlideChange={(swiper) => {
-        swiper.slides.forEach((slide, idx) => {
-          const video = slide.querySelector("video");
-          if (!video) return;
-          if (idx === swiper.activeIndex) {
-            video.play?.().catch(() => {});
-          } else {
-            video.pause();
-            video.currentTime = 0;
-          }
-        });
-      }}
       spaceBetween={0}
       slidesPerView={1}
       modules={[Navigation, Pagination]}
