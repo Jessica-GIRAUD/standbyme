@@ -91,7 +91,7 @@ export default async function SavoirFaire() {
               <Timeline />
             </section>
 
-            <section className="page-section">
+            <section className="page-section" id="eco">
               <Eco />
             </section>
 

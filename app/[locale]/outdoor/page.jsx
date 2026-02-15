@@ -1,100 +1,87 @@
-import ParallaxContainer from "@/components/common/ParallaxContainer";
 import Header from "@/components/header/Header";
-import AnimatedText from "@/components/common/AnimatedText";
 import Footer from "@/components/footer/Footer";
 import Contact from "@/components/Contact";
-import MapMonde from "@/components/MapMonde";
+import Hero from "@/components/Hero";
+import OutdoorPortfolio from "@/components/OutdoorPortfolio";
 import { menuItems } from "@/data/menu";
 import { infos } from "@/data/infos";
+import MapMonde from "@/components/MapMonde";
+import ParallaxContainer from "@/components/common/ParallaxContainer";
+import AnimatedText from "@/components/common/AnimatedText";
 import { getTranslations } from "next-intl/server";
-import SliderVideo from "@/components/SliderVideo";
 
 export const metadata = {
-  title: `${infos.company} - Outdoor & International`,
+  title: `${infos.company} - Outdoor & Structures`,
   description:
-    "Focus Outdoor & International – Stand By Me, expert en structures événementielles et accompagnement worldwide.",
+    "Découvrez nos structures outdoor : bois, métal, tentes AirClad et Algéco. Stand By Me conçoit et réalise vos espaces événementiels extérieurs sur mesure.",
 };
 
 export default async function OutdoorPage() {
-  // Namespace keys should exist in messages/outdoor.json translations
-  const t = await getTranslations("outdoor");
-
+  const t = await getTranslations("portfolio");
   return (
     <div className="theme-main">
       <div className="page" id="top">
         {/* Navigation */}
-        <nav className="main-nav transparent stick-fixed wow-menubar">
+        <nav className="main-nav dark light-after-scroll transparent stick-fixed wow-menubar wch-unset">
           <Header links={menuItems} />
         </nav>
 
         <main id="main">
-          {/* ------------------------------------------------------------------ */}
-          {/* HERO SECTION */}
-          {/* ------------------------------------------------------------------ */}
-          <ParallaxContainer
-            className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
-            style={{
-              backgroundImage:
-                "url(/assets/images/full-width-images/section-bg-5.jpg)",
-            }}
-          >
-            <div className="container position-relative pt-30 pt-sm-50">
-              <div className="text-center">
-                <div className="row">
-                  <div className="col-md-8 offset-md-2">
-                    <h1 className="hs-title-1 mb-30">
-                      <span className="wow charsAnimIn" data-splitting="chars">
-                        {/* Title: e.g. "Outdoor & International" */}
-                        <AnimatedText text={t("title1")} />
-                      </span>
-                    </h1>
-                    <div className="row">
-                      <div className="col-lg-10 offset-lg-1">
-                        <p
-                          className="section-descr mb-0 wow fadeInUp"
-                          data-wow-delay="0.6s"
-                          data-wow-duration="1.2s"
+          {/* Hero Video Section - Sans contenu texte */}
+          <Hero
+            showContent={false}
+            scrollTarget="#outdoor-content"
+            sectionId="home"
+          />
+
+          <section className="page-section pt-0 pb-0" id="home">
+            <ParallaxContainer
+              className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
+              style={{
+                backgroundImage:
+                  "url(/assets/images/full-width-images/section-bg-1.webp)",
+              }}
+            >
+              <div className="container position-relative pt-30 pt-sm-50">
+                <div className="text-center">
+                  <div className="row">
+                    <div className="col-md-8 offset-md-2">
+                      <h1 className="hs-title-1 mb-20">
+                        <span
+                          className="wow charsAnimIn"
+                          data-splitting="chars"
                         >
-                          {t("subtitle")}
-                        </p>
+                          <AnimatedText text={t("outdoor")} />
+                        </span>
+                      </h1>
+                      <div className="row">
+                        <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                          <p
+                            className="section-descr mb-0 wow fadeIn"
+                            data-wow-delay="0.2s"
+                            data-wow-duration="1.2s"
+                          >
+                            {t("solutions_outdoor")}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </ParallaxContainer>
+            </ParallaxContainer>
+          </section>
 
-          {/* ------------------------------------------------------------------ */}
+          {/* Outdoor Portfolio Section */}
+          <div id="outdoor-content">
+            <OutdoorPortfolio gridClass="work-grid-3" />
+          </div>
           {/* INTERNATIONAL MAP SECTION */}
-          {/* ------------------------------------------------------------------ */}
           <section id="international">
             <MapMonde />
           </section>
 
-          {/* ------------------------------------------------------------------ */}
-          {/* OUTDOOR STRUCTURE SHOWCASE */}
-          {/* ------------------------------------------------------------------ */}
-          <section className="page-section pt-0" id="outdoor-showcase">
-            <div className="container position-relative pt-50 pb-70">
-              <div className="row">
-                <div className="col-md-8 offset-md-2 text-center">
-                  <h3 className="section-title mb-30">
-                    <AnimatedText text={t("outdoorShowcaseTitle")} />
-                  </h3>
-                  <p className="section-descr mb-60">
-                    {t("outdoorShowcaseDescr")}
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* Slider with example structures (images / videos) */}
-            <SliderVideo />
-          </section>
-
-          {/* ------------------------------------------------------------------ */}
-          {/* CONTACT */}
-          {/* ------------------------------------------------------------------ */}
+          {/* Contact Section */}
           <Contact />
         </main>
 

@@ -1,83 +1,114 @@
 export const outdoorProjects = [
   {
     id: 1,
-    client: "Brand X",
-    salon: "REFUGE",
-    surface: "0m²",
-    title: "Hoka Lounge",
-    date: "2025",
-    location: "Paris",
-    videoSrc: "/assets/videos/Hoka.mp4",
+    type: "Bois",
+    name: "Les Cloisons",
     images: [
       {
-        imgSrc: "/assets/images/outdoor/Hoka_1.webp",
-        imgAlt: "Container bar - night view",
+        imgSrc: "/assets/images/outdoor/cloison.webp",
+        imgAlt: "Cloisons en bois",
       },
       {
-        imgSrc: "/assets/images/outdoor/Hoka_2.webp",
-        imgAlt: "Container bar - daytime",
-      },
-      {
-        imgSrc: "/assets/images/outdoor/Hoka_3.webp",
-        imgAlt: "Container bar - interior view",
+        imgSrc: "/assets/images/outdoor/cloison2.jpg",
+        imgAlt: "Cloisons en bois - vue détaillée",
       },
     ],
-    type: "video",
-    description:
-      "A modular container bar designed for high-traffic urban events, combining fast setup, strong visual identity and night-time visibility.",
+    svg: "/assets/images/outdoor/cloison.svg",
   },
   {
     id: 2,
-    client: "Festival Y",
-    title: "AirClad Lounge",
-    date: "2024",
-    location: "Berlin",
-    salon: "REFUGE",
-    surface: "0m²",
-    videoSrc: "/assets/videos/REVOLUT.mp4",
+    type: "Bois",
+    name: "Les Espaces Modulables",
     images: [
       {
-        imgSrc: "/assets/images/outdoor/Hoka_1.webp",
-        imgAlt: "AirClad lounge - exterior",
+        imgSrc: "/assets/images/outdoor/espace_modulable.webp",
+        imgAlt: "Espace modulable Algéco",
       },
       {
-        imgSrc: "/assets/images/outdoor/Hoka_2.webp",
-        imgAlt: "AirClad lounge - interior",
-      },
-      {
-        imgSrc: "/assets/images/outdoor/Hoka_3.webp",
-        imgAlt: "AirClad lounge - crowd view",
+        imgSrc: "/assets/images/outdoor/espace_modulable2.jpg",
+        imgAlt: "Espace modulable - vue détaillée",
       },
     ],
-    type: "video",
-    description:
-      "An immersive AirClad lounge created for a major music festival, offering a lightweight structure with strong branding and visitor flow.",
+    svg: "/assets/images/outdoor/espace_modulable.svg",
   },
   {
     id: 3,
-    client: "Festival W",
-    title: "Mobile Innovation Hub",
-    date: "2023",
-    location: "Amsterdam",
-    salon: "REFUGE",
-    surface: "0m²",
-    videoSrc: "/assets/videos/STAND_PTC_2025.mp4",
+    type: "Bois",
+    name: "Les Structures à Étages",
     images: [
       {
-        imgSrc: "/assets/images/outdoor/Hoka_3.webp",
-        imgAlt: "Mobile hub - exterior",
+        imgSrc: "/assets/images/outdoor/structure_a_etage1.webp",
+        imgAlt: "Structure à étages en métal",
       },
       {
-        imgSrc: "/assets/images/outdoor/Hoka_2.webp",
-        imgAlt: "Mobile hub - interior",
-      },
-      {
-        imgSrc: "/assets/images/outdoor/Hoka_1.webp",
-        imgAlt: "Mobile hub - event setup",
+        imgSrc: "/assets/images/outdoor/structure_a_etage2.jpg",
+        imgAlt: "Structure à étages - vue détaillée",
       },
     ],
-    type: "video",
-    description:
-      "A hybrid mobile structure designed as a travelling innovation hub, enabling product demos, workshops and public engagement across European cities.",
+    svg: "/assets/images/outdoor/structure_a_etage.svg",
+  },
+  {
+    id: 4,
+    type: "Bois",
+    name: "La Grange",
+    images: [
+      {
+        imgSrc: "/assets/images/outdoor/grange.webp",
+        imgAlt: "Structure grange en bois",
+      },
+      {
+        imgSrc: "/assets/images/outdoor/grange2.jpg",
+        imgAlt: "Structure grange en bois - vue détaillée",
+      },
+    ],
+    svg: "/assets/images/outdoor/grange.svg",
+  },
+  {
+    id: 5,
+    type: "Bois",
+    name: "Le Kiosque",
+    images: [
+      {
+        imgSrc: "/assets/images/outdoor/kiosque1.webp",
+        imgAlt: "Kiosque en bois",
+      },
+      {
+        imgSrc: "/assets/images/outdoor/kiosque2.jpg",
+        imgAlt: "Kiosque en bois - vue détaillée",
+      },
+    ],
+    svg: "/assets/images/outdoor/kiosque.svg",
+  },
+  {
+    id: 6,
+    type: "Bois",
+    name: "Le Dôme",
+    images: [
+      {
+        imgSrc: "/assets/images/outdoor/dome.webp",
+        imgAlt: "Dôme AirClad",
+      },
+      {
+        imgSrc: "/assets/images/outdoor/dome2.jpg",
+        imgAlt: "Dôme AirClad - vue détaillée",
+      },
+    ],
+    svg: "/assets/images/outdoor/dome.svg",
+  },
+  {
+    id: 7,
+    type: "Bois",
+    name: "La French Cabane",
+    images: [
+      {
+        imgSrc: "/assets/images/outdoor/french_cabane.webp",
+        imgAlt: "French Cabane",
+      },
+      {
+        imgSrc: "/assets/images/outdoor/french_cabane2.jpg",
+        imgAlt: "French Cabane - vue détaillée",
+      },
+    ],
+    svg: "/assets/images/outdoor/french_cabane.svg",
   },
 ];

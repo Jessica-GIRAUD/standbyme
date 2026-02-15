@@ -103,29 +103,12 @@ export default function MapMonde() {
                 {/* Tooltip on hover */}
                 {isHovered && (
                   <div
-                    className={`data-tooltip ${
+                    className={`city-tooltip ${
                       tooltipLeft ? "tooltip-left" : "tooltip-top"
                     }`}
                   >
-                    <div className="tooltip-city">{city.name}</div>
-                    <div className="tooltip-stats">
-                      <div className="tooltip-stat">
-                        <span className="tooltip-stat-label">
-                          {t("revenu")}:
-                        </span>
-                        <span className="tooltip-stat-value">
-                          {formatNumber(city.ca)}€
-                        </span>
-                      </div>
-                      <div className="tooltip-stat">
-                        <span className="tooltip-stat-label">
-                          {t("superficie")}:
-                        </span>
-                        <span className="tooltip-stat-value">
-                          {city.m2.toLocaleString()} m²
-                        </span>
-                      </div>
-                    </div>
+                    <div className="city-name">{city.name}</div>
+                    <div className="city-country">{city.country}</div>
                   </div>
                 )}
               </div>

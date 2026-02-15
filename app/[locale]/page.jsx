@@ -8,7 +8,6 @@ import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import NumbersSection from "@/components/NumbersSection";
-import MapMonde from "@/components/MapMonde";
 
 export const metadata = {
   title:
@@ -62,7 +61,6 @@ export default function Home() {
 
           <main id="main">
             <Hero />
-            <MapMonde />
             <NumbersSection />
             <ClientSection />
             <Team />

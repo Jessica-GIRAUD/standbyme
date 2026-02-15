@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import addScrollspy from '@/utils/addScrollSpy';
-import { init_classic_menu_resize } from '@/utils/menuToggle';
-import { scrollToElement } from '@/utils/scrollToElement';
-import { closeMobileMenu } from '@/utils/toggleMobileMenu';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import addScrollspy from "@/utils/addScrollSpy";
+import { init_classic_menu_resize } from "@/utils/menuToggle";
+import { scrollToElement } from "@/utils/scrollToElement";
+import { closeMobileMenu } from "@/utils/toggleMobileMenu";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Navigation({ links, animateY = false }) {
-  const t = useTranslations('home');
+  const t = useTranslations("home");
 
   useEffect(() => {
     setTimeout(() => {
       scrollToElement();
     }, 1000);
     init_classic_menu_resize();
-    window.addEventListener('scroll', addScrollspy);
+    window.addEventListener("scroll", addScrollspy);
 
-    window.addEventListener('resize', init_classic_menu_resize);
+    window.addEventListener("resize", init_classic_menu_resize);
 
     return () => {
-      window.removeEventListener('scroll', addScrollspy);
-      window.removeEventListener('resize', init_classic_menu_resize);
+      window.removeEventListener("scroll", addScrollspy);
+      window.removeEventListener("resize", init_classic_menu_resize);
     };
   }, []);
 
@@ -31,29 +31,44 @@ export default function Navigation({ links, animateY = false }) {
 
   return (
     <>
-      {links[0].href?.includes('/') &&
+      {links[0].href?.includes("/") &&
         links.map((link, index) => (
-          <li key={index}>
+          <li key={index} className={link.special ? "special" : ""}>
             <Link
               className={(() => {
                 // Handle home page case
                 if (
-                  link.href === '/' &&
-                  (pathname === '/' || pathname.split('/').length <= 2)
+                  link.href === "/" &&
+                  (pathname === "/" || pathname.split("/").length <= 2)
                 ) {
-                  return 'active';
+                  return "active";
                 }
                 // Handle other pages
-                const currentPage = pathname.split('/')[2] || '';
-                const linkPage = link.href.split('/')[1] || '';
-                return currentPage === linkPage ? 'active' : '';
+                const currentPage = pathname.split("/")[2] || "";
+                const linkPage = link.href.split("/")[1] || "";
+                return currentPage === linkPage ? "active" : "";
               })()}
               href={link.href}
             >
-              {animateY ? (
-                <span className='btn-animate-y'>
-                  <span className='btn-animate-y-1'>{link.text}</span>
-                  <span className='btn-animate-y-2' aria-hidden='true'>
+              {link.special ? (
+                <span
+                  className="link-hover-anim underline"
+                  data-link-animate="y"
+                >
+                  <span className="link-strong link-strong-unhovered">
+                    {t(link.text)}
+                  </span>
+                  <span
+                    className="link-strong link-strong-hovered"
+                    aria-hidden="true"
+                  >
+                    {t(link.text)}
+                  </span>
+                </span>
+              ) : animateY ? (
+                <span className="btn-animate-y">
+                  <span className="btn-animate-y-1">{link.text}</span>
+                  <span className="btn-animate-y-2" aria-hidden="true">
                     {t(link.text)}
                   </span>
                 </span>
@@ -63,14 +78,14 @@ export default function Navigation({ links, animateY = false }) {
             </Link>
           </li>
         ))}
-      {!links[0].href?.includes('/') &&
+      {!links[0].href?.includes("/") &&
         links.map((link, index) => (
-          <li className='scrollspy-link' key={index}>
-            <a onClick={() => closeMobileMenu()} className='' href={link.href}>
+          <li className="scrollspy-link" key={index}>
+            <a onClick={() => closeMobileMenu()} className="" href={link.href}>
               {animateY ? (
-                <span className='btn-animate-y'>
-                  <span className='btn-animate-y-1'>{link.text}</span>
-                  <span className='btn-animate-y-2' aria-hidden='true'>
+                <span className="btn-animate-y">
+                  <span className="btn-animate-y-1">{link.text}</span>
+                  <span className="btn-animate-y-2" aria-hidden="true">
                     {t(link.text)}
                   </span>
                 </span>

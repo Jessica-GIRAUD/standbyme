@@ -22,8 +22,8 @@ export default function Slider() {
           slidesPerView: 4, // When window width is <= 768px
         },
         0: {
-          slidesPerView: 3, // When window width is <= 480px
-          spaceBetween: 30,
+          slidesPerView: 2, // When window width is <= 480px
+          spaceBetween: 40,
         },
       }}
       watchSlidesProgress
@@ -53,8 +53,8 @@ export default function Slider() {
               className="image-filter"
               style={{
                 width: "auto",
-                height: isMobile ? "80px" : "120px",
-                maxWidth: isMobile ? "120px" : "160px",
+                height: isMobile ? "100px" : "140px",
+                maxWidth: isMobile ? "150px" : "180px",
                 objectFit: "contain",
               }}
               priority={i < 6} // Priorité pour les 6 premières images visibles

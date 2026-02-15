@@ -4,6 +4,7 @@ import { numberItems } from "@/data/numbers";
 import React, { useEffect, useState, useRef } from "react";
 import AnimatedText from "./common/AnimatedText";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const useCountUp = (end, start = 0, duration = 2000, delay = 0) => {
   const [count, setCount] = useState(start);
@@ -131,9 +132,10 @@ export default function NumbersSection() {
               ? useCountUp(item.title, 0, 2000, item.delay)
               : [item.title, null];
             return (
-              <div
+              <Link
+                href={item.link}
                 key={index}
-                className="col-sm-6 col-lg-3 wow fadeScaleIn px-2"
+                className="col-sm-6 col-lg-3 wow fadeScaleIn px-2 text-decoration-none"
                 ref={isNumeric ? ref : null}
                 data-wow-delay={item.delay}
               >
@@ -161,7 +163,7 @@ export default function NumbersSection() {
                   )}
                   <div className="number-descr">{item.description}</div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

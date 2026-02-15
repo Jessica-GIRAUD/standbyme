@@ -6,6 +6,7 @@ export const numberItems = [
     suite: "stands conçus et réalisés",
     description:
       "Depuis notre création, pour des projets sur-mesure, de toutes tailles.",
+    link: "/realisations",
   },
 
   {
@@ -15,6 +16,7 @@ export const numberItems = [
     suite: "pays sur 3 continents",
     description:
       "Une expertise reconnue pour accompagner nos clients à l’international.",
+    link: "/outdoor/#international",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const numberItems = [
     title: "15",
     suite: "années d’expertise",
     description: "Au service de projets ambitieux depuis 2008.",
+    link: "/savoir-faire",
   },
   {
     id: 4,
@@ -31,5 +34,6 @@ export const numberItems = [
     description:
       "Une reconnaissance officielle de notre savoir-faire et de notre performance.",
     logo: "/assets/images/logo_excellence.png",
+    link: "/savoir-faire/#eco",
   },
 ];
