@@ -1,36 +1,15 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import React from 'react';
-import FullscreenVideo from './FullscreenVideo';
-import useScreenSize from '@/hooks/useScreenSize';
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import React from "react";
+import FullscreenVideo from "./FullscreenVideo";
+import useScreenSize from "@/hooks/useScreenSize";
+import { timelineItems } from "@/data/timeline";
 
 export default function Timeline() {
-  const t = useTranslations('savoir-faire');
+  const t = useTranslations("savoir-faire");
   const { isMobile } = useScreenSize();
-
-  const timelineItems = [
-    {
-      title: 'STAND VIRTUEL',
-      description: 'Jump',
-      btn: 'Découvrir le stand',
-      link: 'https://deltaplus-preventica2023.fr/',
-      image: '/assets/images/delta_vr.webp',
-    },
-    {
-      title: 'CAPTATION VIDEO',
-      description: 'Capture',
-      videoUrl: '/assets/videos/media_2.mp4',
-      thumbnail: '/assets/images/captation-video.png',
-    },
-    {
-      title: 'CAMERA INTELLIGENTE',
-      description: 'Optimise',
-      videoUrl: '/assets/videos/media_1.mp4',
-      thumbnail: '/assets/images/cam.webp',
-    },
-  ];
 
   return (
     <div className="timeline-container">
@@ -41,7 +20,7 @@ export default function Timeline() {
             key={index}
             data-wow-delay={`${index * 0.12}s`}
           >
-            <div className={`col-md-6 ${index % 2 === 0 ? 'order-md-2' : ''}`}>
+            <div className={`col-md-6 ${index % 2 === 0 ? "order-md-2" : ""}`}>
               <div className="timeline-content">
                 <div className="position-relative">
                   {el.videoUrl ? (
@@ -54,8 +33,8 @@ export default function Timeline() {
                           height={400}
                           className="img-fluid rounded cursor-pointer"
                           style={{
-                            height: isMobile ? 'auto' : '250px',
-                            objectFit: 'cover',
+                            height: isMobile ? "auto" : "250px",
+                            objectFit: "cover",
                           }}
                         />
                       </div>
@@ -68,8 +47,8 @@ export default function Timeline() {
                       height={400}
                       className="img-fluid rounded"
                       style={{
-                        height: isMobile ? 'auto' : '250px',
-                        objectFit: 'cover',
+                        height: isMobile ? "auto" : "250px",
+                        objectFit: "cover",
                       }}
                     />
                   )}
@@ -86,10 +65,10 @@ export default function Timeline() {
                 {el.videoUrl ? (
                   <FullscreenVideo videoSrc={el.videoUrl}>
                     <button className="btn btn-mod btn-large btn-round d-flex ms-1 me-1 mt-2 align-middle">
-                      {t(el.title)}{' '}
+                      {t(el.title)}{" "}
                       <i
                         className="mi-play ms-2 fs-5"
-                        style={{ color: '#fff' }}
+                        style={{ color: "#fff" }}
                       />
                     </button>
                   </FullscreenVideo>
