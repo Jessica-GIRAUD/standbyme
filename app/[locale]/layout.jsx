@@ -2,6 +2,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import ClientLayout from '@/components/common/ClientLayout';
 import { notFound } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/next';
 
 export default async function RootLayout({ children, params }) {
   // Ensure that the incoming `locale` is valid
@@ -85,6 +86,7 @@ export default async function RootLayout({ children, params }) {
         <NextIntlClientProvider locale={locale}>
           <ClientLayout>{children}</ClientLayout>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
