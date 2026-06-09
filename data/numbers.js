@@ -33,7 +33,7 @@ export const numberItems = [
     suite: "Entreprise labellisée",
     description:
       "Une reconnaissance officielle de notre savoir-faire et de notre performance.",
-    logo: "/assets/images/logo_excellence.png",
+    logo: "/assets/images/bpi-france.webp",
     link: "/savoir-faire/#eco",
   },
 ];
