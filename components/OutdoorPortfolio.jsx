@@ -54,7 +54,7 @@ export default function OutdoorPortfolio({ gridClass = "" }) {
     <section className="page-section">
       <div className="full-wrapper position-relative">
         {/* Works Filter */}
-        <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
+        {/* <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
           {filters.map((elm, i) => (
             <a
               onClick={() => updateCategory(elm.category)}
@@ -66,7 +66,7 @@ export default function OutdoorPortfolio({ gridClass = "" }) {
               {t(elm.name)}
             </a>
           ))}
-        </div>
+        </div> */}
         {/* End Works Filter */}
 
         {/* Outdoor Grid */}

@@ -1,38 +1,43 @@
-'use client';
+"use client";
 
-import { portfolios } from '@/data/portfolio';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import React, { useEffect, useRef, useState } from 'react';
-import { Gallery } from 'react-photoswipe-gallery';
+import { portfolios } from "@/data/portfolio";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import { Gallery } from "react-photoswipe-gallery";
 
 const filters = [
-  { name: 'Tous les stands', category: 'all' },
-  { name: 'Intérieur', category: 'indoor' },
-  { name: 'Extérieur', category: 'outdoor' },
+  { name: "Tous les stands", category: "all" },
+  { name: "Intérieur", category: "indoor" },
+  { name: "Extérieur", category: "outdoor" },
 ];
 
-export default function Portfolio({ gridClass = '' }) {
-  const t = useTranslations('portfolio');
+export default function Portfolio({
+  gridClass = "",
+  withFilters = true,
+  slice = null,
+  withButton = false,
+}) {
+  const t = useTranslations("portfolio");
 
-  const [currentCategory, setCurrentCategory] = useState('all');
+  const [currentCategory, setCurrentCategory] = useState("all");
 
   const isotopContainer = useRef();
   const isotope = useRef();
 
   const initIsotop = async () => {
-    const Isotope = (await import('isotope-layout')).default;
-    const imagesloaded = (await import('imagesloaded')).default;
+    const Isotope = (await import("isotope-layout")).default;
+    const imagesloaded = (await import("imagesloaded")).default;
 
     if (!isotopContainer.current) return;
 
     // Initialize Isotope in the mounted hook
     isotope.current = new Isotope(isotopContainer.current, {
-      itemSelector: '.work-item',
-      layoutMode: 'masonry', // or 'fitRows', depending on your layout needs
+      itemSelector: ".work-item",
+      layoutMode: "masonry", // or 'fitRows', depending on your layout needs
     });
-    imagesloaded(isotopContainer.current).on('progress', function () {
+    imagesloaded(isotopContainer.current).on("progress", function () {
       // Trigger Isotope layout
       isotope.current?.layout();
     });
@@ -41,7 +46,7 @@ export default function Portfolio({ gridClass = '' }) {
   const updateCategory = (val) => {
     setCurrentCategory(val);
     isotope.current.arrange({
-      filter: val == 'all' ? '*' : '.' + val,
+      filter: val == "all" ? "*" : "." + val,
     });
     //   isotope.value.layout();
   };
@@ -50,7 +55,7 @@ export default function Portfolio({ gridClass = '' }) {
     /////////////////////////////////////////////////////
     // Magnate Animation
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       initIsotop();
     }
   }, []);
@@ -59,19 +64,21 @@ export default function Portfolio({ gridClass = '' }) {
     <section className="page-section">
       <div className="full-wrapper position-relative">
         {/* Works Filter */}
-        <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
-          {filters.map((elm, i) => (
-            <a
-              onClick={() => updateCategory(elm.category)}
-              key={i}
-              className={`filter ${
-                currentCategory == elm.category ? 'active' : ''
-              }`}
-            >
-              {t(elm.name)}
-            </a>
-          ))}
-        </div>
+        {withFilters && (
+          <div className="works-filter text-center mb-60 mb-sm-40 z-index-1">
+            {filters.map((elm, i) => (
+              <a
+                onClick={() => updateCategory(elm.category)}
+                key={i}
+                className={`filter ${
+                  currentCategory == elm.category ? "active" : ""
+                }`}
+              >
+                {t(elm.name)}
+              </a>
+            ))}
+          </div>
+        )}
         {/* End Works Filter */}
         {/* Works Grid */}
         <ul
@@ -80,14 +87,14 @@ export default function Portfolio({ gridClass = '' }) {
           id="work-grid"
         >
           <Gallery>
-            {portfolios.map((item, index) => {
-              const title = item.client + ' ' + item.salon + ' - ' + item.date;
-              const descr = item.location + ' – ' + item.surface;
+            {portfolios.slice(0, slice).map((item, index) => {
+              const title = item.client + " " + item.salon + " - " + item.date;
+              const descr = item.location + " – " + item.surface;
               return (
-                <li key={index} className={'work-item mix  ' + item.mix}>
+                <li key={index} className={"work-item mix  " + item.mix}>
                   <Link
                     href={`/realisations/${item.id}`}
-                    className={'work-lightbox-link mfp-image'}
+                    className={"work-lightbox-link mfp-image"}
                   >
                     <div className="work-img">
                       <div className="work-img-bg wow scalexIn" />
@@ -111,6 +118,16 @@ export default function Portfolio({ gridClass = '' }) {
           </Gallery>
         </ul>
         {/* End Works Grid */}
+        {withButton && (
+          <div className="text-center mt-50 wow fadeInUp">
+            <Link
+              href="/realisations"
+              className="btn btn-mod btn-medium btn-round"
+            >
+              {t("realisationsCta")}
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

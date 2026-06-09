@@ -73,8 +73,13 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: FROM_EMAIL,
       to: infos.emailCallback,
-      subject: `Demande de rappel - ${safePhone}`,
+      subject: `🔔 Demande de rappel - ${safePhone}`,
       html: emailHtml,
+      headers: {
+        "X-Priority": "1",
+        "X-MSMail-Priority": "High",
+        Importance: "High",
+      },
     });
 
     return NextResponse.json({ success: true }, { status: 200 });

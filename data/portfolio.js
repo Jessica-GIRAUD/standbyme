@@ -29,7 +29,7 @@ export const portfolios = [
     salon: "REFUGE",
     client: "HOKA",
     location: "Paris",
-    surface: "0m²",
+    surface: "",
     date: 2025,
     videoSrc: "/assets/videos/Hoka.mp4",
   },

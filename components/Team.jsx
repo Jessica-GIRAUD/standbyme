@@ -12,7 +12,10 @@ export default function Team() {
   const [showDescription, setShowDescription] = useState({ 0: false });
 
   return (
-    <section className="page-section pt-0 pb-0  team-parallax-container" id="about">
+    <section
+      className="page-section pt-0 pb-0  team-parallax-container"
+      id="about"
+    >
       <ParallaxContainer
         className="page-section bg-gray-light-1 bg-light-alpha-80 parallax-5"
         style={{
@@ -25,11 +28,12 @@ export default function Team() {
             <div className="container position-relative">
               <div className="row justify-content-md-center">
                 <div className="col-lg-6 mb-md-60 mb-sm-30">
-                  <h2 className="section-caption mb-xs-10">{t("ourTeam")}</h2>
                   <h3 className="section-title mb-30">
                     <AnimatedText text={t("extraordinary")} />
                   </h3>
-
+                  <p className="section-descr mb-50 mb-sm-30">
+                    {t("subtitle")}
+                  </p>
                   <ul
                     className="nav nav-tabs services-tabs wow fadeInUp"
                     data-wow-delay="0.55s"

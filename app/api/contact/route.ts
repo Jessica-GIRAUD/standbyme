@@ -117,8 +117,13 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: infos.emailCallback,
       replyTo: [String(email).trim()],
-      subject: `Demande de devis - ${safePrenom} ${safeNom} (${safeEntreprise})`,
+      subject: `📩 Demande de devis - ${safePrenom} ${safeNom} (${safeEntreprise})`,
       html: emailHtml,
+      headers: {
+        "X-Priority": "1",
+        "X-MSMail-Priority": "High",
+        Importance: "High",
+      },
     });
 
     return NextResponse.json({ success: true }, { status: 200 });

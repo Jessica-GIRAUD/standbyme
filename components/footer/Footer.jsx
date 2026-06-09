@@ -47,7 +47,9 @@ export default function Footer({ dark = false }) {
               />
             </Link>
             <p>{t("slogan")}</p>
-            <div className={`clearlinks ${isMobile ? "rounded-pill bg-light text-dark p-2 px-4 w-fit" : ""}`}>
+            <div
+              className={`clearlinks ${isMobile ? "rounded-pill bg-light text-dark p-2 px-4 w-fit" : ""}`}
+            >
               <a href={`tel:${infos.phoneNumberProjectRef}`}>
                 {infos.phoneNumberProject}
               </a>
@@ -85,7 +87,13 @@ export default function Footer({ dark = false }) {
             <b>
               © {infos.company} {new Date().getFullYear()}.
             </b>{" "}
-            <b>{t("socialMedia")}</b>
+            <Link
+              href="/politique-de-confidentialite"
+              className="text-gray me-3"
+              style={{ fontSize: "0.85rem" }}
+            >
+              Politique de confidentialité
+            </Link>
             {/* Back to Top Link */}
             <div className="local-scroll float-end mt-n20 mt-sm-10">
               <a href="#top" className="link-to-top" onClick={scrollToTop}>

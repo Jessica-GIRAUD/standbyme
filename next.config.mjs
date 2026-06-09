@@ -1,6 +1,19 @@
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig = {
+  async redirects() {
+    return [
+      // TODO: Ajouter ici les anciennes URLs indexées avec erreurs 404/301
+      // identifiées dans Google Search Console.
+      // Format :
+      // { source: '/ancienne-url', destination: '/nouvelle-url', permanent: true },
+      //
+      // Exemples à compléter par Jessica :
+      // { source: '/stand', destination: '/fr/stand-sur-mesure-salon-professionnel', permanent: true },
+      // { source: '/contact', destination: '/fr#contact', permanent: true },
+      // { source: '/realisations', destination: '/fr/realisations', permanent: true },
+    ];
+  },
   images: {
     // Activer l'optimisation des images
     unoptimized: false,

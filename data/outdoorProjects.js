@@ -1,5 +1,5 @@
 export const outdoorProjects = [
-  {
+  /* {
     id: 1,
     type: "Bois",
     name: "Les Cloisons",
@@ -14,7 +14,7 @@ export const outdoorProjects = [
       },
     ],
     svg: "/assets/images/outdoor/cloison.svg",
-  },
+  }, */
   {
     id: 2,
     type: "Bois",

@@ -158,7 +158,8 @@ html {
   width: 2px;
   margin-left: -1px;
 
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       to bottom,
       var(--color-secondary-1) 0px,
       var(--color-secondary-1) 4px,
@@ -178,7 +179,10 @@ html {
       transparent 8px
     );
 
-  background-size: 100% 15%, 100% 70%, 100% 15%;
+  background-size:
+    100% 15%,
+    100% 70%,
+    100% 15%;
   background-position: top, center, bottom;
   background-repeat: no-repeat;
 
@@ -269,7 +273,9 @@ html {
 .destination-info .btn,
 .destination-info h2 {
   opacity: 1;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.3s ease;
   font-size: clamp(13px, 2vw, 16px);
   margin-bottom: 0;
 }
@@ -479,7 +485,9 @@ html {
   background: linear-gradient(135deg, #d3701d 0%, #ff8c2e 100%);
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(211, 112, 29, 0.8), 0 0 60px rgba(211, 112, 29, 0.4);
+  box-shadow:
+    0 0 30px rgba(211, 112, 29, 0.8),
+    0 0 60px rgba(211, 112, 29, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -488,7 +496,9 @@ html {
 
 .data-point:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 40px rgba(211, 112, 29, 1), 0 0 80px rgba(211, 112, 29, 0.6);
+  box-shadow:
+    0 0 40px rgba(211, 112, 29, 1),
+    0 0 80px rgba(211, 112, 29, 0.6);
 }
 
 .data-point:focus {
@@ -636,8 +646,10 @@ html {
   display: inline-block;
   overflow: hidden;
   border-bottom: 2px solid var(--color-secondary-1);
-  transition: transform 0.5s var(--ease-elastic-1),
-    opacity 0.5s var(--ease-elastic-1), color 0.2s var(--ease-default);
+  transition:
+    transform 0.5s var(--ease-elastic-1),
+    opacity 0.5s var(--ease-elastic-1),
+    color 0.2s var(--ease-default);
 }
 
 .special a .link-strong-hovered {
@@ -697,7 +709,9 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .outdoor-image.fade-in {
@@ -791,4 +805,15 @@ html {
   .outdoor-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.callback-policy-link,
+.callback-policy-link:visited {
+  color: var(--color-secondary-1) !important;
+}
+
+.callback-policy-link:hover,
+.callback-policy-link:focus {
+  color: var(--color-secondary-1) !important;
+  opacity: 0.8;
 }
