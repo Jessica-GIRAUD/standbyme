@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import { infos } from '@/data/infos';
-import { useTranslations } from 'next-intl';
-import { useState } from 'react';
-import ParallaxContainer from './common/ParallaxContainer';
-import AnimatedText from './common/AnimatedText';
-import useScreenSize from '@/hooks/useScreenSize';
+import { infos } from "@/data/infos";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+import ParallaxContainer from "./common/ParallaxContainer";
+import AnimatedText from "./common/AnimatedText";
+import useScreenSize from "@/hooks/useScreenSize";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   const { isMobile } = useScreenSize();
-  const t = useTranslations('contact');
+  const t = useTranslations("contact");
   const [address, setAddress] = useState(infos.googleMap1);
 
   return (
@@ -18,7 +19,7 @@ export default function Contact() {
         className="page-section bg-gray-light-1 bg-light-alpha-90 parallax-5"
         style={{
           backgroundImage:
-            'url(/assets/images/full-width-images/page-title-bg-4.webp)',
+            "url(/assets/images/full-width-images/page-title-bg-4.webp)",
         }}
       >
         <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-gradient-white" />
@@ -27,7 +28,7 @@ export default function Contact() {
             <div className="row">
               <div className="col-md-8 offset-md-2">
                 <h3 className="section-title mb-30">
-                  <AnimatedText text={t('contactProjectTitle')} />
+                  <AnimatedText text={t("contactProjectTitle")} />
                 </h3>
               </div>
             </div>
@@ -35,25 +36,25 @@ export default function Contact() {
         </div>
       </ParallaxContainer>
       <div className="container position-relative">
-        <div className="row">
+        {/* Row 1 : Titre + infos de contact */}
+        <div className="row mb-60 mb-sm-40">
           <div className="col-lg-6">
             <div className="pe-lg-5">
               <h2
-                className=" mb-30 mb-xs-20 wow fadeInUp"
+                className="mb-30 mb-xs-20 wow fadeInUp"
                 data-wow-duration="1.2s"
               >
-                {t('title')}
+                {t("title")}
               </h2>
-
               <p className="text-gray wow fadeInUp" data-wow-duration="0.8s">
-                {t('description')} 🚀
+                {t("description")} 🚀
               </p>
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="row mb-60 mb-sm-50">
-              {/* Contact Item */}
-              <div className="col-sm-5 mb-xs-30 d-flex align-items-stretch">
+            <div className="row">
+              {/* Contact Item — Email & Tél */}
+              <div className="col-sm-6 mb-xs-30 d-flex align-items-stretch">
                 <div
                   className="alt-features-item border-left mt-0 wow fadeScaleIn"
                   data-wow-delay=".3s"
@@ -84,13 +85,13 @@ export default function Contact() {
                       </svg>
                     </div>
                   </div>
-                  <h4 className="alt-features-title">{t('contactProject')}</h4>
+                  <h4 className="alt-features-title">{t("contactProject")}</h4>
                   <div className="alt-features-descr clearlinks mb-20">
                     <div
                       className={
                         isMobile
-                          ? 'rounded-pill bg-light text-dark p-2 px-4 mb-2'
-                          : ''
+                          ? "rounded-pill bg-light text-dark p-2 px-4 mb-2"
+                          : ""
                       }
                     >
                       <a href={`mailto:${infos.email}`}>{infos.email}</a>
@@ -98,8 +99,8 @@ export default function Contact() {
                     <div
                       className={
                         isMobile
-                          ? 'rounded-pill bg-light text-dark p-2 px-4'
-                          : ''
+                          ? "rounded-pill bg-light text-dark p-2 px-4"
+                          : ""
                       }
                     >
                       <a href={`tel:${infos.phoneNumberProjectRef}`}>
@@ -108,14 +109,14 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="alt-features-title">
-                    {t('contactCommercial')}
+                    {t("contactCommercial")}
                   </h4>
                   <div className="alt-features-descr clearlinks">
                     <div
                       className={
                         isMobile
-                          ? 'rounded-pill bg-light text-dark p-2 px-4 mb-2'
-                          : ''
+                          ? "rounded-pill bg-light text-dark p-2 px-4 mb-2"
+                          : ""
                       }
                     >
                       <a href={`mailto:${infos.emailCommercial}`}>
@@ -125,8 +126,8 @@ export default function Contact() {
                     <div
                       className={
                         isMobile
-                          ? 'rounded-pill bg-light text-dark p-2 px-4'
-                          : ''
+                          ? "rounded-pill bg-light text-dark p-2 px-4"
+                          : ""
                       }
                     >
                       <a href={`tel:${infos.phoneNumberCommercialRef}`}>
@@ -137,8 +138,8 @@ export default function Contact() {
                 </div>
               </div>
               {/* End Contact Item */}
-              {/* Contact Item */}
-              <div className="col-sm-7 d-flex align-items-stretch">
+              {/* Contact Item — Adresses */}
+              <div className="col-sm-6 d-flex align-items-stretch">
                 <div
                   className="alt-features-item border-left mt-0 wow fadeScaleIn"
                   data-wow-delay=".5s"
@@ -157,24 +158,18 @@ export default function Contact() {
                       <path d="M12 10c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2m0-5c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3m-7 2.602c0-3.517 3.271-6.602 7-6.602s7 3.085 7 6.602c0 3.455-2.563 7.543-7 14.527-4.489-7.073-7-11.072-7-14.527m7-7.602c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602" />
                     </svg>
                   </div>
-                  <h4 className="alt-features-title">{t('location')}</h4>
+                  <h4 className="alt-features-title">{t("location")}</h4>
                   <div
-                    className={`alt-features-descr ${
-                      address.includes('Paris') ? 'active' : ''
-                    }`}
-                    style={{ cursor: 'pointer' }}
+                    className={`alt-features-descr ${address.includes("Paris") ? "active" : ""}`}
+                    style={{ cursor: "pointer" }}
                     onClick={() => setAddress(infos.googleMap1)}
-                    // className="alt-features-descr"
                   >
                     {infos.address1}
                   </div>
                   <div
-                    className={`alt-features-descr ${
-                      address.includes('Thor') ? 'active' : ''
-                    }`}
-                    style={{ cursor: 'pointer' }}
+                    className={`alt-features-descr ${address.includes("Thor") ? "active" : ""}`}
+                    style={{ cursor: "pointer" }}
                     onClick={() => setAddress(infos.googleMap2)}
-                    // className="alt-features-descr"
                   >
                     {infos.address2}
                   </div>
@@ -184,10 +179,18 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        {/* Google Map */}
-        <div className="row wow fadeInUp" data-wow-delay="0.5s">
-          <div className="col-md-12 d-flex align-items-stretch">
-            <div className="map-boxed">
+
+        {/* Row 2 : Formulaire + Carte côte à côte */}
+        <div className="row wow fadeInUp" data-wow-delay="0.3s">
+          <div className="col-md-6 mb-sm-50">
+            <div className="pe-lg-5">
+              <h3 className="mb-30">{t("DemandeDevis")}</h3>
+              <ContactForm />
+            </div>
+          </div>
+          {/* Google Map */}
+          <div className="col-md-6 d-flex align-items-stretch">
+            <div className="map-boxed w-100">
               <iframe
                 src={address}
                 width={600}
