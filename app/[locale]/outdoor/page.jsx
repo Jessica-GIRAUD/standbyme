@@ -13,7 +13,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata = {
   title: `${infos.company} - Outdoor & Structures`,
   description:
-    "Découvrez nos structures outdoor : bois, métal, tentes AirClad et Algéco. Stand By Me conçoit et réalise vos espaces événementiels extérieurs sur mesure.",
+    "Découvrez nos structures outdoor en bois. Stand By Me conçoit et réalise vos espaces événementiels extérieurs sur mesure.",
 };
 
 export default async function OutdoorPage() {
@@ -22,17 +22,17 @@ export default async function OutdoorPage() {
     <div className="theme-main">
       <div className="page" id="top">
         {/* Navigation */}
-        <nav className="main-nav dark light-after-scroll transparent stick-fixed wow-menubar wch-unset">
+        <nav className="main-nav transparent stick-fixed wow-menubar">
           <Header links={menuItems} />
         </nav>
 
         <main id="main">
           {/* Hero Video Section - Sans contenu texte */}
-          <Hero
+          {/*    <Hero
             showContent={false}
             scrollTarget="#outdoor-content"
             sectionId="home"
-          />
+          /> */}
 
           <section className="page-section pt-0 pb-0" id="home">
             <ParallaxContainer
