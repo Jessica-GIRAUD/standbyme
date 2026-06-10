@@ -74,7 +74,9 @@ export default async function PolitiqueDeConfidentialite() {
                     <li>
                       <strong>Stand By Me</strong>
                     </li>
+                    <li>{t("s1FormeJuridique")}</li>
                     <li>{t("s1Address")}</li>
+                    <li>{t("s1Email")}</li>
                   </ul>
 
                   <h2 className="section-title-small mb-20 mt-50">

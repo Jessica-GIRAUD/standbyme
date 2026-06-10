@@ -13,5 +13,9 @@ export const infos = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2873.663075662839!2d5.014636175672321!3d43.92494913481323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5f434a35dd2b3%3A0xcbbbe94f18311e3c!2s210%20Av.%20de%20la%20Cigali%C3%A8re%2C%2084250%20Le%20Thor!5e0!3m2!1sfr!2sfr!4v1746775260947!5m2!1sfr!2sfr",
   email: "projets@standbyme.fr",
   emailCommercial: "v.gomel@standbyme.fr",
-  emailCallback: ["j.martin@standbyme.fr", "v.gomel@standbyme.fr"],
+  emailCallback: [
+    "j.martin@standbyme.fr",
+    "v.gomel@standbyme.fr",
+    "jessica.lemarchand.pro@gmail.com",
+  ],
 };
