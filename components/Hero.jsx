@@ -111,7 +111,7 @@ export default function Hero({
                       </FullscreenVideo>
                       <button
                         onClick={() => setIsOpen(true)}
-                        className="btn btn-mod btn-w btn-large btn-round ms-1 me-1 mt-2 align-middle"
+                        className="btn btn-mod btn-large btn-round ms-1 me-1 mt-2 align-middle shine-button button-gold"
                         data-btn-animate="y"
                       >
                         {t("getInTouch")}

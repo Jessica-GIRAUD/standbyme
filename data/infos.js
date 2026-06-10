@@ -16,6 +16,6 @@ export const infos = {
   emailCallback: [
     "j.martin@standbyme.fr",
     "v.gomel@standbyme.fr",
-    "jessica.lemarchand.pro@gmail.com",
+    "service.it.standbyme@gmail.com",
   ],
 };

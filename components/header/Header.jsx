@@ -65,17 +65,7 @@ export default function Header({ links }) {
           {/* End Languages */}
           <li>
             <Link href="#contact" className="opacity-1 no-hover">
-              <span className="link-hover-anim underline" data-link-animate="y">
-                <span className="link-strong link-strong-unhovered">
-                  {t("Contact")}
-                </span>
-                <span
-                  className="link-strong link-strong-hovered"
-                  aria-hidden="true"
-                >
-                  {t("Contact")}
-                </span>
-              </span>
+              <div className="shine-button button-gold p-3">{t("Contact")}</div>
             </Link>
           </li>
         </ul>

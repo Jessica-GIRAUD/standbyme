@@ -807,6 +807,70 @@ html {
   }
 }
 
+.shine-button {
+  position: relative;
+  font-size: 17px !important;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  min-width: 200px;
+}
+
+.shine-button::before {
+  content: "";
+  position: absolute;
+  height: 250%;
+  width: 40px;
+  top: 0;
+  left: -60px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: rotate(45deg) translateY(-35%);
+  animation: shine 3s ease infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -80px;
+  }
+  40% {
+    left: calc(100% + 20px);
+  }
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+
+.button-gold {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary-1) 0%,
+    #d39c1d 100%
+  );
+  color: #fff;
+  box-shadow:
+    0 10px 30px rgba(247, 151, 30, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.button-gold:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 40px rgba(247, 151, 30, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.shine-button:active {
+  transform: translateY(-1px);
+  transition: transform 0.1s ease;
+}
+
 .callback-policy-link,
 .callback-policy-link:visited {
   color: var(--color-secondary-1) !important;

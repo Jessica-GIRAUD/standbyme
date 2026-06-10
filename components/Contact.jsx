@@ -27,7 +27,7 @@ export default function Contact() {
           <div className="text-center">
             <div className="row">
               <div className="col-md-8 offset-md-2">
-                <h3 className="section-title mb-30">
+                <h3 className="section-title mb-0">
                   <AnimatedText text={t("contactProjectTitle")} />
                 </h3>
               </div>
@@ -36,22 +36,17 @@ export default function Contact() {
         </div>
       </ParallaxContainer>
       <div className="container position-relative">
-        {/* Row 1 : Titre + infos de contact */}
-        <div className="row mb-60 mb-sm-40">
-          <div className="col-lg-6">
+        {/* Row 1 : Formulaire + Carte */}
+        <div className="row wow fadeInUp mb-60 mb-sm-40" data-wow-delay="0.3s">
+          <div className="col-md-6 mb-sm-50">
             <div className="pe-lg-5">
-              <h2
-                className="mb-30 mb-xs-20 wow fadeInUp"
-                data-wow-duration="1.2s"
-              >
-                {t("title")}
-              </h2>
-              <p className="text-gray wow fadeInUp" data-wow-duration="0.8s">
-                {t("description")} 🚀
-              </p>
+              <h3 className="mb-30">{t("DemandeDevis")}</h3>
+              <ContactForm />
             </div>
           </div>
-          <div className="col-lg-6">
+          {/* Google Map */}
+
+          <div className="col-lg-6 ps-lg-5">
             <div className="row">
               {/* Contact Item — Email & Tél */}
               <div className="col-sm-6 mb-xs-30 d-flex align-items-stretch">
@@ -179,16 +174,21 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        {/* End Google Map */}
 
-        {/* Row 2 : Formulaire + Carte côte à côte */}
-        <div className="row wow fadeInUp" data-wow-delay="0.3s">
-          <div className="col-md-6 mb-sm-50">
-            <div className="pe-lg-5">
-              <h3 className="mb-30">{t("DemandeDevis")}</h3>
-              <ContactForm />
-            </div>
+        {/* Row 2 : Infos de contact + Titre */}
+        <div className="row">
+          <div className="col-lg-6 align-content-center">
+            <h2
+              className="mb-30 mb-xs-20 wow fadeInUp"
+              data-wow-duration="1.2s"
+            >
+              {t("title")}
+            </h2>
+            <p className="text-gray wow fadeInUp" data-wow-duration="0.8s">
+              {t("description")} 🚀
+            </p>
           </div>
-          {/* Google Map */}
           <div className="col-md-6 d-flex align-items-stretch">
             <div className="map-boxed w-100">
               <iframe
@@ -203,7 +203,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        {/* End Google Map */}
       </div>
     </section>
   );
