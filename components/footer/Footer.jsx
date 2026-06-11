@@ -47,13 +47,6 @@ export default function Footer({ dark = false }) {
               />
             </Link>
             <p>{t("slogan")}</p>
-            <div
-              className={`clearlinks ${isMobile ? "rounded-pill bg-light text-dark p-2 px-4 w-fit" : ""}`}
-            >
-              <a href={`tel:${infos.phoneNumberProjectRef}`}>
-                {infos.phoneNumberProject}
-              </a>
-            </div>
           </div>
           <div className="col-md-7 offset-md-1 offset-lg-2">
             <div className="row mt-n30">

@@ -91,17 +91,6 @@ export default function Contact() {
                     >
                       <a href={`mailto:${infos.email}`}>{infos.email}</a>
                     </div>
-                    <div
-                      className={
-                        isMobile
-                          ? "rounded-pill bg-light text-dark p-2 px-4"
-                          : ""
-                      }
-                    >
-                      <a href={`tel:${infos.phoneNumberProjectRef}`}>
-                        {infos.phoneNumberProject}
-                      </a>
-                    </div>
                   </div>
                   <h4 className="alt-features-title">
                     {t("contactCommercial")}

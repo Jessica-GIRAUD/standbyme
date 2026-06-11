@@ -1,8 +1,6 @@
 export const infos = {
   company: "Stand By Me",
   commercialName: "Vladimir GOMEL",
-  phoneNumberProject: "04 84 57 23 39",
-  phoneNumberProjectRef: "+33484572339",
   phoneNumberCommercial: "06 50 50 92 88",
   phoneNumberCommercialRef: "+33650509288",
   address1: "57 Rue de l’Ourcq, 75019 Paris",

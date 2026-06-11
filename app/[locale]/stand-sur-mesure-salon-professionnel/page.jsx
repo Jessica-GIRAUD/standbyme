@@ -102,14 +102,6 @@ export default async function StandSurMesurePage() {
                     >
                       {t("heroCta")}
                     </Link>
-                    <Link
-                      href={`tel:${infos.phoneNumberProjectRef}`}
-                      className="btn btn-mod btn-border-w btn-large btn-round ms-2 me-2 mt-2"
-                      data-btn-animate="y"
-                    >
-                      <i className="mi-phone me-2" />
-                      {infos.phoneNumberProject}
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -206,7 +198,7 @@ export default async function StandSurMesurePage() {
                             width: 48,
                             height: 48,
                             borderRadius: "50%",
-                            backgroundColor: "#1a1a1a",
+                            backgroundColor: "#d3701d",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -290,14 +282,6 @@ export default async function StandSurMesurePage() {
                     data-btn-animate="y"
                   >
                     {t("ctaCta")}
-                  </Link>
-                  <Link
-                    href={`tel:${infos.phoneNumberProjectRef}`}
-                    className="btn btn-mod btn-border-w btn-large btn-round ms-2 me-2 mt-2"
-                    data-btn-animate="y"
-                  >
-                    <i className="mi-phone me-2" />
-                    {t("ctaCall")}
                   </Link>
                 </div>
               </div>
